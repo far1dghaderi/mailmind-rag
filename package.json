@@ -8,15 +8,19 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch src/main.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/*.test.ts"
+    "test": "tsx --test $(find src -name \"*.test.ts\")"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^20.19.43",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
   }
 }
