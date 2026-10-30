@@ -1,0 +1,219 @@
+{
+  "emails": [
+    {
+      "email": 0,
+      "intent": "order_status",
+      "accuracy": 90
+    },
+    {
+      "email": 1,
+      "intent": "order_status",
+      "accuracy": 100
+    },
+    {
+      "email": 2,
+      "intent": "order_status",
+      "accuracy": 80
+    },
+    {
+      "email": 3,
+      "intent": "order_status",
+      "accuracy": 80
+    },
+    {
+      "email": 4,
+      "intent": "shipping_delivery",
+      "accuracy": 90
+    },
+    {
+      "email": 5,
+      "intent": "shipping_delivery",
+      "accuracy": 90
+    },
+    {
+      "email": 6,
+      "intent": "shipping_delivery",
+      "accuracy": 90
+    },
+    {
+      "email": 7,
+      "intent": "payment_issue",
+      "accuracy": 80
+    },
+    {
+      "email": 8,
+      "intent": "return_exchange",
+      "accuracy": 100
+    },
+    {
+      "email": 9,
+      "intent": "return_exchange",
+      "accuracy": 90
+    },
+    {
+      "email": 10,
+      "intent": "return_exchange",
+      "accuracy": 100
+    },
+    {
+      "email": 11,
+      "intent": "return_exchange",
+      "accuracy": 90
+    },
+    {
+      "email": 12,
+      "intent": "refund_status",
+      "accuracy": 90
+    },
+    {
+      "email": 13,
+      "intent": "refund_status",
+      "accuracy": 90
+    },
+    {
+      "email": 14,
+      "intent": "refund_status",
+      "accuracy": 90
+    },
+    {
+      "email": 15,
+      "intent": "order_cancellation",
+      "accuracy": 90
+    },
+    {
+      "email": 16,
+      "intent": "order_cancellation",
+      "accuracy": 100
+    },
+    {
+      "email": 17,
+      "intent": "order_cancellation",
+      "accuracy": 80
+    },
+    {
+      "email": 18,
+      "intent": "order_cancellation",
+      "accuracy": 90
+    },
+    {
+      "email": 19,
+      "intent": "order_cancellation",
+      "accuracy": 100
+    },
+    {
+      "email": 20,
+      "intent": "product_information",
+      "accuracy": 100
+    },
+    {
+      "email": 21,
+      "intent": "product_information",
+      "accuracy": 100
+    },
+    {
+      "email": 22,
+      "intent": "product_information",
+      "accuracy": 100
+    },
+    {
+      "email": 23,
+      "intent": "product_information",
+      "accuracy": 100
+    },
+    {
+      "email": 24,
+      "intent": "damaged_defective_product",
+      "accuracy": 100
+    },
+    {
+      "email": 25,
+      "intent": "damaged_defective_product",
+      "accuracy": 90
+    },
+    {
+      "email": 26,
+      "intent": "damaged_defective_product",
+      "accuracy": 90
+    },
+    {
+      "email": 27,
+      "intent": "damaged_defective_product",
+      "accuracy": 90
+    },
+    {
+      "email": 28,
+      "intent": "payment_issue",
+      "accuracy": 90
+    },
+    {
+      "email": 29,
+      "intent": "payment_issue",
+      "accuracy": 100
+    },
+    {
+      "email": 30,
+      "intent": "payment_issue",
+      "accuracy": 90
+    },
+    {
+      "email": 31,
+      "intent": "payment_issue",
+      "accuracy": 100
+    },
+    {
+      "email": 32,
+      "intent": "discount_promotion",
+      "accuracy": 80
+    },
+    {
+      "email": 33,
+      "intent": "discount_promotion",
+      "accuracy": 90
+    },
+    {
+      "email": 34,
+      "intent": "discount_promotion",
+      "accuracy": 100
+    },
+    {
+      "email": 35,
+      "intent": "product_information",
+      "accuracy": 80
+    },
+    {
+      "email": 36,
+      "intent": "missing_incorrect_items",
+      "accuracy": 100
+    },
+    {
+      "email": 37,
+      "intent": "missing_incorrect_items",
+      "accuracy": 100
+    },
+    {
+      "email": 38,
+      "intent": "missing_incorrect_items",
+      "accuracy": 100
+    },
+    {
+      "email": 39,
+      "intent": "missing_incorrect_items",
+      "accuracy": 90
+    },
+    {
+      "email": 40,
+      "intent": "unknown",
+      "accuracy": 0
+    },
+    {
+      "email": 41,
+      "intent": "unknown",
+      "accuracy": 0
+    },
+    {
+      "email": 42,
+      "intent": "unknown",
+      "accuracy": 0
+    }
+  ]
+}

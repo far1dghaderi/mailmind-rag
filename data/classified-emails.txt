@@ -1,0 +1,643 @@
+0
+From: Maya Collins <maya.collins@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 09:14:00 +0000
+Subject: Order #MM10482 status
+
+
+Hello,
+
+I placed order #MM10482 on October 27, but I haven't received any update since the confirmation email. Could you check whether it has been processed and let me know when it is expected to ship?
+
+Thanks,
+Maya
+
+#DIVIDER#
+1
+From: Oliver Reed <oliver.reed@mailbox.org>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 11:32:00 +0000
+Subject: Has my order been dispatched?
+
+
+Hi support,
+
+I ordered a coffee grinder three days ago. The order page still says “Processing.” Is that normal, or is something holding it up? My order number is MM10501.
+
+Regards,
+Oliver
+
+#DIVIDER#
+2
+From: Nina Patel <nina.patel@inbox.com>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 14:06:00 +0000
+Subject: Order confirmation but no progress
+
+
+Hello,
+
+I received confirmation for order MM10536 last Friday, but the status has not changed. I understand processing can take time, but I'd appreciate an estimate of when it will leave your warehouse.
+
+Best,
+Nina
+
+#DIVIDER#
+3
+From: Lucas Meyer <lucas.meyer@example.net>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 08:51:00 +0000
+Subject: Checking status of recent purchase
+
+
+Good afternoon,
+
+Could you please provide an update on order MM10577? I need to know whether it is likely to arrive before November 5, as it is a birthday present.
+
+Thank you,
+Lucas
+
+#DIVIDER#
+4
+From: Grace Turner <grace.turner@fastmail.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 16:20:00 +0000
+Subject: Package is several days late
+
+
+Hi,
+
+My order MM10391 was expected to arrive on October 25, but it still hasn't shown up. The tracking page has shown “In transit” for four days without any new scans. Can you investigate?
+
+Thanks,
+Grace
+
+#DIVIDER#
+5
+From: Benjamin Clark <ben.clark@example.org>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 10:03:00 +0000
+Subject: Tracking link does not work
+
+
+Hello Support,
+
+I received a shipping notification for order MM10467, but the tracking link leads to an error page. I tried it on two devices. Could you send me a working tracking number or link?
+
+Best regards,
+Ben
+
+#DIVIDER#
+6
+From: Amira Hassan <amira.hassan@posteo.net>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 17:42:00 +0000
+Subject: Delivery marked as attempted
+
+
+Hello,
+
+The courier tracking says delivery was attempted yesterday, but I was home all afternoon and nobody rang the bell. There was no note left either. Please let me know how I can arrange another delivery for order MM10499.
+
+Regards,
+Amira
+
+#DIVIDER#
+7
+From: Jack Wilson <jack.wilson@customer.email>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 12:18:00 +0000
+Subject: Shipping cost question
+
+
+Hi team,
+
+I noticed a shipping charge of $8.95 on my checkout receipt. I thought orders over $75 qualified for free standard shipping, and my order total was $89.50 before tax. Could you explain why I was charged?
+
+Thanks,
+Jack
+
+#DIVIDER#
+8
+From: Chloe Bennett <chloe.bennett@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 10:40:00 +0000
+Subject: Request to return a jacket
+
+
+Hello,
+
+I'd like to return the navy jacket from order MM10412. It arrived last week, but the fit is not right. The tags are still attached and I haven't worn it. Please tell me how to start a return and whether you can provide a return label.
+
+Kind regards,
+Chloe
+
+#DIVIDER#
+9
+From: Ethan Brooks <ethan.brooks@mail.com>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 13:27:00 +0000
+Subject: Exchange for a different size
+
+
+Hi,
+
+I ordered the running shoes in size 42 (order MM10455), but I need size 43. The shoes are unused and still in the original box. Can I exchange them directly, or do I need to return them and place a new order?
+
+Thanks,
+Ethan
+
+#DIVIDER#
+10
+From: Sofia Rossi <sofia.rossi@example.eu>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 09:55:00 +0000
+Subject: Can I return one item from my order?
+
+
+Hello Support,
+
+Order MM10488 contained three items. I would like to keep two of them and return only the ceramic lamp. Is a partial return possible? Please let me know what information you need from me.
+
+Best,
+Sofia
+
+#DIVIDER#
+11
+From: Noah Kim <noah.kim@inboxmail.net>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 15:11:00 +0000
+Subject: Return window clarification
+
+
+Hi,
+
+My headphones arrived on October 2, and I am considering returning them. I am not sure whether the return period is counted from the order date or the delivery date. Could you clarify the policy and tell me if order MM10273 is still eligible?
+
+Regards,
+Noah
+
+#DIVIDER#
+12
+From: Isabella Moore <isabella.moore@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 08:36:00 +0000
+Subject: Refund has not arrived
+
+
+Hello,
+
+I returned the backpack from order MM10201, and your tracking shows that the return was delivered to your warehouse on October 22. I haven't received the refund yet. Could you check its status and tell me when I should expect it?
+
+Thank you,
+Isabella
+
+#DIVIDER#
+13
+From: Leo Fischer <leo.fischer@webmail.de>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 16:49:00 +0000
+Subject: Refund confirmation received, money missing
+
+
+Hi support,
+
+I got an email confirming a refund of €64.90 for order MM10318 five business days ago, but the amount is not showing on my card statement. Has the refund actually been sent, or is there another processing period?
+
+Best,
+Leo
+
+#DIVIDER#
+14
+From: Harper Scott <harper.scott@example.org>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 12:02:00 +0000
+Subject: Partial refund amount seems incorrect
+
+
+Hello,
+
+I returned two items from order MM10366 and received a refund of $24.00. Based on the receipt, I expected $39.00. Could you provide a breakdown of the refund and explain the difference?
+
+Regards,
+Harper
+
+#DIVIDER#
+15
+From: Mateo Alvarez <mateo.alvarez@inbox.com>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 09:21:00 +0000
+Subject: Following up on cancelled order refund
+
+
+Hello team,
+
+Order MM10403 was cancelled before shipment, and I was told the payment would be refunded. It has now been eight days. Could you confirm whether the refund was initiated and which payment method it will go back to?
+
+Thanks,
+Mateo
+
+#DIVIDER#
+16
+From: Ella Morgan <ella.morgan@example.net>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 11:08:00 +0000
+Subject: Please cancel order MM10512
+
+
+Hi,
+
+I placed order MM10512 about twenty minutes ago and accidentally selected the wrong color. I'd rather cancel it and place a new order. Could you stop the current order before it is shipped?
+
+Thanks,
+Ella
+
+#DIVIDER#
+17
+From: David Nguyen <david.nguyen@mailbox.org>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 15:34:00 +0000
+Subject: Cancel one item from my order
+
+
+Hello Support,
+
+I ordered a phone case and a screen protector under order MM10528. I no longer need the screen protector, but I would still like the phone case. Is it possible to cancel just one item?
+
+Regards,
+David
+
+#DIVIDER#
+18
+From: Zoe Campbell <zoe.campbell@example.com>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 10:17:00 +0000
+Subject: Wrong delivery address - cancellation needed
+
+
+Hello,
+
+I just noticed that order MM10543 is going to my old address. I cannot receive packages there anymore. If the address cannot be changed at this stage, please cancel the order so I can place it again with the correct details.
+
+Best,
+Zoe
+
+#DIVIDER#
+19
+From: Samuel Price <sam.price@customer.net>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 13:46:00 +0000
+Subject: Cancel order placed by mistake
+
+
+Hi,
+
+I accidentally submitted checkout twice and now have two orders, MM10569 and MM10570, for the same items. Please cancel MM10570 if it has not entered fulfillment yet.
+
+Thank you,
+Samuel
+
+#DIVIDER#
+20
+From: Aiden Murphy <aiden.murphy@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 13:12:00 +0000
+Subject: Question about wireless headphones
+
+
+Hello,
+
+I'm interested in the SoundPeak H40 wireless headphones. Could you tell me whether they support multipoint Bluetooth, so I can connect them to my laptop and phone at the same time? I couldn't find that detail on the product page.
+
+Thanks,
+Aiden
+
+#DIVIDER#
+21
+From: Lily Evans <lily.evans@fastmail.com>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 09:48:00 +0000
+Subject: Material used in the travel mug
+
+
+Hi there,
+
+Is the inner lining of your 500 ml stainless-steel travel mug made from food-grade stainless steel? I am also wondering whether the lid is dishwasher-safe.
+
+Kind regards,
+Lily
+
+#DIVIDER#
+22
+From: Omar Farouk <omar.farouk@example.org>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 16:25:00 +0000
+Subject: Difference between two desk lamps
+
+
+Hello Support,
+
+I'm deciding between the Luma Desk Lamp 2 and the Luma Desk Lamp Pro. The product pages look very similar. Could you explain the main differences, especially brightness settings, color temperature, and whether either model has a USB charging port?
+
+Best,
+Omar
+
+#DIVIDER#
+23
+From: Charlotte King <charlotte.king@inbox.net>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 11:39:00 +0000
+Subject: Care instructions for linen bedding
+
+
+Hello,
+
+I'm considering buying your linen duvet cover set. How should it be washed, and is it likely to shrink after the first wash? I'd like to understand the care requirements before ordering.
+
+Thank you,
+Charlotte
+
+#DIVIDER#
+24
+From: Mason Lee <mason.lee@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 15:03:00 +0000
+Subject: Glass bottle arrived broken
+
+
+Hello,
+
+My order MM10431 arrived today, but the glass water bottle was broken inside the box. There were small pieces of glass in the packaging. I have taken photos of the item and box. Please advise how to get a replacement or refund.
+
+Regards,
+Mason
+
+#DIVIDER#
+25
+From: Freya Adams <freya.adams@mail.com>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 12:56:00 +0000
+Subject: Electric kettle stopped working
+
+
+Hi Support,
+
+The electric kettle from order MM10198 worked for about two weeks, but now it switches off before the water boils. I have tried a different outlet and followed the manual's instructions. Could you tell me whether this is covered by the warranty?
+
+Thanks,
+Freya
+
+#DIVIDER#
+26
+From: Theo Martin <theo.martin@example.net>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 08:43:00 +0000
+Subject: Scratched item received
+
+
+Hello,
+
+I received the wooden serving tray in order MM10476, and it has a deep scratch across the top surface. The outer shipping box looks fine, so the damage may have happened before packing. I'd prefer a replacement if possible. What should I do next?
+
+Best regards,
+Theo
+
+#DIVIDER#
+27
+From: Priya Shah <priya.shah@posteo.net>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 17:08:00 +0000
+Subject: Portable speaker will not charge
+
+
+Hi,
+
+The portable speaker I purchased (order MM10382) will not charge. I've tested the included cable with another device, so the cable seems to work. The speaker's charging indicator does not turn on at all. Please let me know how to arrange a repair or replacement.
+
+Regards,
+Priya
+
+#DIVIDER#
+28
+From: Henry Ward <henry.ward@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 10:26:00 +0000
+Subject: Charged twice for one order
+
+
+Hello,
+
+I placed order MM10508 once, but my banking app shows two identical charges of $72.40 from your store. I have only one order confirmation. Could you check whether one of the charges is a duplicate authorization and explain when it will be reversed?
+
+Thanks,
+Henry
+
+#DIVIDER#
+29
+From: Layla Ahmed <layla.ahmed@inbox.com>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 14:19:00 +0000
+Subject: Card payment keeps failing
+
+
+Hi team,
+
+I'm trying to place an order, but checkout displays “Payment could not be processed” after I enter my card details. The card works on other websites and my bank says it has not blocked the transaction. Is there another way to complete the purchase?
+
+Best,
+Layla
+
+#DIVIDER#
+30
+From: Finn O'Connor <finn.oconnor@example.ie>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 11:14:00 +0000
+Subject: Payment taken but no order created
+
+
+Hello Support,
+
+My card was charged €48.95 this morning, but the checkout page showed an error and I never received an order number or confirmation email. Can you check whether an order was created under this email address?
+
+Regards,
+Finn
+
+#DIVIDER#
+31
+From: Ruby James <ruby.james@customer.org>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 10:52:00 +0000
+Subject: Question about payment methods
+
+
+Hello,
+
+I'd like to place an order, but I don't want to enter my card details directly on the website. Do you accept PayPal or another third-party payment method? Also, are installment payments available for orders over $100?
+
+Thank you,
+Ruby
+
+#DIVIDER#
+32
+From: Caleb Young <caleb.young@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 12:41:00 +0000
+Subject: WELCOME10 code not working
+
+
+Hi,
+
+I'm a new customer and received the WELCOME10 discount code in your newsletter. When I enter it at checkout, the site says the code is invalid. My cart contains a backpack priced at $58. Could you help me understand why it isn't applying?
+
+Thanks,
+Caleb
+
+#DIVIDER#
+33
+From: Mila Petrova <mila.petrova@mailbox.org>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 17:16:00 +0000
+Subject: Discount disappeared at checkout
+
+
+Hello,
+
+A 15% discount was visible on the product page for the wireless mouse, but when I added it to my cart the price returned to the regular amount. I haven't completed the purchase yet. Is the promotion still active?
+
+Best regards,
+Mila
+
+#DIVIDER#
+34
+From: Oscar Bennett <oscar.bennett@example.net>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 13:33:00 +0000
+Subject: Can I combine two promotional codes?
+
+
+Hi Support,
+
+I have a newsletter code for 10% off and a separate free-shipping code. Can both be applied to the same order, or does the checkout system allow only one promotional code at a time?
+
+Regards,
+Oscar
+
+#DIVIDER#
+35
+From: Hana Suzuki <hana.suzuki@inbox.com>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 16:02:00 +0000
+Subject: Loyalty voucher rejected
+
+
+Hello,
+
+I received a $20 voucher through your loyalty program, but checkout says it cannot be used with the items in my basket. The basket contains two regular-price home accessories. Could you tell me whether there are exclusions or a minimum spend requirement?
+
+Thank you,
+Hana
+
+#DIVIDER#
+36
+From: Jackie Rivera <jackie.rivera@example.com>
+To: support@mailmind.com
+Date: Mon, 27 Oct 2026 14:31:00 +0000
+Subject: One item missing from order MM10420
+
+
+Hello,
+
+My package arrived today, but it contained the notebook and pen set only. The desk organizer listed on the same order is missing. The packing slip shows all three products, so I'm not sure whether it was packed separately. Could you check?
+
+Thanks,
+Jackie
+
+#DIVIDER#
+37
+From: Arjun Desai <arjun.desai@mail.com>
+To: support@mailmind.com
+Date: Tue, 28 Oct 2026 08:59:00 +0000
+Subject: Received the wrong color
+
+
+Hi,
+
+I ordered a black phone stand under order MM10483, but the package contains a white one. The product itself is fine, but I specifically need black. How can I get the correct item?
+
+Regards,
+Arjun
+
+#DIVIDER#
+38
+From: Eva Schneider <eva.schneider@example.de>
+To: support@mailmind.com
+Date: Wed, 29 Oct 2026 15:47:00 +0000
+Subject: Package contains someone else's item
+
+
+Hello Support Team,
+
+I ordered a set of kitchen towels, but the box also contained a pair of headphones that I did not purchase. My towels are there, so it looks like an extra item was packed by mistake. Please let me know how you would like me to handle the headphones.
+
+Kind regards,
+Eva
+
+#DIVIDER#
+39
+From: Dylan Foster <dylan.foster@fastmail.com>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 09:07:00 +0000
+Subject: Only one of two products delivered
+
+
+Hi,
+
+Order MM10519 included two identical water filters, but only one was in the parcel. The box did not look damaged and there was no note about a split shipment. Can you confirm whether the second filter is being sent separately?
+
+Thanks,
+Dylan
+
+#DIVIDER#
+40
+From: Natalie Brooks <natalie.brooks@example.com>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 10:10:00 +0000
+Subject: Request for a copy of my appointment details
+
+
+Hello,
+
+I'm writing to ask whether you can resend the confirmation for my dental appointment next Tuesday. I seem to have deleted the original message and would appreciate the appointment time and clinic address.
+
+Kind regards,
+Natalie
+
+#DIVIDER#
+41
+From: Peter Walsh <peter.walsh@workmail.net>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 11:25:00 +0000
+Subject: Question about Python virtual environments
+
+
+Hi,
+
+I'm setting up a Python project and I'm not sure whether I should use venv or conda to manage dependencies. The project will run on a Linux server and needs to be reproducible across development machines. Do you have a recommendation?
+
+Thanks,
+Peter
+
+#DIVIDER#
+42
+From: Marta Silva <marta.silva@example.org>
+To: support@mailmind.com
+Date: Thu, 30 Oct 2026 13:40:00 +0000
+Subject: Noise complaint about construction work
+
+
+Dear team,
+
+There has been construction noise in the building next to my apartment starting before 7 a.m. for the past week. Could you tell me which local authority handles complaints about permitted construction hours, or where I can find the relevant regulations?
+
+Sincerely,
+Marta Silva
