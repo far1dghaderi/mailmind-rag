@@ -1,0 +1,22 @@
+{
+  "name": "mailmind-rag",
+  "version": "0.1.0",
+  "description": "Email triage and PDF Q&A pipeline: intent classification, invoice field extraction, cited answers, and an eval harness.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
