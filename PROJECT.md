@@ -81,7 +81,7 @@ src/
   domain/          intents, email parsing, model-output parsing, policy chunking   (no dependencies)
   application/     classification use case, prompt, ports (interfaces)
   infrastructure/  Ollama adapter, LLM factory, file reader confined to data/, PDF text reader
-  presentation/    Express app: POST /classify
+  presentation/    Express app: POST /classify, POST /search, static page from public/
   main.ts          composition root, the only place everything is wired together
 scripts/           gen-policies, extract (PDF text), run-classification
 kb/                fact sheets, generated Markdown, PDFs
@@ -110,6 +110,8 @@ Hello, I placed order #MM10482 ...
 ```
 
 ### API
+
+**Search page:** open `/` and type a question. It shows the top 3 chunks with similarity scores, and those under the cutoff are dimmed, so you can see what the system would use and what it would ignore. `POST /search` with `{ "question": "..." }` returns the same data as JSON. It does not write an answer yet.
 
 `POST /classify` with `{ "path": "classified-emails.txt" }`. The path is relative to `data/` and cannot escape it. The response is `{ "emails": [ ... ] }` in the shape shown above.
 
@@ -160,9 +162,10 @@ Requirements: Node 20+, [Ollama](https://ollama.com) with `llama3.1:8b` pulled.
 ```bash
 npm install
 cp .env.example .env                          # then set DATABASE_URL (Postgres with the pgvector extension, database `mailmind`)
-npx tsx scripts/db-init.ts                   # create the chunks table
-npx tsx scripts/index-kb.ts                  # chunk, embed and store the policy PDFs
-npm run dev                                  # starts the API on :3000
+npm run db:init                              # create the chunks table (these three load .env automatically)
+npm run index                                # chunk, embed and store the policy PDFs
+npm run ask -- "Can I return a sale item?"   # show the top 3 chunks with scores; * marks those kept
+npm run dev                                  # starts the API and the search page on http://localhost:3000 (needs .env)
 npx tsx scripts/run-classification.ts        # classify data/classified-emails.txt and save to results/
 npx tsx scripts/extract.ts                   # print text extracted from kb/pdf/*.pdf
 npx tsx scripts/chunk.ts                     # print the chunks and check every fact-sheet number survived
@@ -187,7 +190,7 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 - [x] Chunk policy text by heading, keeping document and section (one chunk per section, stable ids like `returns#3`)
 - [x] Postgres + pgvector, `vector(768)` table (a local Postgres 18 instead of Docker)
 - [x] Embed chunks (`search_document:` prefix) and store them (21 chunks, model name stored on every row)
-- [ ] Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold
+- [x] Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold (defaults k=3, threshold 0.6; to be tuned by the eval)
 - [ ] Grounded answer prompt with citations, and the refusal path
 - [ ] Wire email -> classify -> retrieve -> answer or flag; run end to end on 5 emails
 
@@ -217,6 +220,8 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 - [ ] Extract fields from attachment PDFs (order confirmations, receipts)
 
 ## Limitations (so far)
+
+- Retrieval uses one fixed similarity cutoff (0.6). On the first 7 seed questions it already misses once: for "Can I use WELCOME10 on a sale item?" the chunk that holds the answer (`discounts#2`, 0.574) falls below the cutoff, while an unanswerable question's best chunk scores 0.564. One number cannot separate those two cases, so threshold tuning, hybrid search or reranking are the first improvements to try, measured by the eval.
 
 - The labelled dataset is small and clean; the real difficulty shows up with messy emails, which are not in the dataset yet.
 - `confidence` is the model's self-report and has not been calibrated.

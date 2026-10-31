@@ -1,12 +1,12 @@
+import { createPool } from '../src/infrastructure/createPool.js';
 import { readdirSync } from 'node:fs';
-import pg from 'pg';
 import { indexChunks } from '../src/application/indexChunks.js';
 import { chunkPolicy } from '../src/domain/chunkPolicy.js';
 import { ollamaEmbedder } from '../src/infrastructure/ollamaEmbedder.js';
 import { pgChunkStore } from '../src/infrastructure/pgChunkStore.js';
 import { readPdfText } from '../src/infrastructure/readPdfText.js';
 
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const pool = createPool();
 const embedder = ollamaEmbedder({ baseUrl: process.env.EMBED_URL, model: process.env.EMBED_MODEL });
 
 const chunks = [];

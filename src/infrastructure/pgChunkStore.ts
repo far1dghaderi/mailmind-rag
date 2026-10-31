@@ -38,4 +38,13 @@ export const pgChunkStore = (pool: Pool, table = "chunks"): ChunkStore => ({
       client.release();
     }
   },
+
+  async search(embedding, model, k) {
+    const { rows } = await pool.query(
+      `SELECT id, doc, section, text, 1 - (embedding <=> $1::vector) AS similarity
+       FROM ${table} WHERE embedding_model = $2 ORDER BY embedding <=> $1::vector LIMIT $3`,
+      [toVector(embedding), model, k],
+    );
+    return rows.map((r) => ({ ...r, similarity: Number(r.similarity) }));
+  },
 });

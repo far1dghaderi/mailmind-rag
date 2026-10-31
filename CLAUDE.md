@@ -45,6 +45,8 @@ Likely confusion pairs: order_status/shipping_delivery, return_exchange/refund_s
 - **Run 1 saved: 39/42 = 92.9%**, llama3.1:8b, prompt v1, `results/2026-10-31-classification.json`. Misses: 7, 15, 37. Dataset is clean/easy, so this is optimistic. (42 emails are parsed; the last email in the file has no number line and is skipped.) Re-run with `npx tsx scripts/run-classification.ts`; the model is not fully repeatable even at temperature 0, so expect +-1-2 emails.
 - Field renamed to `confidence` everywhere; each result is `{email, intent, confidence, accurate}`.
 - PDFs are in `kb/pdf/`; `scripts/extract.ts` extracts them with pdf-parse v2 and the text is readable and in order (see Gotchas).
+- Retrieval done: `retrieve(question, embedder, store, {k, threshold})` returns chunks with cosine similarity >= threshold, best first; empty list = "not found" (caller must refuse). Defaults k=3, threshold=0.6 (not tuned: derived from 7 questions; do not tune on them, use the eval set). Search only considers rows whose `embedding_model` matches the embedder. **Known weakness:** with 0.6, "Can I use WELCOME10 on a sale item?" loses `discounts#2` (0.574, holds the answer) while the unanswerable warranty question's best chunk is 0.564, so a single cutoff cannot separate them. Phase 3 candidates: relative threshold, hybrid search, reranking.
+- Search UI done: `public/index.html` (no framework) calls `POST /search`; `search()` in `retrieve.ts` returns top-k with a `relevant` flag, `retrieve()` filters it. `npm run dev|start` now pass `--env-file=.env` and the server needs `DATABASE_URL` at startup.
 - Embedding done: 21 chunks in table `chunks` (database `mailmind`), embedded as `"<section>\n<text>"` with the `search_document: ` prefix added inside `ollamaEmbedder`; `embedding_model` stored per row; re-index replaces a whole document in a transaction. No vector index (exact scan at ~20 rows). `embeddingText()` in `indexChunks.ts` is the one place to change what gets embedded; test it as an eval experiment. First look at retrieval (cosine similarity, 7 seed questions): the right chunk was top-1 for 5 of 7, rank 3 for the WELCOME10-on-sale-item question (`discounts#2`), and the unanswerable warranty question topped out at 0.564 versus 0.68-0.77 for answerable top-1s, so a threshold near 0.6 looks plausible; verify properly in the eval.
 - Chunking done: one chunk per section, id `<doc>#<n>`, fields `{id, doc, section, text}`. Headings are detected by shape (`N. Title`, or short title-case with no digits/`$`/end punctuation). A heading with no body or only a `:` lead-in merges into the next chunk. `scripts/chunk.ts` checks every fact-sheet number appears in a chunk. Policies are tiny (sections 20-80 tokens), so there is no token target; no splitting/overlap until a doc needs it.
 - 3 fact sheets saved in `kb/facts/` (contents below).
@@ -55,7 +57,7 @@ Likely confusion pairs: order_status/shipping_delivery, return_exchange/refund_s
 1. ~~PDF extraction~~ done.
 2. ~~Chunking~~ done (`src/domain/chunkPolicy.ts`, `scripts/chunk.ts`).
 3. ~~pgvector + embedding~~ done (`pgChunkStore`, `indexChunks`, `ollamaEmbedder`, `scripts/db-init.ts`, `scripts/index-kb.ts`).
-4. Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold for "nothing found".
+4. ~~Retrieval~~ done (`src/application/retrieve.ts`, `pgChunkStore.search`, `scripts/ask.ts`).
 5. Grounded answer prompt (use ONLY retrieved chunks, cite chunk IDs) and refusal path.
 6. Wire email -> classify -> retrieve -> answer or flag. Run end to end on 5 emails.
 
@@ -151,11 +153,11 @@ Gift cards cannot be used to buy other gift cards
 ## Code layout
 ```
 src/domain/          intents, parseEmails (header block -> subject/body/label), parseClassification, chunkPolicy
-src/application/     classifyEmail (prompt + PROMPT_VERSION), classifyFile, indexChunks, ports (Llm, Embedder, ChunkStore, ReadFile)
+src/application/     classifyEmail (prompt + PROMPT_VERSION), classifyFile, indexChunks, retrieve, ports (Llm, Embedder, ChunkStore, ReadFile)
 src/infrastructure/  ollamaLlm, createLlm (LLM_PROVIDER/LLM_URL/LLM_MODEL), dataFileReader (confined to data/), readPdfText, ollamaEmbedder, pgChunkStore
-src/presentation/    Express app: POST /classify {"path": "file.txt"} (relative to data/)
+src/presentation/    Express app: POST /classify {"path": "file.txt"} (relative to data/), POST /search {"question"} -> {threshold, hits[{id,doc,section,text,similarity,relevant}]}, static UI in public/index.html
 src/main.ts          composition root
-scripts/             gen-policies, extract, chunk, run-classification, db-init, index-kb
+scripts/             gen-policies, extract, chunk, run-classification, db-init, index-kb, ask
 results/             dated eval outputs
 ```
 The model is behind `Llm.complete(prompt): Promise<string>`; swapping provider/model touches only infrastructure. Email file format: number line, headers (From/To/Date/Subject/Intent) up to the first blank line, then body; emails split on `#DIVIDER#`.
@@ -167,6 +169,7 @@ The model is behind `Llm.complete(prompt): Promise<string>`; swapping provider/m
 - Self-reported confidence is not accuracy. Accuracy needs hand labels.
 - The `md-to-pdf` CLI writes PDFs beside the Markdown files.
 - **pdf-parse is v2 (2.4.5)**: `import { PDFParse } from 'pdf-parse'`; `new PDFParse({ data: buffer })`, `await parser.getText()` -> `{ text, total }`, then `await parser.destroy()`. The old `pdf-parse/lib/pdf-parse.js` path is v1 only and fails here.
+- DB scripts: run them with `npm run db:init|index|ask` (they pass `--env-file=.env`); `.env` is gitignored and holds `DATABASE_URL`/`TEST_DATABASE_URL`. Without it `createPool()` throws a clear error instead of pg's "SASL ... password must be a string". `npm test` does not load `.env`, so the pgvector integration tests are skipped unless `TEST_DATABASE_URL` is exported.
 - Local Postgres needs `sudo apt install postgresql-18-pgvector` before `CREATE EXTENSION vector`. A throwaway script outside the repo needs `.mts` (and must run from the repo so `pg` resolves).
 - Do not kill a dev server started with `npx` by PID; the real node process survives. Use `fuser -k <port>/tcp`.
 
