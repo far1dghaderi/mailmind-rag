@@ -20,7 +20,17 @@ export interface StoredChunk {
   model: string;
 }
 
+export interface Hit {
+  id: string;
+  doc: string;
+  section: string;
+  text: string;
+  similarity: number; // cosine similarity, 1 = same direction
+}
+
 export interface ChunkStore {
   // Replaces every chunk of one document atomically, so a re-index never leaves stale rows.
   replaceDoc(doc: string, rows: StoredChunk[]): Promise<void>;
+  // Nearest chunks first. Only rows embedded with `model` are searched: vectors from different models are not comparable.
+  search(embedding: number[], model: string, k: number): Promise<Hit[]>;
 }

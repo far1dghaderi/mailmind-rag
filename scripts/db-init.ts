@@ -1,7 +1,7 @@
-import pg from 'pg';
+import { createPool } from '../src/infrastructure/createPool.js';
 import { schemaSql } from '../src/infrastructure/pgChunkStore.js';
 
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const pool = createPool();
 await pool.query(schemaSql());
 console.log('schema ready');
 await pool.end();

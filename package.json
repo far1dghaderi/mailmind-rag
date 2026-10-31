@@ -8,11 +8,14 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "tsx watch src/main.ts",
+    "dev": "tsx watch --env-file=.env src/main.ts",
     "build": "tsc",
-    "start": "node dist/main.js",
+    "start": "node --env-file=.env dist/main.js",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test $(find src -name \"*.test.ts\")"
+    "test": "tsx --test $(find src -name \"*.test.ts\")",
+    "db:init": "tsx --env-file=.env scripts/db-init.ts",
+    "index": "tsx --env-file=.env scripts/index-kb.ts",
+    "ask": "tsx --env-file=.env scripts/ask.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

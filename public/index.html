@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mailmind-rag</title>
+<style>
+  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --accent:#2563eb; --ok:#16a34a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161513; --fg:#f5f5f4; --muted:#a8a29e; --card:#1f1d1b; --line:#33302d; --accent:#60a5fa; --ok:#4ade80; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:24px 16px 64px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width:720px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 20px; font-size:14px; }
+  input { width:100%; padding:12px 14px; font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  input:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
+  #status { margin:16px 0 8px; color:var(--muted); font-size:14px; }
+  #status.empty { color:#b45309; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:10px 0; }
+  .card.weak { opacity:.55; }
+  .head { display:flex; justify-content:space-between; gap:12px; font-size:14px; margin-bottom:6px; }
+  .id { font-weight:600; }
+  .section { color:var(--muted); }
+  .bar { height:6px; background:var(--line); border-radius:3px; overflow:hidden; margin-bottom:8px; }
+  .bar > span { display:block; height:100%; background:var(--ok); }
+  .weak .bar > span { background:var(--muted); }
+  .text { white-space:pre-wrap; margin:0; font-size:15px; }
+  .group { margin:20px 0 0; color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>mailmind-rag</h1>
+  <p class="sub">Ask a question about the Northwind Goods policies. Press Enter.</p>
+  <form id="form">
+    <input id="q" name="question" type="text" autocomplete="off" autofocus
+           placeholder="e.g. Can I return a sale item?" aria-label="Question">
+  </form>
+  <div id="status" role="status" aria-live="polite"></div>
+  <div id="results"></div>
+</main>
+<script>
+  const form = document.getElementById("form");
+  const input = document.getElementById("q");
+  const status = document.getElementById("status");
+  const results = document.getElementById("results");
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function card(h) {
+    const c = el("div", "card" + (h.relevant ? "" : " weak"));
+    const head = el("div", "head");
+    head.append(el("span", "id", h.id + "  " + h.section), el("span", "section", h.similarity.toFixed(3)));
+    const bar = el("div", "bar");
+    const fill = el("span");
+    fill.style.width = Math.max(0, Math.min(100, h.similarity * 100)) + "%";
+    bar.append(fill);
+    c.append(head, bar, el("p", "text", h.text));
+    return c;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    status.className = "";
+    status.textContent = "Searching…";
+    results.replaceChildren();
+    try {
+      const res = await fetch("/search", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || res.statusText);
+
+      const good = data.hits.filter((h) => h.relevant);
+      const weak = data.hits.filter((h) => !h.relevant);
+      if (good.length) {
+        status.textContent = good.length + " matching chunk" + (good.length > 1 ? "s" : "") + " (similarity ≥ " + data.threshold + ")";
+      } else {
+        status.className = "empty";
+        status.textContent = "Nothing found: no chunk reaches similarity " + data.threshold + ". The system would refuse and flag a human.";
+      }
+      good.forEach((h) => results.append(card(h)));
+      if (weak.length) {
+        results.append(el("div", "group", "Below the cutoff, not used"));
+        weak.forEach((h) => results.append(card(h)));
+      }
+    } catch (err) {
+      status.className = "empty";
+      status.textContent = "Error: " + err.message;
+    }
+  });
+</script>
+</body>
+</html>
