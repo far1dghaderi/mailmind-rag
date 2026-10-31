@@ -1,0 +1,11 @@
+Store name: Northwind Goods
+Creating an account requires an email address and a password
+Passwords must be at least 8 characters long
+A password reset link is valid for 60 minutes
+Customers can check out as a guest without creating an account
+Guest orders do not appear in an account's order history
+Order history shows orders placed in the past 2 years
+Marketing emails can be turned off at any time in account settings
+Order and delivery emails are still sent when marketing emails are turned off
+Account deletion requests are confirmed by email within 1 business day
+Account deletion removes personal data within 45 days but keeps order records for 7 years for accounting
