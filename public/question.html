@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mailmind-rag</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>mailmind-rag</h1>
+  <nav><a href="/">Email triage</a><a href="/question.html" aria-current="page">Ask a question</a></nav>
+  <p class="sub">Ask a question about the Northwind Goods policies. Press Enter.</p>
+  <form id="form">
+    <input id="q" name="question" type="text" autocomplete="off" autofocus
+           placeholder="e.g. Can I return a sale item?" aria-label="Question">
+  </form>
+  <div id="status" role="status" aria-live="polite"></div>
+  <div id="results"></div>
+</main>
+<script>
+  const form = document.getElementById("form");
+  const input = document.getElementById("q");
+  const status = document.getElementById("status");
+  const results = document.getElementById("results");
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  const REASONS = {
+    no_relevant_chunks: "no policy chunk was relevant enough",
+    model_declined: "the model said the policies do not answer this",
+    invalid_output: "the model reply could not be read",
+    no_valid_citation: "the model cited nothing we gave it",
+    ungrounded_numbers: "the answer contained a number that is not in the policies",
+  };
+
+  function answerBox(data) {
+    const box = el("div", "answer" + (data.answered ? "" : " refused"));
+    if (data.answered) {
+      box.append(el("p", "label", "Answer"), el("p", "", data.answer), el("p", "cites", "Cites: " + data.citations.join(", ")));
+    } else {
+      box.append(el("p", "label", "Not answered, flagged for a human"), el("p", "", "Reason: " + (REASONS[data.reason] || data.reason)));
+    }
+    return box;
+  }
+
+  function card(h) {
+    const c = el("div", "card" + (h.relevant ? "" : " weak"));
+    const head = el("div", "head");
+    head.append(el("span", "id", h.id + "  " + h.section), el("span", "section", h.similarity.toFixed(3)));
+    const bar = el("div", "bar");
+    const fill = el("span");
+    fill.style.width = Math.max(0, Math.min(100, h.similarity * 100)) + "%";
+    bar.append(fill);
+    c.append(head, bar, el("p", "text", h.text));
+    return c;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    status.className = "";
+    status.textContent = "Searching…";
+    results.replaceChildren();
+    try {
+      const res = await fetch("/ask", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || res.statusText);
+
+      const { hits, threshold } = data.search;
+      const good = hits.filter((h) => h.relevant);
+      const weak = hits.filter((h) => !h.relevant);
+      status.textContent = good.length
+        ? good.length + " matching chunk" + (good.length > 1 ? "s" : "") + " (similarity ≥ " + threshold + ")"
+        : "No chunk reaches similarity " + threshold + ".";
+      results.append(answerBox(data));
+      good.forEach((h) => results.append(card(h)));
+      if (weak.length) {
+        results.append(el("div", "group", "Below the cutoff, not used"));
+        weak.forEach((h) => results.append(card(h)));
+      }
+    } catch (err) {
+      status.className = "empty";
+      status.textContent = "Error: " + err.message;
+    }
+  });
+</script>
+</body>
+</html>

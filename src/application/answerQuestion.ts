@@ -4,9 +4,11 @@ import type { ChunkStore, Embedder, Hit, Llm } from "./ports.js";
 
 export const ANSWER_PROMPT_VERSION = "v1";
 
+export type NoAnswerReason = "no_relevant_chunks" | Refusal;
+
 export type AnswerResult =
   | { answered: true; answer: string; citations: string[] }
-  | { answered: false; reason: "no_relevant_chunks" | Refusal; flagForHuman: true };
+  | { answered: false; reason: NoAnswerReason; flagForHuman: true };
 
 // The search is returned too, so a caller can show which chunks were found and which were used.
 export type Answer = AnswerResult & { search: SearchResult };
