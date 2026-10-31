@@ -15,7 +15,8 @@
     "test": "tsx --test $(find src -name \"*.test.ts\")",
     "db:init": "tsx --env-file=.env scripts/db-init.ts",
     "index": "tsx --env-file=.env scripts/index-kb.ts",
-    "ask": "tsx --env-file=.env scripts/ask.ts"
+    "ask": "tsx --env-file=.env scripts/ask.ts",
+    "pipeline": "tsx --env-file=.env scripts/run-pipeline.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

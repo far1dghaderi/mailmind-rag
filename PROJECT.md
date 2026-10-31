@@ -81,7 +81,7 @@ src/
   domain/          intents, email parsing, model-output parsing, answer validation, policy chunking   (no dependencies)
   application/     classification use case, prompt, ports (interfaces)
   infrastructure/  Ollama adapter, LLM factory, file reader confined to data/, PDF text reader
-  presentation/    Express app: POST /classify, POST /search, POST /ask, static page from public/
+  presentation/    Express app: POST /classify, /triage, /triage/email, /search, /ask, static pages from public/
   main.ts          composition root, the only place everything is wired together
 scripts/           gen-policies, extract (PDF text), run-classification
 kb/                fact sheets, generated Markdown, PDFs
@@ -111,7 +111,11 @@ Hello, I placed order #MM10482 ...
 
 ### API
 
-**Search page:** open `/` and type a question. It shows the answer (or the refusal and its reason) and the top 3 chunks with similarity scores; those under the cutoff are dimmed, so you can see what the system used and what it ignored. `POST /ask` with `{ "question": "..." }` returns `{ answered, answer, citations }` or `{ answered: false, reason, flagForHuman }`, plus the search result. `POST /search` returns only the chunks.
+**Email page:** open `/`, type or paste an email (subject and message), and press Process email (or Ctrl/Cmd+Enter). It shows the final result first, then the four stages: classify, route (can the policies answer this kind of email?), retrieve (top 3 policy sections with scores, weak ones dimmed), and answer. Skipped stages are greyed out. A few example emails can be loaded from a dropdown. `POST /triage/email` with `{ "subject": "...", "body": "..." }` returns the same data as JSON.
+
+**Question page:** open `/question.html` and type a question. It shows the answer (or the refusal and its reason) and the top 3 chunks with similarity scores; those under the cutoff are dimmed, so you can see what the system used and what it ignored. `POST /ask` with `{ "question": "..." }` returns `{ answered, answer, citations }` or `{ answered: false, reason, flagForHuman }`, plus the search result. `POST /search` returns only the chunks.
+
+`POST /triage` with `{ "path": "classified-emails.txt", "emails": [7, 11] }` (emails optional) runs the full pipeline and returns each email's intent, the label, and either an answer with citations or the reason it was flagged for a human.
 
 `POST /classify` with `{ "path": "classified-emails.txt" }`. The path is relative to `data/` and cannot escape it. The response is `{ "emails": [ ... ] }` in the shape shown above.
 
@@ -156,6 +160,20 @@ Not an eval, just the first read of the pipeline. Counted by hand against the ex
 
 4 of 7 right. Two kinds of failure: retrieval misses the right chunk (one case) and the model refuses when the answer needs a one-step inference (two cases). Answers are also one word because the prompt asks for a "short answer". These are the first things to improve, each measured by the eval.
 
+### First full pipeline run (5 emails, prompt v1, llama3.1:8b)
+
+An email goes through: classify, then (policy intents only) retrieve and answer, otherwise flag a human. The raw subject and body are the retrieval query. Only these intents are answered from the policies: `return_exchange`, `refund_status`, `shipping_delivery`, `discount_promotion`, `damaged_defective_product`, `missing_incorrect_items`. The rest (`order_status`, `order_cancellation`, `product_information`, `payment_issue`, `unknown`) need data the policies do not hold, so they are flagged.
+
+| # | Email | Label | Model intent | Outcome | Verdict |
+|---|---|---|---|---|---|
+| 0 | Order #MM10482 status | order_status | order_status | flagged (intent not handled) | correct |
+| 7 | Shipping cost question | shipping_delivery | order_status | flagged (intent not handled) | safe miss: misclassified, so an answerable email went to a human |
+| 11 | Return window clarification | return_exchange | return_exchange | "counted from the delivery date" [`returns#1`] | correct |
+| 34 | Can I combine two promotional codes? | discount_promotion | discount_promotion | "No" [`discounts#2`, `discounts#3`] | correct, but one word |
+| 40 | Appointment details | unknown | unknown | flagged (intent not handled) | correct |
+
+4 of 5 handled correctly, and the one failure is safe because it went to a human. Five emails is a smoke test, not an eval.
+
 ### Results so far
 
 | Run | Date | Model | Prompt | Result |
@@ -180,7 +198,8 @@ npm install
 cp .env.example .env                          # then set DATABASE_URL (Postgres with the pgvector extension, database `mailmind`)
 npm run db:init                              # create the chunks table (these three load .env automatically)
 npm run index                                # chunk, embed and store the policy PDFs
-npm run ask -- "Can I return a sale item?"   # show the top 3 chunks with scores; * marks those kept
+npm run ask -- "Can I return a sale item?"   # answer or refusal, plus the top 3 chunks with scores; * marks those used
+npm run pipeline -- classified-emails.txt 7,11,34   # full pipeline on chosen emails (omit the numbers for all)
 npm run dev                                  # starts the API and the search page on http://localhost:3000 (needs .env)
 npx tsx scripts/run-classification.ts        # classify data/classified-emails.txt and save to results/
 npx tsx scripts/extract.ts                   # print text extracted from kb/pdf/*.pdf
@@ -208,7 +227,7 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 - [x] Embed chunks (`search_document:` prefix) and store them (21 chunks, model name stored on every row)
 - [x] Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold (defaults k=3, threshold 0.6; to be tuned by the eval)
 - [x] Grounded answer prompt with citations, and the refusal path (`POST /ask`; checks that citations are real chunks and every number comes from the question or a cited chunk)
-- [ ] Wire email -> classify -> retrieve -> answer or flag; run end to end on 5 emails
+- [x] Wire email -> classify -> retrieve -> answer or flag; run end to end on 5 emails (`POST /triage`, `npm run pipeline`)
 
 ### Phase 2: evaluation and baseline
 

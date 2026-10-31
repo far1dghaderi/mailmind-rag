@@ -4,81 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mailmind-rag</title>
-<style>
-  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --accent:#2563eb; --ok:#16a34a; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#161513; --fg:#f5f5f4; --muted:#a8a29e; --card:#1f1d1b; --line:#33302d; --accent:#60a5fa; --ok:#4ade80; }
-  }
-  * { box-sizing: border-box; }
-  body { margin:0; padding:24px 16px 64px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
-  main { max-width:720px; margin:0 auto; }
-  h1 { font-size:20px; margin:0 0 4px; }
-  .sub { color:var(--muted); margin:0 0 20px; font-size:14px; }
-  input { width:100%; padding:12px 14px; font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; }
-  input:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
-  #status { margin:16px 0 8px; color:var(--muted); font-size:14px; }
-  #status.empty { color:#b45309; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:10px 0; }
-  .card.weak { opacity:.55; }
-  .head { display:flex; justify-content:space-between; gap:12px; font-size:14px; margin-bottom:6px; }
-  .id { font-weight:600; }
-  .section { color:var(--muted); }
-  .bar { height:6px; background:var(--line); border-radius:3px; overflow:hidden; margin-bottom:8px; }
-  .bar > span { display:block; height:100%; background:var(--ok); }
-  .weak .bar > span { background:var(--muted); }
-  .text { white-space:pre-wrap; margin:0; font-size:15px; }
-  .answer { border-radius:10px; padding:14px 16px; margin:16px 0 4px; border:1px solid var(--ok); background:var(--card); }
-  .answer.refused { border-color:#b45309; }
-  .answer .label { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--ok); margin:0 0 4px; }
-  .answer.refused .label { color:#b45309; }
-  .answer p { margin:0; }
-  .answer .cites { color:var(--muted); font-size:13px; margin-top:6px; }
-  .group { margin:20px 0 0; color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
-</style>
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <main>
   <h1>mailmind-rag</h1>
-  <p class="sub">Ask a question about the Northwind Goods policies. Press Enter.</p>
+  <nav><a href="/" aria-current="page">Email triage</a><a href="/question.html">Ask a question</a></nav>
+  <p class="sub">Paste a customer email. The system classifies it, looks in the policies if it can answer, and replies with citations or flags a human.</p>
+
   <form id="form">
-    <input id="q" name="question" type="text" autocomplete="off" autofocus
-           placeholder="e.g. Can I return a sale item?" aria-label="Question">
+    <label for="subject">Subject</label>
+    <input id="subject" name="subject" type="text" autocomplete="off" placeholder="e.g. Return window clarification">
+    <label for="body">Message</label>
+    <textarea id="body" name="body" placeholder="Hi, my headphones arrived on October 2 and I want to return them..." required></textarea>
+    <div class="row">
+      <button id="go" class="primary" type="submit">Process email</button>
+      <select id="example" aria-label="Load an example">
+        <option value="">Try an example…</option>
+        <option value="0">Return window (policy question)</option>
+        <option value="1">Combine promo codes (policy question)</option>
+        <option value="2">Where is my order? (needs order data)</option>
+        <option value="3">Unrelated email</option>
+      </select>
+      <span class="hint">Ctrl/Cmd + Enter to submit</span>
+    </div>
   </form>
+
   <div id="status" role="status" aria-live="polite"></div>
-  <div id="results"></div>
+  <div id="output"></div>
 </main>
 <script>
-  const form = document.getElementById("form");
-  const input = document.getElementById("q");
-  const status = document.getElementById("status");
-  const results = document.getElementById("results");
+  const EXAMPLES = [
+    { subject: "Return window clarification", body: "Hi,\n\nMy headphones arrived on October 2, and I am considering returning them. I am not sure whether the return period is counted from the order date or the delivery date. Could you clarify?\n\nThanks,\nNora" },
+    { subject: "Can I combine two promotional codes?", body: "Hi Support,\n\nI have a newsletter code for 10% off and a separate free-shipping code. Can both be applied to the same order, or does the checkout allow only one promotion?\n\nThanks,\nLeo" },
+    { subject: "Order #MM10482 status", body: "Hello,\n\nI placed order #MM10482 on October 27, but I haven't received any update since the confirmation email. Could you check whether it has been processed?\n\nThanks,\nMaya" },
+    { subject: "Question about Python virtual environments", body: "Hello,\n\nCould you explain how to create a virtual environment in Python and install packages into it?\n\nThanks" },
+  ];
 
-  function el(tag, cls, text) {
+  const $ = (id) => document.getElementById(id);
+  const form = $("form"), subject = $("subject"), body = $("body"), go = $("go"), status = $("status"), output = $("output");
+
+  const el = (tag, cls, text) => {
     const e = document.createElement(tag);
     if (cls) e.className = cls;
     if (text !== undefined) e.textContent = text;
     return e;
-  }
+  };
 
   const REASONS = {
-    no_relevant_chunks: "no policy chunk was relevant enough",
+    intent_not_handled: "this kind of email needs data the policies do not hold (order, payment or product details)",
+    empty_email: "the email is empty",
+    no_relevant_chunks: "no policy section was relevant enough",
     model_declined: "the model said the policies do not answer this",
     invalid_output: "the model reply could not be read",
     no_valid_citation: "the model cited nothing we gave it",
     ungrounded_numbers: "the answer contained a number that is not in the policies",
   };
 
-  function answerBox(data) {
-    const box = el("div", "answer" + (data.answered ? "" : " refused"));
-    if (data.answered) {
-      box.append(el("p", "label", "Answer"), el("p", "", data.answer), el("p", "cites", "Cites: " + data.citations.join(", ")));
-    } else {
-      box.append(el("p", "label", "Not answered, flagged for a human"), el("p", "", "Reason: " + (REASONS[data.reason] || data.reason)));
-    }
-    return box;
+  function step(n, title, state) {
+    const li = el("li", "step" + (state === "skipped" ? " skipped" : ""));
+    li.append(el("span", "num", String(n)), el("h2", "", title));
+    return li;
   }
 
-  function card(h) {
+  function chunkCard(h) {
     const c = el("div", "card" + (h.relevant ? "" : " weak"));
     const head = el("div", "head");
     head.append(el("span", "id", h.id + "  " + h.section), el("span", "section", h.similarity.toFixed(3)));
@@ -90,38 +79,89 @@
     return c;
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const question = input.value.trim();
-    if (!question) return;
+  function render(r) {
+    output.replaceChildren();
+    const handled = r.reason !== "intent_not_handled" && r.reason !== "empty_email";
+
+    const final = el("div", "final" + (r.status === "answered" ? "" : " flagged"));
+    if (r.status === "answered") {
+      final.append(el("p", "label", "Final result: answered"), el("p", "", r.answer), el("p", "hint", "Cites: " + r.citations.join(", ")));
+    } else {
+      final.append(el("p", "label", "Final result: flagged for a human"), el("p", "", "Reason: " + (REASONS[r.reason] || r.reason)));
+    }
+    output.append(final);
+
+    const steps = el("ol", "steps");
+
+    // 1. classify
+    const s1 = step(1, "Classify the intent");
+    const d1 = el("p", "detail");
+    d1.append(el("span", "badge", r.intent), document.createTextNode("  model confidence " + r.confidence + " (self-reported, not measured accuracy)"));
+    s1.append(d1);
+
+    // 2. route
+    const s2 = step(2, "Can the policies answer this kind of email?");
+    s2.append(el("p", "detail", handled
+      ? "Yes: " + r.intent + " is covered by the returns, shipping and discount policies."
+      : r.reason === "empty_email" ? "Nothing to process." : "No: " + r.intent + " needs data the policies do not hold, so it goes to a human."));
+
+    // 3. retrieve
+    const s3 = step(3, "Retrieve policy sections", r.search ? "" : "skipped");
+    if (r.search) {
+      const good = r.search.hits.filter((h) => h.relevant).length;
+      s3.append(el("p", "detail", good
+        ? good + " of " + r.search.hits.length + " reach similarity " + r.search.threshold + " and are used; the rest are shown dimmed."
+        : "No section reaches similarity " + r.search.threshold + "."));
+      r.search.hits.forEach((h) => s3.append(chunkCard(h)));
+    } else {
+      s3.append(el("p", "detail", "Skipped."));
+    }
+
+    // 4. answer
+    const gotChunks = r.search && r.search.hits.some((h) => h.relevant);
+    const s4 = step(4, "Write a grounded answer", gotChunks ? "" : "skipped");
+    s4.append(el("p", "detail", !gotChunks ? "Skipped." :
+      r.status === "answered" ? "The model answered using only the retrieved sections, and every citation and number checked out." :
+      "The answer was rejected: " + (REASONS[r.reason] || r.reason) + "."));
+
+    steps.append(s1, s2, s3, s4);
+    output.append(steps);
+  }
+
+  async function run() {
+    if (!subject.value.trim() && !body.value.trim()) { body.focus(); return; }
+    go.disabled = true;
     status.className = "";
-    status.textContent = "Searching…";
-    results.replaceChildren();
+    status.textContent = "Processing… this takes a few seconds (classify, search, answer).";
+    output.replaceChildren();
     try {
-      const res = await fetch("/ask", {
+      const res = await fetch("/triage/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ subject: subject.value, body: body.value }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || res.statusText);
-
-      const { hits, threshold } = data.search;
-      const good = hits.filter((h) => h.relevant);
-      const weak = hits.filter((h) => !h.relevant);
-      status.textContent = good.length
-        ? good.length + " matching chunk" + (good.length > 1 ? "s" : "") + " (similarity ≥ " + threshold + ")"
-        : "No chunk reaches similarity " + threshold + ".";
-      results.append(answerBox(data));
-      good.forEach((h) => results.append(card(h)));
-      if (weak.length) {
-        results.append(el("div", "group", "Below the cutoff, not used"));
-        weak.forEach((h) => results.append(card(h)));
-      }
+      status.textContent = "";
+      render(data);
     } catch (err) {
       status.className = "empty";
       status.textContent = "Error: " + err.message;
+    } finally {
+      go.disabled = false;
     }
+  }
+
+  form.addEventListener("submit", (e) => { e.preventDefault(); run(); });
+  body.addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); run(); } });
+  $("example").addEventListener("change", (e) => {
+    const ex = EXAMPLES[e.target.value];
+    if (!ex) return;
+    subject.value = ex.subject;
+    body.value = ex.body;
+    e.target.value = "";
+    output.replaceChildren();
+    status.textContent = "";
   });
 </script>
 </body>
