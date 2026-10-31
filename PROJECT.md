@@ -78,10 +78,10 @@ The code follows a layered design so the language model, the file source, and th
 
 ```
 src/
-  domain/          intents, email parsing, model-output parsing, policy chunking   (no dependencies)
+  domain/          intents, email parsing, model-output parsing, answer validation, policy chunking   (no dependencies)
   application/     classification use case, prompt, ports (interfaces)
   infrastructure/  Ollama adapter, LLM factory, file reader confined to data/, PDF text reader
-  presentation/    Express app: POST /classify, POST /search, static page from public/
+  presentation/    Express app: POST /classify, POST /search, POST /ask, static page from public/
   main.ts          composition root, the only place everything is wired together
 scripts/           gen-policies, extract (PDF text), run-classification
 kb/                fact sheets, generated Markdown, PDFs
@@ -111,7 +111,7 @@ Hello, I placed order #MM10482 ...
 
 ### API
 
-**Search page:** open `/` and type a question. It shows the top 3 chunks with similarity scores, and those under the cutoff are dimmed, so you can see what the system would use and what it would ignore. `POST /search` with `{ "question": "..." }` returns the same data as JSON. It does not write an answer yet.
+**Search page:** open `/` and type a question. It shows the answer (or the refusal and its reason) and the top 3 chunks with similarity scores; those under the cutoff are dimmed, so you can see what the system used and what it ignored. `POST /ask` with `{ "question": "..." }` returns `{ answered, answer, citations }` or `{ answered: false, reason, flagForHuman }`, plus the search result. `POST /search` returns only the chunks.
 
 `POST /classify` with `{ "path": "classified-emails.txt" }`. The path is relative to `data/` and cannot escape it. The response is `{ "emails": [ ... ] }` in the shape shown above.
 
@@ -139,6 +139,22 @@ One command will run the whole eval and write a dated file to `results/`. Metric
 - Confidence calibration: are high-confidence classifications more often correct?
 
 Datasets: the labelled emails, about 12 deliberately messy ones (two intents in one, vague subject, empty body, forwarded thread), about 40 answerable questions with expected answers and source chunks, about 10 unanswerable questions, and multi-chunk questions that need two policies together.
+
+### First end-to-end look (7 seed questions, answer prompt v1, llama3.1:8b)
+
+Not an eval, just the first read of the pipeline. Counted by hand against the expected answers.
+
+| Question | Result | Verdict |
+|---|---|---|
+| Can I return a sale item? | "no", cites `returns#4` | correct, but one word |
+| Free shipping on a $45 order? | "no", cites `shipping#2` | correct, but one word |
+| WELCOME10 on a sale item? | refused (`model_declined`) | wrong: retrieval dropped `discounts#2` (0.574 < 0.6) |
+| Price back on a discounted return? | "the amount actually paid", cites `returns#5` | correct |
+| Do you ship to the UK? | refused (`model_declined`) | wrong: `shipping#1` says US and Canada only, but the model would not infer "no" |
+| Warranty on electronics? | refused (`no_relevant_chunks`) | correct refusal |
+| Return after 20 days? | refused (`model_declined`) | wrong: `returns#1` says 14 days, but the model would not infer "no" |
+
+4 of 7 right. Two kinds of failure: retrieval misses the right chunk (one case) and the model refuses when the answer needs a one-step inference (two cases). Answers are also one word because the prompt asks for a "short answer". These are the first things to improve, each measured by the eval.
 
 ### Results so far
 
@@ -191,7 +207,7 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 - [x] Postgres + pgvector, `vector(768)` table (a local Postgres 18 instead of Docker)
 - [x] Embed chunks (`search_document:` prefix) and store them (21 chunks, model name stored on every row)
 - [x] Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold (defaults k=3, threshold 0.6; to be tuned by the eval)
-- [ ] Grounded answer prompt with citations, and the refusal path
+- [x] Grounded answer prompt with citations, and the refusal path (`POST /ask`; checks that citations are real chunks and every number comes from the question or a cited chunk)
 - [ ] Wire email -> classify -> retrieve -> answer or flag; run end to end on 5 emails
 
 ### Phase 2: evaluation and baseline

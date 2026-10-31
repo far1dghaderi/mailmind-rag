@@ -5,9 +5,10 @@ import { createApp } from "./app.js";
 
 type Deps = Parameters<typeof createApp>[0];
 const noSearch: Deps["search"] = async () => ({ threshold: 0.6, hits: [] });
+const noAnswer: Deps["answer"] = async () => ({ answered: false, reason: "no_relevant_chunks", flagForHuman: true, search: { threshold: 0.6, hits: [] } });
 
-async function call(classifyFile: Deps["classifyFile"], body: unknown, search: Deps["search"] = noSearch, path = "/classify") {
-  const server = createApp({ classifyFile, search }).listen(0);
+async function call(classifyFile: Deps["classifyFile"], body: unknown, search: Deps["search"] = noSearch, path = "/classify", answer: Deps["answer"] = noAnswer) {
+  const server = createApp({ classifyFile, search, answer }).listen(0);
   try {
     const { port } = server.address() as AddressInfo;
     const res = await fetch(`http://localhost:${port}${path}`, {
@@ -52,12 +53,26 @@ test("/search 400 for a missing, blank or oversized question", async () => {
 });
 
 test("serves the UI page at /", async () => {
-  const server = createApp({ classifyFile: idle, search: noSearch }).listen(0);
+  const server = createApp({ classifyFile: idle, search: noSearch, answer: noAnswer }).listen(0);
   try {
     const res = await fetch(`http://localhost:${(server.address() as AddressInfo).port}/`);
     assert.equal(res.status, 200);
     assert.match(await res.text(), /<form/);
   } finally {
     server.close();
+  }
+});
+
+test("/ask returns the answer result for a question", async () => {
+  let asked = "";
+  const result = { answered: true as const, answer: "No.", citations: ["r#1"], search: { threshold: 0.6, hits: [] } };
+  const r = await call(idle, { question: " Can I? " }, noSearch, "/ask", async (q) => ((asked = q), result));
+  assert.deepEqual(r, { status: 200, json: result });
+  assert.equal(asked, "Can I?");
+});
+
+test("/ask 400 for a missing, blank or oversized question", async () => {
+  for (const body of [{}, { question: "  " }, { question: "x".repeat(1001) }]) {
+    assert.equal((await call(idle, body, noSearch, "/ask")).status, 400);
   }
 });

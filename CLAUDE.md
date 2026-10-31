@@ -46,6 +46,7 @@ Likely confusion pairs: order_status/shipping_delivery, return_exchange/refund_s
 - Field renamed to `confidence` everywhere; each result is `{email, intent, confidence, accurate}`.
 - PDFs are in `kb/pdf/`; `scripts/extract.ts` extracts them with pdf-parse v2 and the text is readable and in order (see Gotchas).
 - Retrieval done: `retrieve(question, embedder, store, {k, threshold})` returns chunks with cosine similarity >= threshold, best first; empty list = "not found" (caller must refuse). Defaults k=3, threshold=0.6 (not tuned: derived from 7 questions; do not tune on them, use the eval set). Search only considers rows whose `embedding_model` matches the embedder. **Known weakness:** with 0.6, "Can I use WELCOME10 on a sale item?" loses `discounts#2` (0.574, holds the answer) while the unanswerable warranty question's best chunk is 0.564, so a single cutoff cannot separate them. Phase 3 candidates: relative threshold, hybrid search, reranking.
+- Answer step done: `answerQuestion(question, {embedder, store, llm})` -> `{answered, answer, citations}` or `{answered:false, reason, flagForHuman:true}` plus the `search` result. The model sees only chunks with similarity >= threshold (decided: baseline first; feeding it all top-k would hide the retrieval weakness). No relevant chunk = refuse without calling the model. `parseAnswer` (domain) refuses on: `model_declined` (answer null), `invalid_output`, `no_valid_citation` (ids must be chunks we gave it), `ungrounded_numbers` (every number must be in the question or a cited chunk). **First read, 7 seed questions: 4/7 right.** Failures: WELCOME10-on-sale-item (retrieval drops `discounts#2`), UK shipping and 20-day return (model declines when the answer needs one inference, e.g. 20 > 14 days), plus answers are one word because the prompt says "short answer". Do not tune prompt v1 on these 7: build the eval set first, then change one thing at a time and bump `ANSWER_PROMPT_VERSION`.
 - Search UI done: `public/index.html` (no framework) calls `POST /search`; `search()` in `retrieve.ts` returns top-k with a `relevant` flag, `retrieve()` filters it. `npm run dev|start` now pass `--env-file=.env` and the server needs `DATABASE_URL` at startup.
 - Embedding done: 21 chunks in table `chunks` (database `mailmind`), embedded as `"<section>\n<text>"` with the `search_document: ` prefix added inside `ollamaEmbedder`; `embedding_model` stored per row; re-index replaces a whole document in a transaction. No vector index (exact scan at ~20 rows). `embeddingText()` in `indexChunks.ts` is the one place to change what gets embedded; test it as an eval experiment. First look at retrieval (cosine similarity, 7 seed questions): the right chunk was top-1 for 5 of 7, rank 3 for the WELCOME10-on-sale-item question (`discounts#2`), and the unanswerable warranty question topped out at 0.564 versus 0.68-0.77 for answerable top-1s, so a threshold near 0.6 looks plausible; verify properly in the eval.
 - Chunking done: one chunk per section, id `<doc>#<n>`, fields `{id, doc, section, text}`. Headings are detected by shape (`N. Title`, or short title-case with no digits/`$`/end punctuation). A heading with no body or only a `:` lead-in merges into the next chunk. `scripts/chunk.ts` checks every fact-sheet number appears in a chunk. Policies are tiny (sections 20-80 tokens), so there is no token target; no splitting/overlap until a doc needs it.
@@ -58,7 +59,7 @@ Likely confusion pairs: order_status/shipping_delivery, return_exchange/refund_s
 2. ~~Chunking~~ done (`src/domain/chunkPolicy.ts`, `scripts/chunk.ts`).
 3. ~~pgvector + embedding~~ done (`pgChunkStore`, `indexChunks`, `ollamaEmbedder`, `scripts/db-init.ts`, `scripts/index-kb.ts`).
 4. ~~Retrieval~~ done (`src/application/retrieve.ts`, `pgChunkStore.search`, `scripts/ask.ts`).
-5. Grounded answer prompt (use ONLY retrieved chunks, cite chunk IDs) and refusal path.
+5. ~~Grounded answer + refusal~~ done (`parseAnswer`, `answerQuestion`, `POST /ask`, `ANSWER_PROMPT_VERSION = 'v1'`).
 6. Wire email -> classify -> retrieve -> answer or flag. Run end to end on 5 emails.
 
 ## Milestones
@@ -152,8 +153,8 @@ Gift cards cannot be used to buy other gift cards
 
 ## Code layout
 ```
-src/domain/          intents, parseEmails (header block -> subject/body/label), parseClassification, chunkPolicy
-src/application/     classifyEmail (prompt + PROMPT_VERSION), classifyFile, indexChunks, retrieve, ports (Llm, Embedder, ChunkStore, ReadFile)
+src/domain/          intents, parseEmails (header block -> subject/body/label), parseClassification, parseAnswer, chunkPolicy
+src/application/     classifyEmail (prompt + PROMPT_VERSION), classifyFile, indexChunks, retrieve, answerQuestion (ANSWER_PROMPT_VERSION), ports (Llm, Embedder, ChunkStore, ReadFile)
 src/infrastructure/  ollamaLlm, createLlm (LLM_PROVIDER/LLM_URL/LLM_MODEL), dataFileReader (confined to data/), readPdfText, ollamaEmbedder, pgChunkStore
 src/presentation/    Express app: POST /classify {"path": "file.txt"} (relative to data/), POST /search {"question"} -> {threshold, hits[{id,doc,section,text,similarity,relevant}]}, static UI in public/index.html
 src/main.ts          composition root
