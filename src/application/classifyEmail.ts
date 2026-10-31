@@ -5,7 +5,7 @@ import type { Llm } from "./ports.js";
 const buildPrompt = (email: string) => `Classify the email below into exactly one of these intents:
 ${INTENTS.join(", ")}
 If it fits none of them, use "${UNKNOWN}".
-Reply with only JSON: {"intent": "<intent>", "accuracy": <confidence 0-100>}
+Reply with only JSON: {"intent": "<intent>", "confidence": <how sure you are, 0-100>}
 
 <email>
 ${email}

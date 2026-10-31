@@ -2,6 +2,7 @@
 From: Maya Collins <maya.collins@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 09:14:00 +0000
+Intent: order_status
 Subject: Order #MM10482 status
 
 
@@ -17,6 +18,7 @@ Maya
 From: Oliver Reed <oliver.reed@mailbox.org>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 11:32:00 +0000
+Intent: order_status
 Subject: Has my order been dispatched?
 
 
@@ -32,6 +34,7 @@ Oliver
 From: Nina Patel <nina.patel@inbox.com>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 14:06:00 +0000
+Intent: order_status
 Subject: Order confirmation but no progress
 
 
@@ -47,6 +50,7 @@ Nina
 From: Lucas Meyer <lucas.meyer@example.net>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 08:51:00 +0000
+Intent: order_status
 Subject: Checking status of recent purchase
 
 
@@ -62,6 +66,7 @@ Lucas
 From: Grace Turner <grace.turner@fastmail.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 16:20:00 +0000
+Intent: shipping_delivery
 Subject: Package is several days late
 
 
@@ -77,6 +82,7 @@ Grace
 From: Benjamin Clark <ben.clark@example.org>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 10:03:00 +0000
+Intent: shipping_delivery
 Subject: Tracking link does not work
 
 
@@ -92,6 +98,7 @@ Ben
 From: Amira Hassan <amira.hassan@posteo.net>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 17:42:00 +0000
+Intent: shipping_delivery
 Subject: Delivery marked as attempted
 
 
@@ -107,6 +114,7 @@ Amira
 From: Jack Wilson <jack.wilson@customer.email>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 12:18:00 +0000
+Intent: shipping_delivery
 Subject: Shipping cost question
 
 
@@ -122,6 +130,7 @@ Jack
 From: Chloe Bennett <chloe.bennett@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 10:40:00 +0000
+Intent: return_exchange
 Subject: Request to return a jacket
 
 
@@ -137,6 +146,7 @@ Chloe
 From: Ethan Brooks <ethan.brooks@mail.com>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 13:27:00 +0000
+Intent: return_exchange
 Subject: Exchange for a different size
 
 
@@ -152,6 +162,7 @@ Ethan
 From: Sofia Rossi <sofia.rossi@example.eu>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 09:55:00 +0000
+Intent: return_exchange
 Subject: Can I return one item from my order?
 
 
@@ -167,6 +178,7 @@ Sofia
 From: Noah Kim <noah.kim@inboxmail.net>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 15:11:00 +0000
+Intent: return_exchange
 Subject: Return window clarification
 
 
@@ -182,6 +194,7 @@ Noah
 From: Isabella Moore <isabella.moore@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 08:36:00 +0000
+Intent: refund_status
 Subject: Refund has not arrived
 
 
@@ -197,6 +210,7 @@ Isabella
 From: Leo Fischer <leo.fischer@webmail.de>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 16:49:00 +0000
+Intent: refund_status
 Subject: Refund confirmation received, money missing
 
 
@@ -212,6 +226,7 @@ Leo
 From: Harper Scott <harper.scott@example.org>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 12:02:00 +0000
+Intent: refund_status
 Subject: Partial refund amount seems incorrect
 
 
@@ -227,6 +242,7 @@ Harper
 From: Mateo Alvarez <mateo.alvarez@inbox.com>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 09:21:00 +0000
+Intent: refund_status
 Subject: Following up on cancelled order refund
 
 
@@ -242,6 +258,7 @@ Mateo
 From: Ella Morgan <ella.morgan@example.net>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 11:08:00 +0000
+Intent: order_cancellation
 Subject: Please cancel order MM10512
 
 
@@ -257,6 +274,7 @@ Ella
 From: David Nguyen <david.nguyen@mailbox.org>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 15:34:00 +0000
+Intent: order_cancellation
 Subject: Cancel one item from my order
 
 
@@ -272,6 +290,7 @@ David
 From: Zoe Campbell <zoe.campbell@example.com>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 10:17:00 +0000
+Intent: order_cancellation
 Subject: Wrong delivery address - cancellation needed
 
 
@@ -287,6 +306,7 @@ Zoe
 From: Samuel Price <sam.price@customer.net>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 13:46:00 +0000
+Intent: order_cancellation
 Subject: Cancel order placed by mistake
 
 
@@ -302,6 +322,7 @@ Samuel
 From: Aiden Murphy <aiden.murphy@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 13:12:00 +0000
+Intent: product_information
 Subject: Question about wireless headphones
 
 
@@ -317,6 +338,7 @@ Aiden
 From: Lily Evans <lily.evans@fastmail.com>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 09:48:00 +0000
+Intent: product_information
 Subject: Material used in the travel mug
 
 
@@ -332,6 +354,7 @@ Lily
 From: Omar Farouk <omar.farouk@example.org>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 16:25:00 +0000
+Intent: product_information
 Subject: Difference between two desk lamps
 
 
@@ -347,6 +370,7 @@ Omar
 From: Charlotte King <charlotte.king@inbox.net>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 11:39:00 +0000
+Intent: product_information
 Subject: Care instructions for linen bedding
 
 
@@ -362,6 +386,7 @@ Charlotte
 From: Mason Lee <mason.lee@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 15:03:00 +0000
+Intent: damaged_defective_product
 Subject: Glass bottle arrived broken
 
 
@@ -377,6 +402,7 @@ Mason
 From: Freya Adams <freya.adams@mail.com>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 12:56:00 +0000
+Intent: damaged_defective_product
 Subject: Electric kettle stopped working
 
 
@@ -392,6 +418,7 @@ Freya
 From: Theo Martin <theo.martin@example.net>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 08:43:00 +0000
+Intent: damaged_defective_product
 Subject: Scratched item received
 
 
@@ -407,6 +434,7 @@ Theo
 From: Priya Shah <priya.shah@posteo.net>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 17:08:00 +0000
+Intent: damaged_defective_product
 Subject: Portable speaker will not charge
 
 
@@ -422,7 +450,9 @@ Priya
 From: Henry Ward <henry.ward@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 10:26:00 +0000
+Intent: payment_issue
 Subject: Charged twice for one order
+
 
 
 Hello,
@@ -437,6 +467,7 @@ Henry
 From: Layla Ahmed <layla.ahmed@inbox.com>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 14:19:00 +0000
+Intent: payment_issue
 Subject: Card payment keeps failing
 
 
@@ -452,6 +483,7 @@ Layla
 From: Finn O'Connor <finn.oconnor@example.ie>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 11:14:00 +0000
+Intent: payment_issue
 Subject: Payment taken but no order created
 
 
@@ -467,6 +499,7 @@ Finn
 From: Ruby James <ruby.james@customer.org>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 10:52:00 +0000
+Intent: payment_issue
 Subject: Question about payment methods
 
 
@@ -482,6 +515,7 @@ Ruby
 From: Caleb Young <caleb.young@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 12:41:00 +0000
+Intent: discount_promotion
 Subject: WELCOME10 code not working
 
 
@@ -497,6 +531,7 @@ Caleb
 From: Mila Petrova <mila.petrova@mailbox.org>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 17:16:00 +0000
+Intent: discount_promotion
 Subject: Discount disappeared at checkout
 
 
@@ -512,6 +547,7 @@ Mila
 From: Oscar Bennett <oscar.bennett@example.net>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 13:33:00 +0000
+Intent: discount_promotion
 Subject: Can I combine two promotional codes?
 
 
@@ -527,6 +563,7 @@ Oscar
 From: Hana Suzuki <hana.suzuki@inbox.com>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 16:02:00 +0000
+Intent: discount_promotion
 Subject: Loyalty voucher rejected
 
 
@@ -542,6 +579,7 @@ Hana
 From: Jackie Rivera <jackie.rivera@example.com>
 To: support@mailmind.com
 Date: Mon, 27 Oct 2026 14:31:00 +0000
+Intent: missing_incorrect_items
 Subject: One item missing from order MM10420
 
 
@@ -557,6 +595,7 @@ Jackie
 From: Arjun Desai <arjun.desai@mail.com>
 To: support@mailmind.com
 Date: Tue, 28 Oct 2026 08:59:00 +0000
+Intent: missing_incorrect_items
 Subject: Received the wrong color
 
 
@@ -572,6 +611,7 @@ Arjun
 From: Eva Schneider <eva.schneider@example.de>
 To: support@mailmind.com
 Date: Wed, 29 Oct 2026 15:47:00 +0000
+Intent: missing_incorrect_items
 Subject: Package contains someone else's item
 
 
@@ -587,6 +627,7 @@ Eva
 From: Dylan Foster <dylan.foster@fastmail.com>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 09:07:00 +0000
+Intent: missing_incorrect_items
 Subject: Only one of two products delivered
 
 
@@ -602,6 +643,7 @@ Dylan
 From: Natalie Brooks <natalie.brooks@example.com>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 10:10:00 +0000
+Intent: unknown
 Subject: Request for a copy of my appointment details
 
 
@@ -617,6 +659,7 @@ Natalie
 From: Peter Walsh <peter.walsh@workmail.net>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 11:25:00 +0000
+Intent: unknown
 Subject: Question about Python virtual environments
 
 
@@ -628,10 +671,11 @@ Thanks,
 Peter
 
 #DIVIDER#
-42
+
 From: Marta Silva <marta.silva@example.org>
 To: support@mailmind.com
 Date: Thu, 30 Oct 2026 13:40:00 +0000
+Intent: unknown
 Subject: Noise complaint about construction work
 
 
