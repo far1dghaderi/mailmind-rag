@@ -21,6 +21,7 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "pdf-parse": "^2.4.5"
   }
 }
