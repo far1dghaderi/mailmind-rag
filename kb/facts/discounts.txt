@@ -1,0 +1,10 @@
+Store name: Northwind Goods
+New customers get code WELCOME10 for 10% off their first order
+WELCOME10 requires a minimum order of $30
+Only one discount code can be used per order
+Discount codes cannot be combined with each other
+Discount codes are not valid on sale items
+Discount codes expire 30 days after they are issued
+Newsletter subscribers receive a new code every month
+If an item's price drops within 7 days of purchase, we will refund the difference on request
+Gift cards cannot be used to buy other gift cards

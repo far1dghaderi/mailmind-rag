@@ -1,0 +1,10 @@
+Store name: Northwind Goods
+Returns accepted within 14 days of delivery
+Item must be unused and in original packaging
+Refunds are issued to the original payment method
+Refunds take 5-7 business days after we receive the returned item
+Customer pays return shipping unless the item is damaged or wrong
+Damaged or wrong items: contact us within 48 hours of delivery with a photo
+Exchanges are allowed for size or color, subject to stock
+Sale items are final sale and cannot be returned
+Refunds on discounted orders are for the amount actually paid, not the original price

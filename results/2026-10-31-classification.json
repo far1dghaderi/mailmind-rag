@@ -1,0 +1,263 @@
+{
+  "date": "2026-10-31",
+  "model": "llama3.1:8b",
+  "promptVersion": "v1",
+  "input": "classified-emails.txt",
+  "total": 42,
+  "correct": 39,
+  "accuracy": 0.9286,
+  "emails": [
+    {
+      "email": 0,
+      "intent": "order_status",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 1,
+      "intent": "order_status",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 2,
+      "intent": "order_status",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 3,
+      "intent": "order_status",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 4,
+      "intent": "shipping_delivery",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 5,
+      "intent": "shipping_delivery",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 6,
+      "intent": "shipping_delivery",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 7,
+      "intent": "order_status",
+      "confidence": 80,
+      "accurate": false
+    },
+    {
+      "email": 8,
+      "intent": "return_exchange",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 9,
+      "intent": "return_exchange",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 10,
+      "intent": "return_exchange",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 11,
+      "intent": "return_exchange",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 12,
+      "intent": "refund_status",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 13,
+      "intent": "refund_status",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 14,
+      "intent": "refund_status",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 15,
+      "intent": "order_cancellation",
+      "confidence": 90,
+      "accurate": false
+    },
+    {
+      "email": 16,
+      "intent": "order_cancellation",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 17,
+      "intent": "order_cancellation",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 18,
+      "intent": "order_cancellation",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 19,
+      "intent": "order_cancellation",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 20,
+      "intent": "product_information",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 21,
+      "intent": "product_information",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 22,
+      "intent": "product_information",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 23,
+      "intent": "product_information",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 24,
+      "intent": "damaged_defective_product",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 25,
+      "intent": "damaged_defective_product",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 26,
+      "intent": "damaged_defective_product",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 27,
+      "intent": "damaged_defective_product",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 28,
+      "intent": "payment_issue",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 29,
+      "intent": "payment_issue",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 30,
+      "intent": "payment_issue",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 31,
+      "intent": "payment_issue",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 32,
+      "intent": "discount_promotion",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 33,
+      "intent": "discount_promotion",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 34,
+      "intent": "discount_promotion",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 35,
+      "intent": "discount_promotion",
+      "confidence": 80,
+      "accurate": true
+    },
+    {
+      "email": 36,
+      "intent": "missing_incorrect_items",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 37,
+      "intent": "return_exchange",
+      "confidence": 90,
+      "accurate": false
+    },
+    {
+      "email": 38,
+      "intent": "missing_incorrect_items",
+      "confidence": 100,
+      "accurate": true
+    },
+    {
+      "email": 39,
+      "intent": "missing_incorrect_items",
+      "confidence": 90,
+      "accurate": true
+    },
+    {
+      "email": 40,
+      "intent": "unknown",
+      "confidence": 0,
+      "accurate": true
+    },
+    {
+      "email": 41,
+      "intent": "unknown",
+      "confidence": 100,
+      "accurate": true
+    }
+  ]
+}

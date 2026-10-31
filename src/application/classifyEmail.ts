@@ -2,6 +2,8 @@ import { INTENTS, UNKNOWN } from "../domain/intents.js";
 import { parseClassification, type Classification } from "../domain/parseClassification.js";
 import type { Llm } from "./ports.js";
 
+export const PROMPT_VERSION = "v1";
+
 const buildPrompt = (email: string) => `Classify the email below into exactly one of these intents:
 ${INTENTS.join(", ")}
 If it fits none of them, use "${UNKNOWN}".
