@@ -121,7 +121,7 @@ Hello, I placed order #MM10482 ...
 | Web | Express 5 |
 | Chat / classification model | Ollama, `llama3.1:8b`, JSON mode |
 | Embeddings | Ollama, `nomic-embed-text` |
-| Vector store | Postgres + pgvector (Docker) |
+| Vector store | Postgres + pgvector (`vector(768)`, cosine distance) |
 | Orchestration | LangGraph.js, added only after the baseline eval exists |
 | PDF text | `pdf-parse` v2 |
 | Tests | Node's built-in `node:test` through `tsx` |
@@ -159,6 +159,9 @@ Requirements: Node 20+, [Ollama](https://ollama.com) with `llama3.1:8b` pulled.
 
 ```bash
 npm install
+cp .env.example .env                          # then set DATABASE_URL (Postgres with the pgvector extension, database `mailmind`)
+npx tsx scripts/db-init.ts                   # create the chunks table
+npx tsx scripts/index-kb.ts                  # chunk, embed and store the policy PDFs
 npm run dev                                  # starts the API on :3000
 npx tsx scripts/run-classification.ts        # classify data/classified-emails.txt and save to results/
 npx tsx scripts/extract.ts                   # print text extracted from kb/pdf/*.pdf
@@ -166,7 +169,7 @@ npx tsx scripts/chunk.ts                     # print the chunks and check every 
 npm test && npm run typecheck
 ```
 
-Configuration (all optional): `PORT`, `DATA_DIR`, `LLM_PROVIDER`, `LLM_URL`, `LLM_MODEL`.
+Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT`, `DATA_DIR`, `LLM_PROVIDER`, `LLM_URL`, `LLM_MODEL`, `EMBED_URL`, `EMBED_MODEL`. Set `TEST_DATABASE_URL` to also run the pgvector integration test.
 
 ## Progress
 
@@ -182,8 +185,8 @@ Configuration (all optional): `PORT`, `DATA_DIR`, `LLM_PROVIDER`, `LLM_URL`, `LL
 - [x] Policy PDFs generated
 - [x] PDF text extraction checked for readable, ordered text
 - [x] Chunk policy text by heading, keeping document and section (one chunk per section, stable ids like `returns#3`)
-- [ ] Postgres + pgvector in Docker, `vector(768)` table
-- [ ] Embed chunks (`search_document:` prefix) and store them
+- [x] Postgres + pgvector, `vector(768)` table (a local Postgres 18 instead of Docker)
+- [x] Embed chunks (`search_document:` prefix) and store them (21 chunks, model name stored on every row)
 - [ ] Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold
 - [ ] Grounded answer prompt with citations, and the refusal path
 - [ ] Wire email -> classify -> retrieve -> answer or flag; run end to end on 5 emails
