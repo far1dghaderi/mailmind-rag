@@ -45,13 +45,14 @@ Likely confusion pairs: order_status/shipping_delivery, return_exchange/refund_s
 - **Run 1 saved: 39/42 = 92.9%**, llama3.1:8b, prompt v1, `results/2026-10-31-classification.json`. Misses: 7, 15, 37. Dataset is clean/easy, so this is optimistic. (42 emails are parsed; the last email in the file has no number line and is skipped.) Re-run with `npx tsx scripts/run-classification.ts`; the model is not fully repeatable even at temperature 0, so expect +-1-2 emails.
 - Field renamed to `confidence` everywhere; each result is `{email, intent, confidence, accurate}`.
 - PDFs are in `kb/pdf/`; `scripts/extract.ts` extracts them with pdf-parse v2 and the text is readable and in order (see Gotchas).
+- Chunking done: one chunk per section, id `<doc>#<n>`, fields `{id, doc, section, text}`. Headings are detected by shape (`N. Title`, or short title-case with no digits/`$`/end punctuation). A heading with no body or only a `:` lead-in merges into the next chunk. `scripts/chunk.ts` checks every fact-sheet number appears in a chunk. Policies are tiny (sections 20-80 tokens), so there is no token target; no splitting/overlap until a doc needs it.
 - 3 fact sheets saved in `kb/facts/` (contents below).
 - `scripts/gen-policies.ts` generates policy Markdown via Ollama, with a number guard (strips list/heading numbers before checking that every number in the output exists in the facts). All three pass. Farid read the outputs and confirmed no invented rules.
 - PDFs generated with `npx md-to-pdf kb/md/*.md` (output lands next to the .md files; move to `kb/pdf/`).
 
 ### Next (in order)
 1. ~~PDF extraction~~ done.
-2. Chunk by heading/paragraph (about 200-400 tokens). Keep doc name and section with each chunk. Strip the `-- N of N --` page markers pdf-parse adds.
+2. ~~Chunking~~ done (`src/domain/chunkPolicy.ts`, `scripts/chunk.ts`).
 3. pgvector in Docker, table with `vector(768)`, embed chunks with `search_document:` prefix, store.
 4. Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold for "nothing found".
 5. Grounded answer prompt (use ONLY retrieved chunks, cite chunk IDs) and refusal path.
@@ -148,12 +149,12 @@ Gift cards cannot be used to buy other gift cards
 
 ## Code layout
 ```
-src/domain/          intents, parseEmails (header block -> subject/body/label), parseClassification
+src/domain/          intents, parseEmails (header block -> subject/body/label), parseClassification, chunkPolicy
 src/application/     classifyEmail (prompt + PROMPT_VERSION), classifyFile, ports (Llm, ReadFile)
-src/infrastructure/  ollamaLlm, createLlm (LLM_PROVIDER/LLM_URL/LLM_MODEL), dataFileReader (confined to data/)
+src/infrastructure/  ollamaLlm, createLlm (LLM_PROVIDER/LLM_URL/LLM_MODEL), dataFileReader (confined to data/), readPdfText
 src/presentation/    Express app: POST /classify {"path": "file.txt"} (relative to data/)
 src/main.ts          composition root
-scripts/             gen-policies, extract, run-classification
+scripts/             gen-policies, extract, chunk, run-classification
 results/             dated eval outputs
 ```
 The model is behind `Llm.complete(prompt): Promise<string>`; swapping provider/model touches only infrastructure. Email file format: number line, headers (From/To/Date/Subject/Intent) up to the first blank line, then body; emails split on `#DIVIDER#`.
