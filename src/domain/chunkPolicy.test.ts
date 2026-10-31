@@ -80,3 +80,26 @@ test("no content lost and no empty chunks", () => {
   for (const line of body) assert.ok(all.includes(line), `missing: ${line}`);
   assert.ok(chunkPolicy("shipping", shipping).every((c) => c.text.trim()));
 });
+
+test("headings may contain small lowercase words (a, and, of, to, ...)", () => {
+  const text = `Northwind Goods Gift Card Policy
+Buying a Gift Card
+You can purchase a gift card in any whole-dollar amount from $10 to $500.
+Gift Card Details
+A gift card code is 16 characters long and is not case-sensitive.
+Resending a Lost Gift Card Code
+A lost code can be resent up to 3 times.
+Redelivery and Returns
+A redelivery can be requested within 2 business days of a failed attempt.
+Terms of Use
+Gift cards have no expiry date.`;
+  assert.deepEqual(
+    chunkPolicy("giftcards", text).map((c) => c.section),
+    ["Buying a Gift Card", "Gift Card Details", "Resending a Lost Gift Card Code", "Redelivery and Returns", "Terms of Use"],
+  );
+});
+
+test("an ordinary sentence with lowercase content words is not a heading", () => {
+  const chunks = chunkPolicy("d", "Title\nHeading\nWe pack every order carefully and ship it fast.");
+  assert.deepEqual(chunks.map((c) => c.section), ["Heading"]);
+});

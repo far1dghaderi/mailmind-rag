@@ -19,7 +19,7 @@ The deliverable is a before/after table backed by real runs, not a demo.
 
 ## The scenario
 
-A fake online store, **Northwind Goods**, receives customer-support email. Three policy documents (returns, shipping, discounts) describe how the store works. All data is invented, so the repository is safe to make public.
+A fake online store, **Northwind Goods**, receives customer-support email. Seven policy documents describe how the store works: returns, shipping and discounts, plus accounts, gift cards, pre-orders and carrier delivery. The knowledge base is deliberately big enough to contain look-alike passages (several documents talk about returns, gift cards or delivery), because a tiny one makes retrieval look better than it is. All data is invented, so the repository is safe to make public.
 
 ## What it does
 
@@ -68,7 +68,7 @@ Embedding model rule: the model must never change mid-project, because vectors f
 The PDFs are generated, but with guardrails against the model inventing rules:
 
 1. A short plain-text **fact sheet** per policy is the ground truth (`kb/facts/`).
-2. `scripts/gen-policies.ts` asks the local model to write a friendly Markdown policy from the facts. A **number guard** checks that every number in the output appears in the fact sheet.
+2. `scripts/gen-policies.ts` asks the local model to write a friendly Markdown policy from the facts. A two-way **number guard** rejects a policy that contains a number not in the fact sheet, or that drops a number the fact sheet has, and the script retries up to three times. Existing policies are never regenerated unless named on the command line, because that would change the text and shift chunk ids the eval set cites.
 3. The Markdown is rendered to PDF (`kb/pdf/`).
 4. A human reads every output to confirm no rules were added.
 
@@ -200,6 +200,7 @@ npm run db:init                              # create the chunks table (these th
 npm run index                                # chunk, embed and store the policy PDFs
 npm run ask -- "Can I return a sale item?"   # answer or refusal, plus the top 3 chunks with scores; * marks those used
 npm run pipeline -- classified-emails.txt 7,11,34   # full pipeline on chosen emails (omit the numbers for all)
+npx tsx scripts/check-qa.ts                  # validate eval/qa-set.json against the real chunk ids
 npm run dev                                  # starts the API and the search page on http://localhost:3000 (needs .env)
 npx tsx scripts/run-classification.ts        # classify data/classified-emails.txt and save to results/
 npx tsx scripts/extract.ts                   # print text extracted from kb/pdf/*.pdf
@@ -219,12 +220,13 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 - [x] Model call abstracted behind one interface, parsing separated from the provider
 - [x] Baseline classification run saved to `results/` (Run 1, 92.9%)
 - [x] Fact sheets for returns, shipping, discounts
+- [x] Knowledge base extended with four more documents (accounts, gift cards, pre-orders, delivery): 45 chunks in total
 - [x] Policy generation with a number guard, outputs reviewed by hand
 - [x] Policy PDFs generated
 - [x] PDF text extraction checked for readable, ordered text
 - [x] Chunk policy text by heading, keeping document and section (one chunk per section, stable ids like `returns#3`)
 - [x] Postgres + pgvector, `vector(768)` table (a local Postgres 18 instead of Docker)
-- [x] Embed chunks (`search_document:` prefix) and store them (21 chunks, model name stored on every row)
+- [x] Embed chunks (`search_document:` prefix) and store them (45 chunks across 7 documents, model name stored on every row)
 - [x] Query embedding (`search_query:` prefix), top-k retrieval, similarity threshold (defaults k=3, threshold 0.6; to be tuned by the eval)
 - [x] Grounded answer prompt with citations, and the refusal path (`POST /ask`; checks that citations are real chunks and every number comes from the question or a cited chunk)
 - [x] Wire email -> classify -> retrieve -> answer or flag; run end to end on 5 emails (`POST /triage`, `npm run pipeline`)
@@ -232,7 +234,7 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 ### Phase 2: evaluation and baseline
 
 - [ ] Add about 12 messy emails
-- [ ] Build the Q&A set: about 40 answerable, about 10 unanswerable, plus multi-chunk questions
+- [x] Build the Q&A set: `eval/qa-set.json`, 80 questions (53 answerable, 11 multi-chunk, 16 unanswerable) covering all seven documents, checked by `npx tsx scripts/check-qa.ts`
 - [ ] Write the one-command eval script (accuracy, confusion matrix, retrieval hit rate, answer correctness, refusal accuracy, calibration)
 - [ ] Record the full baseline numbers
 

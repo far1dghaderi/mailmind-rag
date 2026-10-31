@@ -1,0 +1,11 @@
+Store name: Northwind Goods
+Gift cards can be bought in any whole-dollar amount from $10 to $500
+The gift card code is sent by email to the address entered at purchase
+Gift card emails are sent within 15 minutes of the purchase
+A gift card code is 16 characters long and is not case-sensitive
+A gift card can be used to pay for merchandise on the Northwind Goods website
+A gift card can be spent across several orders until its balance reaches zero
+A gift card has no expiry date
+Unused gift card balances are not paid out in cash
+A lost gift card code can be resent to the purchaser's email address up to 3 times
+A customer account can hold up to 10 gift card codes at once

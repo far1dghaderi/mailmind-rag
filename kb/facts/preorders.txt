@@ -1,0 +1,11 @@
+Store name: Northwind Goods
+A pre-order lets a customer buy an item before its release date
+Pre-order items are charged when they ship, not when the order is placed
+A customer can pre-order up to 2 units of the same item
+A pre-order release date can move by up to 60 days after the date first shown
+Pre-order customers are emailed each time the release date changes
+A pre-order can be switched to an in-stock item of the same or lower price before it ships
+Pre-order customers receive a release email 3 days before the item ships
+A pre-ordered item can be returned only after it has been delivered
+A backorder is an item that is out of stock and expected back in 1 to 6 weeks
+A backordered item still out of stock after 30 days shows a new estimated date

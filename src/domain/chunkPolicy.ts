@@ -5,6 +5,9 @@ export interface Chunk {
   text: string;
 }
 
+// Lowercase words allowed inside a title-case heading ("Buying a Gift Card", "Redelivery and Returns").
+const SMALL_WORDS = new Set(["a", "an", "the", "of", "to", "and", "or", "in", "on", "for", "as", "at", "by", "with"]);
+
 const isPageMarker = (l: string) => /^-- \d+ of \d+ --$/.test(l);
 
 // PDF text has no font info, so detect headings by shape.
@@ -12,7 +15,7 @@ function isHeading(l: string): boolean {
   if (/[.:]$/.test(l)) return false;
   if (/^\d+\.\s+\S/.test(l)) return l.split(" ").length <= 8;
   const words = l.split(" ");
-  return words.length <= 6 && !/[\d$]/.test(l) && words.every((w) => /^[A-Z]/.test(w));
+  return words.length <= 6 && !/[\d$]/.test(l) && words.every((w) => /^[A-Z]/.test(w) || SMALL_WORDS.has(w));
 }
 
 // shortcut: one chunk per section, no splitting of long sections, no overlap; revisit when a policy has sections over ~400 tokens.

@@ -1,0 +1,705 @@
+{
+  "questions": [
+    {
+      "id": "q01",
+      "type": "answerable",
+      "question": "Bought a hoodie 9 days ago and changed my mind. Can I still send it back?",
+      "expected_answer": "Yes, returns are accepted within 14 days of delivery, provided the hoodie is unused and in its original packaging.",
+      "source_chunks": [
+        "returns#1"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "unanswerable",
+      "question": "Do you offer gift wrapping for birthday orders?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q03",
+      "type": "answerable",
+      "question": "I wore the jacket once to a party and now want to return it. Is that okay?",
+      "expected_answer": "No, to be eligible for a return the item must be unused and in its original packaging.",
+      "source_chunks": [
+        "returns#1"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "answerable",
+      "question": "Will my refund go back to the card I paid with?",
+      "expected_answer": "Refunds are issued to the original payment method.",
+      "source_chunks": [
+        "returns#2"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "multi_chunk",
+      "question": "My lamp arrived smashed. Do I have to pay to ship it back, and how do I get my money back?",
+      "expected_answer": "No, return shipping is not your cost for a damaged item, but please contact us within 48 hours of delivery with a photo. The refund goes to your original payment method and takes 5-7 business days after we receive the item.",
+      "source_chunks": [
+        "returns#2",
+        "returns#3"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "answerable",
+      "question": "Ordered a medium but I need a large. Can I exchange it?",
+      "expected_answer": "Yes, exchanges are allowed for size or color, subject to stock availability.",
+      "source_chunks": [
+        "returns#4"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "unanswerable",
+      "question": "Is there a Northwind store in Toronto I can visit in person?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q08",
+      "type": "answerable",
+      "question": "I don't need it fast. How long does regular shipping take?",
+      "expected_answer": "Standard shipping takes 3-5 business days.",
+      "source_chunks": [
+        "shipping#2"
+      ]
+    },
+    {
+      "id": "q09",
+      "type": "answerable",
+      "question": "How much is standard shipping?",
+      "expected_answer": "Standard shipping costs $4.99, and it is free on orders over $50.",
+      "source_chunks": [
+        "shipping#2"
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "answerable",
+      "question": "How fast is express delivery?",
+      "expected_answer": "Express shipping takes 1-2 business days.",
+      "source_chunks": [
+        "shipping#3"
+      ]
+    },
+    {
+      "id": "q11",
+      "type": "answerable",
+      "question": "My order was $30. How much would express shipping cost me?",
+      "expected_answer": "Express shipping costs $12.99.",
+      "source_chunks": [
+        "shipping#3"
+      ]
+    },
+    {
+      "id": "q12",
+      "type": "answerable",
+      "question": "I placed my order at 1:45 PM. Will it leave the warehouse today?",
+      "expected_answer": "Orders placed before 2 PM ship the same business day, so yours should ship today.",
+      "source_chunks": [
+        "shipping#4"
+      ]
+    },
+    {
+      "id": "q13",
+      "type": "answerable",
+      "question": "Will I get an email when my package leaves?",
+      "expected_answer": "Yes, a tracking number is emailed to you once your order ships.",
+      "source_chunks": [
+        "shipping#5"
+      ]
+    },
+    {
+      "id": "q14",
+      "type": "answerable",
+      "question": "I typed the wrong apartment number. Can I fix it after ordering?",
+      "expected_answer": "Yes, you can change your shipping address within 2 hours of placing your order.",
+      "source_chunks": [
+        "shipping#6"
+      ]
+    },
+    {
+      "id": "q15",
+      "type": "answerable",
+      "question": "My package is missing. What should I do?",
+      "expected_answer": "Please contact us to start a lost package claim if the package has not arrived 10 days after the estimated delivery date.",
+      "source_chunks": [
+        "shipping#7"
+      ]
+    },
+    {
+      "id": "q16",
+      "type": "answerable",
+      "question": "Can you deliver to a PO box in Ohio?",
+      "expected_answer": "No, we cannot ship to PO boxes.",
+      "source_chunks": [
+        "shipping#8"
+      ]
+    },
+    {
+      "id": "q17",
+      "type": "unanswerable",
+      "question": "Do you take Apple Pay at checkout?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q18",
+      "type": "answerable",
+      "question": "My cart only comes to $25. Will WELCOME10 still work for me?",
+      "expected_answer": "No, WELCOME10 requires a minimum order of $30.",
+      "source_chunks": [
+        "discounts#1"
+      ]
+    },
+    {
+      "id": "q19",
+      "type": "answerable",
+      "question": "I'm new here. How much off will my first order get with WELCOME10?",
+      "expected_answer": "New customers get 10% off their first order with WELCOME10.",
+      "source_chunks": [
+        "discounts#1"
+      ]
+    },
+    {
+      "id": "q20",
+      "type": "multi_chunk",
+      "question": "I'm a new customer with a $28 cart. Can I stack WELCOME10 with the friend code I was sent?",
+      "expected_answer": "No. WELCOME10 requires a $30 minimum order, and only one discount code can be used per order because codes cannot be combined.",
+      "source_chunks": [
+        "discounts#1",
+        "discounts#2"
+      ]
+    },
+    {
+      "id": "q21",
+      "type": "answerable",
+      "question": "Can I use two discount codes on the same order?",
+      "expected_answer": "No, only one discount code can be used per order.",
+      "source_chunks": [
+        "discounts#2"
+      ]
+    },
+    {
+      "id": "q22",
+      "type": "answerable",
+      "question": "I signed up for the newsletter. Do I ever get new codes?",
+      "expected_answer": "Yes, newsletter subscribers receive a new discount code every month.",
+      "source_chunks": [
+        "discounts#3"
+      ]
+    },
+    {
+      "id": "q23",
+      "type": "answerable",
+      "question": "I got a code last month. Will it still work today?",
+      "expected_answer": "Discount codes expire 30 days after they are issued.",
+      "source_chunks": [
+        "discounts#4"
+      ]
+    },
+    {
+      "id": "q24",
+      "type": "answerable",
+      "question": "I bought a lamp for $60 and it dropped in price 4 days later. Can I get the difference back?",
+      "expected_answer": "Yes, if an item's price drops within 7 days of purchase, we will refund the difference on request.",
+      "source_chunks": [
+        "discounts#5"
+      ]
+    },
+    {
+      "id": "q25",
+      "type": "answerable",
+      "question": "Can I use a gift card to buy another gift card for my cousin?",
+      "expected_answer": "No, gift cards cannot be used to buy other gift cards.",
+      "source_chunks": [
+        "discounts#6"
+      ]
+    },
+    {
+      "id": "q26",
+      "type": "multi_chunk",
+      "question": "The headphones I bought dropped in price 3 days later, and I'm thinking about returning them instead. What are my options?",
+      "expected_answer": "If the price drops within 7 days of purchase, you can request a refund of the difference. You can also return an unused item in its original packaging within 14 days of delivery.",
+      "source_chunks": [
+        "discounts#5",
+        "returns#1"
+      ]
+    },
+    {
+      "id": "q27",
+      "type": "unanswerable",
+      "question": "Do I earn loyalty points on my purchases?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q28",
+      "type": "answerable",
+      "question": "They sent me the wrong color. Do I have to pay postage to send it back?",
+      "expected_answer": "No, return shipping is only your responsibility when the item is not damaged or wrong.",
+      "source_chunks": [
+        "returns#3"
+      ]
+    },
+    {
+      "id": "q29",
+      "type": "answerable",
+      "question": "The item I received is damaged. How long do I have to tell you?",
+      "expected_answer": "Please contact us within 48 hours of delivery.",
+      "source_chunks": [
+        "returns#6",
+        "returns#3"
+      ]
+    },
+    {
+      "id": "q30",
+      "type": "answerable",
+      "question": "I want to swap my green shirt for blue, but blue might be sold out. Is that possible?",
+      "expected_answer": "Exchanges are subject to stock availability, so the exchange depends on the color being in stock.",
+      "source_chunks": [
+        "returns#4"
+      ]
+    },
+    {
+      "id": "q31",
+      "type": "answerable",
+      "question": "Do you deliver to Canada?",
+      "expected_answer": "Yes, we ship to the United States and Canada only.",
+      "source_chunks": [
+        "shipping#1"
+      ]
+    },
+    {
+      "id": "q32",
+      "type": "unanswerable",
+      "question": "Can I cancel my whole order after I've placed it?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q33",
+      "type": "answerable",
+      "question": "What shipping options do you have?",
+      "expected_answer": "We offer two shipping options: standard and express.",
+      "source_chunks": [
+        "shipping#2"
+      ]
+    },
+    {
+      "id": "q34",
+      "type": "unanswerable",
+      "question": "What materials are your tote bags made from?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q35",
+      "type": "multi_chunk",
+      "question": "My tracking email came 3 weeks ago and the package still hasn't shown up, 11 days past the delivery estimate. Can you help?",
+      "expected_answer": "A tracking number was emailed to you once the order shipped, and since the package has not arrived 10 days after the estimated delivery date, please contact us to start a lost package claim.",
+      "source_chunks": [
+        "shipping#5",
+        "shipping#7"
+      ]
+    },
+    {
+      "id": "q36",
+      "type": "answerable",
+      "question": "Once you receive my returned boots, how long until the refund shows up?",
+      "expected_answer": "Refunds may take 5-7 business days after we receive the returned item.",
+      "source_chunks": [
+        "returns#2"
+      ]
+    },
+    {
+      "id": "q37",
+      "type": "unanswerable",
+      "question": "Will I have to pay customs duties on an order shipped to Canada?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q38",
+      "type": "answerable",
+      "question": "Do I need to send proof with my damage report?",
+      "expected_answer": "Yes, please include a photo when you contact us about a damaged or wrong item.",
+      "source_chunks": [
+        "returns#3",
+        "returns#6"
+      ]
+    },
+    {
+      "id": "q39",
+      "type": "answerable",
+      "question": "I changed my mind on an unopened item. Who pays for the return label?",
+      "expected_answer": "The customer pays for return shipping unless the item is damaged or wrong.",
+      "source_chunks": [
+        "returns#3"
+      ]
+    },
+    {
+      "id": "q40",
+      "type": "unanswerable",
+      "question": "What's your customer service phone number?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q41",
+      "type": "multi_chunk",
+      "question": "I sent back an unused sweater on day 13 after delivery. When will I get my money?",
+      "expected_answer": "Returns are accepted within 14 days of delivery, so day 13 is within the window, and the refund takes 5-7 business days after we receive the item.",
+      "source_chunks": [
+        "returns#1",
+        "returns#2"
+      ]
+    },
+    {
+      "id": "q42",
+      "type": "answerable",
+      "question": "Can I return a sale item?",
+      "expected_answer": "No, sale items are final sale and cannot be returned.",
+      "source_chunks": [
+        "returns#4"
+      ]
+    },
+    {
+      "id": "q43",
+      "type": "answerable",
+      "question": "Can I use WELCOME10 on a sale item?",
+      "expected_answer": "No, discount codes are not valid on sale items.",
+      "source_chunks": [
+        "discounts#2"
+      ]
+    },
+    {
+      "id": "q44",
+      "type": "answerable",
+      "question": "Do I get free shipping on a $45 order?",
+      "expected_answer": "No, standard shipping is free only on orders over $50, so a $45 order pays $4.99 for standard shipping.",
+      "source_chunks": [
+        "shipping#2"
+      ]
+    },
+    {
+      "id": "q45",
+      "type": "answerable",
+      "question": "Do you ship to the UK?",
+      "expected_answer": "No, we ship to the United States and Canada only.",
+      "source_chunks": [
+        "shipping#1"
+      ]
+    },
+    {
+      "id": "q46",
+      "type": "unanswerable",
+      "question": "Do you match competitors' prices if I find something cheaper?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q47",
+      "type": "answerable",
+      "question": "I returned something bought with a code. Which price do I get back?",
+      "expected_answer": "You get back the amount you actually paid, not the original price.",
+      "source_chunks": [
+        "returns#5"
+      ]
+    },
+    {
+      "id": "q48",
+      "type": "multi_chunk",
+      "question": "Newsletter subscribers get a new code every month. Mine is 45 days old, is it still good?",
+      "expected_answer": "No, discount codes expire 30 days after they are issued, so a 45-day-old code has expired. Newsletter subscribers receive a new code every month.",
+      "source_chunks": [
+        "discounts#3",
+        "discounts#4"
+      ]
+    },
+    {
+      "id": "q49",
+      "type": "answerable",
+      "question": "Can I return an item after 20 days?",
+      "expected_answer": "No, returns are accepted only within 14 days of delivery.",
+      "source_chunks": [
+        "returns#1"
+      ]
+    },
+    {
+      "id": "q50",
+      "type": "unanswerable",
+      "question": "What's your warranty on electronics?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q51",
+      "type": "answerable",
+      "question": "Is a 7-character password allowed when I sign up for an account?",
+      "expected_answer": "No, your password must be at least 8 characters long.",
+      "source_chunks": [
+        "accounts#1"
+      ]
+    },
+    {
+      "id": "q52",
+      "type": "unanswerable",
+      "question": "Can I turn on two-factor login for my Northwind account so a code is texted to me at sign-in?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q53",
+      "type": "answerable",
+      "question": "I want to buy a gift card for $25.50 for my sister. Is that amount possible?",
+      "expected_answer": "No, gift cards are sold in whole-dollar amounts from $10 to $500, so $25.50 is not available.",
+      "source_chunks": [
+        "giftcards#1"
+      ]
+    },
+    {
+      "id": "q54",
+      "type": "multi_chunk",
+      "question": "My order comes to $180 and I'm choosing standard shipping. Will someone have to sign for it, and will I be charged for shipping?",
+      "expected_answer": "Yes, orders totaling $150 or more need a signature at delivery, and standard shipping is free on orders over $50, so you pay nothing for shipping.",
+      "source_chunks": [
+        "delivery#1",
+        "shipping#2"
+      ]
+    },
+    {
+      "id": "q55",
+      "type": "answerable",
+      "question": "One of the items I want says backordered. How long until it comes back in stock, and what if it's still out later?",
+      "expected_answer": "A backordered item is expected back in 1 to 6 weeks, and if it is still out of stock after 30 days, a new estimated date will be shown.",
+      "source_chunks": [
+        "preorders#7"
+      ]
+    },
+    {
+      "id": "q56",
+      "type": "answerable",
+      "question": "Nobody was home, and the delivery person left a slip instead of my parcel. Why did they do that?",
+      "expected_answer": "Because a signature was required and no one signed, the carrier left a notice instead of the parcel.",
+      "source_chunks": [
+        "delivery#2"
+      ]
+    },
+    {
+      "id": "q57",
+      "type": "unanswerable",
+      "question": "Do you offer student discounts if I send a copy of my enrollment letter?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q58",
+      "type": "answerable",
+      "question": "I checked out without making an account. Will that order show up when I log in and look at my history?",
+      "expected_answer": "No, guest orders do not appear in an account's order history.",
+      "source_chunks": [
+        "accounts#2"
+      ]
+    },
+    {
+      "id": "q59",
+      "type": "multi_chunk",
+      "question": "I pre-ordered a lamp and it arrived cracked yesterday. Can I send it back, and do I have to pay for the return postage?",
+      "expected_answer": "Yes, a pre-ordered item can be returned once it has been delivered, and since it arrived damaged you don't pay return shipping if you contact us within 48 hours of delivery with a photo.",
+      "source_chunks": [
+        "preorders#6",
+        "returns#3"
+      ]
+    },
+    {
+      "id": "q60",
+      "type": "answerable",
+      "question": "Can I spend the balance of one gift card over a few separate purchases?",
+      "expected_answer": "Yes, the balance can be spent across several orders until it reaches zero.",
+      "source_chunks": [
+        "giftcards#3"
+      ]
+    },
+    {
+      "id": "q61",
+      "type": "answerable",
+      "question": "My pre-ordered speaker's release date just moved back by 45 days. Is that allowed, and will someone tell me?",
+      "expected_answer": "Yes, the release date can move by up to 60 days after the date first shown, and you will be emailed each time it changes.",
+      "source_chunks": [
+        "preorders#3"
+      ]
+    },
+    {
+      "id": "q62",
+      "type": "unanswerable",
+      "question": "Which courier company delivers my parcels, UPS or someone else?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q63",
+      "type": "answerable",
+      "question": "Can the carrier drop off my parcel at 9 PM on a weeknight?",
+      "expected_answer": "No, carriers deliver only between 8 AM and 6 PM local time.",
+      "source_chunks": [
+        "delivery#3"
+      ]
+    },
+    {
+      "id": "q64",
+      "type": "multi_chunk",
+      "question": "The carrier dropped my parcel in a safe place 12 days ago because no signature was needed. Can I still send it back?",
+      "expected_answer": "Yes, a parcel left in a safe place counts as delivered on the day it was dropped off, so it is still within the 14-day return window, as long as the item is unused and in its original packaging.",
+      "source_chunks": [
+        "delivery#4",
+        "returns#1"
+      ]
+    },
+    {
+      "id": "q65",
+      "type": "answerable",
+      "question": "I'm typing my gift card code and I'm not sure if I need the exact capital letters from the email. Does it matter?",
+      "expected_answer": "No, gift card codes are not case-sensitive.",
+      "source_chunks": [
+        "giftcards#4"
+      ]
+    },
+    {
+      "id": "q66",
+      "type": "answerable",
+      "question": "I want my account deleted for good. What happens to my personal info and my old orders?",
+      "expected_answer": "Your personal data is removed within 45 days, but we keep your order records for 7 years for accounting purposes.",
+      "source_chunks": [
+        "accounts#5"
+      ]
+    },
+    {
+      "id": "q67",
+      "type": "unanswerable",
+      "question": "How do I change the email address attached to my account to a new one?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q68",
+      "type": "answerable",
+      "question": "I want to pre-order 5 of the same pair of headphones for my office. Is that allowed?",
+      "expected_answer": "No, a customer can pre-order up to 2 units of the same item.",
+      "source_chunks": [
+        "preorders#2"
+      ]
+    },
+    {
+      "id": "q69",
+      "type": "answerable",
+      "question": "I lost the email with my gift card code. Can you send it again, and how many times?",
+      "expected_answer": "Yes, the code can be resent to your email address up to 3 times.",
+      "source_chunks": [
+        "giftcards#5"
+      ]
+    },
+    {
+      "id": "q70",
+      "type": "multi_chunk",
+      "question": "I unsubscribed from marketing emails in my account. Will I still get the tracking email when my order ships?",
+      "expected_answer": "Yes, turning off marketing emails does not stop order and delivery emails, and a tracking number is emailed to you once your order ships.",
+      "source_chunks": [
+        "accounts#4",
+        "shipping#5"
+      ]
+    },
+    {
+      "id": "q71",
+      "type": "answerable",
+      "question": "My gift card is from three years ago. Has it expired, and can I cash out what's left?",
+      "expected_answer": "It has no expiry date, but an unused balance is not paid out in cash.",
+      "source_chunks": [
+        "giftcards#4"
+      ]
+    },
+    {
+      "id": "q72",
+      "type": "answerable",
+      "question": "Will I get a heads-up before my pre-order ships?",
+      "expected_answer": "Yes, you receive a release email 3 days before the item ships.",
+      "source_chunks": [
+        "preorders#5"
+      ]
+    },
+    {
+      "id": "q73",
+      "type": "answerable",
+      "question": "I asked for a password reset 2 hours ago and the link still doesn't work. Is it still valid?",
+      "expected_answer": "No, a password reset link is valid for 60 minutes only, so a link sent 2 hours ago is no longer valid.",
+      "source_chunks": [
+        "accounts#6"
+      ]
+    },
+    {
+      "id": "q74",
+      "type": "unanswerable",
+      "question": "Can I pick a two-hour delivery window, like 1 to 3 PM, for my parcel?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q75",
+      "type": "answerable",
+      "question": "The carrier tried yesterday and I wasn't home. Can I ask for another delivery attempt?",
+      "expected_answer": "Yes, you can request a redelivery within 2 business days of a failed delivery attempt.",
+      "source_chunks": [
+        "delivery#5"
+      ]
+    },
+    {
+      "id": "q76",
+      "type": "answerable",
+      "question": "I bought a $50 gift card two hours ago and the code never arrived. What should have happened?",
+      "expected_answer": "The code should have been emailed within 15 minutes of purchase to the address you entered at checkout.",
+      "source_chunks": [
+        "giftcards#2"
+      ]
+    },
+    {
+      "id": "q77",
+      "type": "multi_chunk",
+      "question": "I pre-ordered a $80 speaker and want to switch to an in-stock one before it ships. When will I be charged?",
+      "expected_answer": "You can switch to an in-stock item of the same or lower price before it ships, and pre-order items are charged when they ship, not when the order is placed.",
+      "source_chunks": [
+        "preorders#1",
+        "preorders#4"
+      ]
+    },
+    {
+      "id": "q78",
+      "type": "unanswerable",
+      "question": "Is there a paid membership program with extra perks for frequent buyers?",
+      "expected_answer": null,
+      "source_chunks": []
+    },
+    {
+      "id": "q79",
+      "type": "answerable",
+      "question": "How many gift card codes can I keep saved in my customer account at the same time? I have a bunch.",
+      "expected_answer": "You can store up to 10 gift card codes in your account at once.",
+      "source_chunks": [
+        "giftcards#6"
+      ]
+    },
+    {
+      "id": "q80",
+      "type": "answerable",
+      "question": "I placed an order 2 years and 3 months ago. Will it still show in my order history?",
+      "expected_answer": "No, order history shows only orders placed in the past 2 years.",
+      "source_chunks": [
+        "accounts#3"
+      ]
+    }
+  ]
+}
