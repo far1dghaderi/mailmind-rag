@@ -1,0 +1,163 @@
+0
+From: Dana Whitfield <dana.whitfield@example.com>
+To: support@mailmind.com
+Date: Mon, 26 Oct 2026 10:12:00 +0000
+Intent: return_exchange
+Subject: jacket size
+
+
+hi so i got the navy jacket (order MM10612) and its too big i think i ordered medium but got large?? cant tell if i can swap it for a medium or if i have to send it back first and wait i dont wanna pay twice lol thx
+
+
+#DIVIDER#
+1
+From: Marcus Oyelaran <m.oyelaran@mailbox.org>
+To: support@mailmind.com
+Date: Tue, 27 Oct 2026 16:40:00 +0000
+Intent: damaged_defective_product
+Subject: RE: order MM10633
+
+
+HOW MANY TIMES DO I HAVE TO SAY IT. THE KETTLE CAME WITH THE LID CRACKED RIGHT THROUGH. I PHOTOGRAPHED IT THE DAY IT ARRIVED AND SENT THE PHOTOS ALREADY TO SOMEONE NAMED TOM. NOBODY REPLIED. I WANT A REPLACEMENT OR MY MONEY BACK AND I WANT IT DONE THIS WEEK NOT NEXT MONTH. DO NOT SEND ME ANOTHER AUTOMATED LINK
+
+
+#DIVIDER#
+2
+From: Priya Raman <priya.raman@inbox.com>
+To: support@mailmind.com
+Date: Tue, 27 Oct 2026 19:03:00 +0000
+Intent: refund_status
+Subject: Refund + address thing
+
+
+Hello Northwind team,
+
+Two things. First, I returned the linen throw on October 9 (the prepaid label, tracking shows delivered back to you on October 14), and I still have not seen the refund on my card. Could you tell me where the refund is and when it should land?
+
+Second, I moved last week, so I need to update the delivery address on my account. I think there is a settings page for that but I could not find it. Thanks for your help.
+
+Priya
+
+#DIVIDER#
+3
+From: Gwen Lovell <gwen.lovell@example.com>
+To: support@mailmind.com
+Date: Wed, 28 Oct 2026 12:47:00 +0000
+Intent: shipping_delivery
+Subject: Tracking weirdness
+
+
+Tracking says delivered but nothing arrived. What now?
+
+
+#DIVIDER#
+4
+From: Arjun Kapoor <arjun.kapoor@mailbox.org>
+To: support@mailmind.com
+Date: Thu, 29 Oct 2026 09:05:00 +0000
+Intent: discount_promotion
+Subject: Question about my last order
+
+
+So my cousin is getting married in Lisbon in January and I have been running around for weeks, first the venue, then the caterer who wanted a deposit on a Tuesday, then my mum calling every evening about the seating plan. Anyway in the middle of all that I finally sat down to buy the gift set you sell, and I saw on your newsletter from Oct 22 there was a code, something like FALLSAVE20 or FALLSAVE25, I cannot remember which. I wrote it down on a sticky note and the sticky note fell into the bin at work. Is there a list of current codes? More importantly, does the code stack with the Oct 22 sale or do you only take one? Thanks, Arjun
+
+
+#DIVIDER#
+5
+From: Helen Store <helen.store@example.com>
+To: support@mailmind.com
+Date: Thu, 29 Oct 2026 14:30:00 +0000
+Intent: missing_incorrect_items
+Subject: FW: FW: box
+
+> ----- Forwarded message -----
+> From: Northwind Orders <orders@northwind.example>
+> Date: Mon, 26 Oct 2026
+> Subject: Your order MM10650 has shipped
+>
+> Your order MM10650 (3 items) has shipped.
+> Items: ceramic bowl set, bamboo cutting board, oat milk frother.
+
+Hi, I got the box today but only the bowl set and cutting board are inside. The frother is missing and there is no slip. Could someone send the frother or refund that one item? Thank you.
+
+Helen Store
+Operations Lead | Harbour Street Café
+t: 0161 555 0140 | www.harbourcafe.example
+This email and any attachments are confidential.
+
+> On Tue, 27 Oct 2026 at 08:14, Northwind Support wrote:
+> Thanks for getting in touch. Your order is on its way.
+
+
+#DIVIDER#
+6
+From: Sam Okafor <sam.okafor@inbox.com>
+To: support@mailmind.com
+Date: Fri, 30 Oct 2026 07:58:00 +0000
+Intent: return_exchange
+Subject: that thing i got
+
+
+hey, the thing i got last week is not really what i expected. the color is kinda different from the pic and it feels cheap. can i send it back or something? i dont really know the order number off the top of my head, sorry, it was the big green one i think
+
+
+#DIVIDER#
+7
+From: Maureen Dunne <maureen.dunne@example.net>
+To: support@mailmind.com
+Date: Fri, 30 Oct 2026 11:19:00 +0000
+Intent: damaged_defective_product
+Subject: Lovely lamp, truly
+
+
+Oh wonderful, what a treat. Your Northwind floor lamp (order MM10688) arrived and it flickers like a horror film set every time the dimmer goes past halfway. I am sure this is what the catalogue meant by "ambient". I am thrilled to have a lamp that suddenly decides it is a strobe. Anyway, is there a warranty replacement for faulty electrics or do I just have to sit in the dark and enjoy the experience?
+
+
+#DIVIDER#
+8
+From: Jonas Keller <jonas.keller@example.com>
+To: support@mailmind.com
+Date: Sat, 31 Oct 2026 10:02:00 +0000
+Intent: refund_status
+Subject: Mug return
+
+
+Hola, I returned the mug on Oct 14 (label printed, dropped at the depot). Cuándo llega mi reembolso? I see nothing on my bank yet. Bitte schnell, thanks. Jonas
+
+
+#DIVIDER#
+9
+From: Rachel Brenner <rachel.brenner@mailbox.org>
+To: support@mailmind.com
+Date: Sat, 31 Oct 2026 13:44:00 +0000
+Intent: discount_promotion
+Subject: Cancel my order?!
+
+
+Hi there, I am not asking you to cancel anything, sorry for the subject line. I got your newsletter on Oct 25 with code HARVEST15 for 15 percent off orders over 60. I tried it at checkout today and it says expired, but the newsletter said valid until Nov 2. Can you honour it for my basket? Thanks, Rachel
+
+
+#DIVIDER#
+10
+From: Felix Adeyemi <felix.a@inbox.com>
+To: support@mailmind.com
+Date: Mon, 26 Oct 2026 15:21:00 +0000
+Intent: shipping_delivery
+Subject: Hello from Leeds
+
+
+Hello Northwind team, I hope you are well. It has been a grey week here in Leeds and my grandmother turned ninety-one on Saturday, we had a small lunch and she insisted on a second cake. My dog Biscuit is recovering from his vaccinations and has been sulking about it. Anyway, I am buying a sofa cushion set for her flat in Bristol as a gift. Could you tell me whether express shipping is available to Bristol and roughly how many working days it takes? Many thanks, Felix
+
+
+#DIVIDER#
+11
+From: Ellen Marsh <ellen.marsh@example.com>
+To: support@mailmind.com
+Date: Mon, 26 Oct 2026 17:50:00 +0000
+Intent: return_exchange
+Subject: Very disappointed with the return policy
+
+
+I have to say I was really let down when I bought the wool throw. Your site said final sale on the page but the product page listing also said 30-day returns, which is confusing and honestly a bit annoying. Before I write a full review, I just need a simple answer: is the 30-day return window counted from the delivery date or from the order date? Thank you.
+
+Ellen

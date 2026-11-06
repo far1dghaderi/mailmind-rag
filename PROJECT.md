@@ -134,7 +134,7 @@ Hello, I placed order #MM10482 ...
 
 ## Evaluation
 
-One command will run the whole eval and write a dated file to `results/`. Metrics:
+`npm run eval` runs the whole eval and writes dated files to `results/`. Metrics:
 
 - Classification accuracy, a per-intent breakdown, and a confusion matrix. Likely confusing pairs: `order_status`/`shipping_delivery`, `return_exchange`/`refund_status`, `damaged_defective_product`/`missing_incorrect_items`.
 - Retrieval hit rate: is the right chunk in the top-k?
@@ -143,6 +143,33 @@ One command will run the whole eval and write a dated file to `results/`. Metric
 - Confidence calibration: are high-confidence classifications more often correct?
 
 Datasets: the labelled emails, about 12 deliberately messy ones (two intents in one, vague subject, empty body, forwarded thread), about 40 answerable questions with expected answers and source chunks, about 10 unanswerable questions, and multi-chunk questions that need two policies together.
+
+### Baseline (2026-11-06, llama3.1:8b, classification prompt v1, answer prompt v1, k=3, cutoff 0.6)
+
+Classification, 54 labelled emails (42 clean + 12 messy), identical in three runs:
+
+| | Result |
+|---|---|
+| Clean emails | 39/42 = 92.9% |
+| Messy emails | 10/12 = 83.3% |
+| All | 49/54 = 90.7% |
+| Said confidence 90-100 | 33/35 right = 94.3% |
+| Said confidence 70-89 | 15/18 right = 83.3% |
+
+Question answering, 80 questions (64 answerable, 16 unanswerable), identical in two runs:
+
+| | Result |
+|---|---|
+| Right chunk in top-3 | 55/64 = 85.9% |
+| Right chunk after the 0.6 cutoff | 53/64 = 82.8% |
+| Unanswerable questions refused | 16/16 = 100% |
+| Answerable questions answered (not refused) | 58/64 = 90.6% |
+| Answers citing a correct source | 47/58 = 81.0% |
+| **Answers correct (estimate)** | **about 50/64 = 78%** strictly, 53/64 = 83% counting "partly" |
+
+How answer correctness was measured: a cheap fact check (flipped yes/no, different numbers) marked 39 answers confirmed, 5 wrong, 14 undecidable. I read all 14 undecidable answers plus 6 of the confirmed ones by hand (`results/2026-11-06-answer-handcheck.json`): 11 right and 3 partly in the first group, 6 of 6 right in the second. The other 33 confirmed answers were not read, so the 78% assumes they are right too; it is an estimate, not a count. All 5 answers marked wrong were wrong.
+
+Known failures to attack first: multi-chunk questions (8 of the 17 retrieval or citation failures), the model refusing when one inference is needed (3 questions), one-word answers with the wrong yes/no (q01, q54, q64, q73), and the cutoff dropping a needed chunk (q03, q14).
 
 ### First end-to-end look (7 seed questions, answer prompt v1, llama3.1:8b)
 
@@ -233,10 +260,10 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 
 ### Phase 2: evaluation and baseline
 
-- [ ] Add about 12 messy emails
+- [x] Add 12 messy emails (`data/messy-emails.txt`, labels checked by hand)
 - [x] Build the Q&A set: `eval/qa-set.json`, 80 questions (53 answerable, 11 multi-chunk, 16 unanswerable) covering all seven documents, checked by `npx tsx scripts/check-qa.ts`
-- [ ] Write the one-command eval script (accuracy, confusion matrix, retrieval hit rate, answer correctness, refusal accuracy, calibration)
-- [ ] Record the full baseline numbers
+- [x] Write the one-command eval script: `npm run eval` (classification accuracy, confusion matrix, calibration; retrieval hit rate, refusal accuracy, citations, fact-checked answers)
+- [x] Record the full baseline numbers (see "Baseline" below)
 
 ### Phase 3: improve and lock in
 

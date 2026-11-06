@@ -1,0 +1,6 @@
+{
+  "run": "results/2026-11-06-qa-eval.json",
+  "note": "Hand verdicts on the 20 answers in eval/answer-sample.md: all 14 the fact check could not judge, plus 6 it confirmed.",
+  "unchecked": { "right": ["q04","q12","q15","q23","q30","q33","q35","q39","q47","q56","q77"], "partly": ["q26","q41","q71"] },
+  "confirmed": { "right": ["q05","q16","q24","q38","q58","q66"], "partly": [], "wrong": [] }
+}

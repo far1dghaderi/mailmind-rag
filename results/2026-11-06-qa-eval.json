@@ -1,0 +1,2053 @@
+{
+  "date": "2026-11-06",
+  "model": "llama3.1:8b",
+  "answerPromptVersion": "v1",
+  "retrieval": {
+    "k": 3,
+    "threshold": 0.6
+  },
+  "summary": {
+    "retrievalTopK": {
+      "hit": 55,
+      "total": 64
+    },
+    "retrievalAfterCutoff": {
+      "hit": 53,
+      "total": 64
+    },
+    "answeredAnswerable": {
+      "hit": 58,
+      "total": 64
+    },
+    "refusedUnanswerable": {
+      "hit": 16,
+      "total": 16
+    },
+    "cited": {
+      "hit": 47,
+      "total": 58
+    },
+    "facts": {
+      "confirmed": 39,
+      "wrong": 5,
+      "unchecked": 14,
+      "refused": 6
+    }
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "type": "answerable",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q02",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q03",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": false,
+      "decisionOk": false
+    },
+    {
+      "id": "q04",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q05",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q06",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q07",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q08",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q09",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q10",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q11",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q12",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q13",
+      "type": "answerable",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q14",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": false,
+      "decisionOk": false
+    },
+    {
+      "id": "q15",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q16",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q17",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q18",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q19",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q20",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q21",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q22",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q23",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q24",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q25",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q26",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q27",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q28",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q29",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q30",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q31",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q32",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q33",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q34",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q35",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q36",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q37",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q38",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q39",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q40",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q41",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q42",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q43",
+      "type": "answerable",
+      "inTopK": false,
+      "afterCutoff": false,
+      "decisionOk": false
+    },
+    {
+      "id": "q44",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q45",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q46",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q47",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q48",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q49",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q50",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q51",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q52",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q53",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q54",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q55",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q56",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q57",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q58",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q59",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q60",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q61",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q62",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q63",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q64",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q65",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q66",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q67",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q68",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q69",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q70",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q71",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q72",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q73",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q74",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q75",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q76",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q77",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q78",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q79",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q80",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "q01",
+      "answered": true,
+      "citations": [
+        "preorders#6"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#6",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#6"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q02",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#3",
+        "preorders#1",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "giftcards#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q03",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#6",
+        "returns#1",
+        "returns#3"
+      ],
+      "relevant": [],
+      "reason": "no_relevant_chunks"
+    },
+    {
+      "id": "q04",
+      "answered": true,
+      "citations": [
+        "returns#2"
+      ],
+      "topK": [
+        "giftcards#5",
+        "returns#5",
+        "returns#2"
+      ],
+      "relevant": [
+        "giftcards#5",
+        "returns#5",
+        "returns#2"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "id": "q05",
+      "answered": true,
+      "citations": [
+        "returns#3",
+        "returns#6"
+      ],
+      "topK": [
+        "returns#3",
+        "returns#6",
+        "delivery#5"
+      ],
+      "relevant": [
+        "returns#3",
+        "returns#6",
+        "delivery#5"
+      ],
+      "answer": "No, you don't have to pay to ship it back. Contact us within 48 hours of delivery with a photo."
+    },
+    {
+      "id": "q06",
+      "answered": true,
+      "citations": [
+        "returns#4"
+      ],
+      "topK": [
+        "returns#4",
+        "returns#6",
+        "preorders#4"
+      ],
+      "relevant": [
+        "returns#4"
+      ],
+      "answer": "Yes, subject to stock availability."
+    },
+    {
+      "id": "q07",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#1",
+        "giftcards#3",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "giftcards#1",
+        "giftcards#3",
+        "giftcards#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q08",
+      "answered": true,
+      "citations": [
+        "shipping#2"
+      ],
+      "topK": [
+        "shipping#2",
+        "returns#1",
+        "shipping#3"
+      ],
+      "relevant": [
+        "shipping#2",
+        "returns#1",
+        "shipping#3"
+      ],
+      "answer": "3-5 business days"
+    },
+    {
+      "id": "q09",
+      "answered": true,
+      "citations": [
+        "shipping#2"
+      ],
+      "topK": [
+        "shipping#2",
+        "shipping#3",
+        "delivery#1"
+      ],
+      "relevant": [
+        "shipping#2",
+        "shipping#3"
+      ],
+      "answer": "$4.99"
+    },
+    {
+      "id": "q10",
+      "answered": true,
+      "citations": [
+        "shipping#3"
+      ],
+      "topK": [
+        "shipping#3",
+        "delivery#3",
+        "shipping#2"
+      ],
+      "relevant": [
+        "shipping#3",
+        "delivery#3",
+        "shipping#2"
+      ],
+      "answer": "1-2 business days"
+    },
+    {
+      "id": "q11",
+      "answered": true,
+      "citations": [
+        "shipping#3"
+      ],
+      "topK": [
+        "shipping#3",
+        "shipping#2",
+        "delivery#1"
+      ],
+      "relevant": [
+        "shipping#3",
+        "shipping#2",
+        "delivery#1"
+      ],
+      "answer": "$12.99"
+    },
+    {
+      "id": "q12",
+      "answered": true,
+      "citations": [
+        "shipping#4"
+      ],
+      "topK": [
+        "shipping#4",
+        "delivery#4",
+        "delivery#5"
+      ],
+      "relevant": [
+        "shipping#4",
+        "delivery#4",
+        "delivery#5"
+      ],
+      "answer": "yes"
+    },
+    {
+      "id": "q13",
+      "answered": true,
+      "citations": [
+        "preorders#5",
+        "accounts#4",
+        "shipping#7"
+      ],
+      "topK": [
+        "preorders#5",
+        "accounts#4",
+        "shipping#7"
+      ],
+      "relevant": [
+        "preorders#5",
+        "accounts#4",
+        "shipping#7"
+      ],
+      "answer": "No specific information is provided about receiving an email when the package leaves."
+    },
+    {
+      "id": "q14",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#6",
+        "shipping#6",
+        "accounts#2"
+      ],
+      "relevant": [
+        "returns#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q15",
+      "answered": true,
+      "citations": [
+        "shipping#7"
+      ],
+      "topK": [
+        "shipping#7",
+        "returns#6",
+        "delivery#5"
+      ],
+      "relevant": [
+        "shipping#7",
+        "returns#6",
+        "delivery#5"
+      ],
+      "answer": "Contact us to start a lost package claim."
+    },
+    {
+      "id": "q16",
+      "answered": true,
+      "citations": [
+        "shipping#8"
+      ],
+      "topK": [
+        "shipping#8",
+        "delivery#4",
+        "delivery#2"
+      ],
+      "relevant": [
+        "shipping#8"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q17",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "accounts#2",
+        "giftcards#3",
+        "discounts#1"
+      ],
+      "relevant": [
+        "accounts#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q18",
+      "answered": true,
+      "citations": [
+        "discounts#1"
+      ],
+      "topK": [
+        "discounts#1",
+        "giftcards#3",
+        "giftcards#1"
+      ],
+      "relevant": [
+        "discounts#1"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q19",
+      "answered": true,
+      "citations": [
+        "discounts#1"
+      ],
+      "topK": [
+        "discounts#1",
+        "giftcards#1",
+        "preorders#1"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#1"
+      ],
+      "answer": "10%"
+    },
+    {
+      "id": "q20",
+      "answered": true,
+      "citations": [
+        "discounts#1"
+      ],
+      "topK": [
+        "discounts#1",
+        "giftcards#6",
+        "giftcards#3"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#6",
+        "giftcards#3"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q21",
+      "answered": true,
+      "citations": [
+        "discounts#2",
+        "discounts#1"
+      ],
+      "topK": [
+        "discounts#2",
+        "discounts#1",
+        "preorders#2"
+      ],
+      "relevant": [
+        "discounts#2",
+        "discounts#1",
+        "preorders#2"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q22",
+      "answered": true,
+      "citations": [
+        "discounts#3"
+      ],
+      "topK": [
+        "discounts#3",
+        "giftcards#5",
+        "giftcards#2"
+      ],
+      "relevant": [
+        "discounts#3",
+        "giftcards#5",
+        "giftcards#2"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "id": "q23",
+      "answered": true,
+      "citations": [
+        "discounts#4"
+      ],
+      "topK": [
+        "discounts#4",
+        "giftcards#2",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "discounts#4",
+        "giftcards#2",
+        "giftcards#4"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q24",
+      "answered": true,
+      "citations": [
+        "discounts#5"
+      ],
+      "topK": [
+        "discounts#5",
+        "returns#6",
+        "returns#5"
+      ],
+      "relevant": [
+        "discounts#5"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "id": "q25",
+      "answered": true,
+      "citations": [
+        "discounts#6"
+      ],
+      "topK": [
+        "discounts#6",
+        "giftcards#3",
+        "giftcards#1"
+      ],
+      "relevant": [
+        "discounts#6",
+        "giftcards#3",
+        "giftcards#1"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q26",
+      "answered": true,
+      "citations": [
+        "discounts#5"
+      ],
+      "topK": [
+        "discounts#5",
+        "returns#3",
+        "preorders#6"
+      ],
+      "relevant": [
+        "discounts#5"
+      ],
+      "answer": "You can return the headphones and get a refund of the price difference."
+    },
+    {
+      "id": "q27",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#3",
+        "discounts#1",
+        "preorders#1"
+      ],
+      "relevant": [
+        "giftcards#3",
+        "discounts#1",
+        "preorders#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q28",
+      "answered": true,
+      "citations": [
+        "returns#3",
+        "returns#6"
+      ],
+      "topK": [
+        "returns#3",
+        "returns#6",
+        "delivery#5"
+      ],
+      "relevant": [
+        "returns#3",
+        "returns#6",
+        "delivery#5"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q29",
+      "answered": true,
+      "citations": [
+        "returns#6"
+      ],
+      "topK": [
+        "returns#6",
+        "returns#3",
+        "delivery#5"
+      ],
+      "relevant": [
+        "returns#6",
+        "returns#3",
+        "delivery#5"
+      ],
+      "answer": "48 hours"
+    },
+    {
+      "id": "q30",
+      "answered": true,
+      "citations": [
+        "returns#4"
+      ],
+      "topK": [
+        "returns#4",
+        "preorders#4",
+        "preorders#7"
+      ],
+      "relevant": [
+        "returns#4",
+        "preorders#4"
+      ],
+      "answer": "We allow exchanges for size or color, subject to stock availability."
+    },
+    {
+      "id": "q31",
+      "answered": true,
+      "citations": [
+        "shipping#1"
+      ],
+      "topK": [
+        "shipping#1",
+        "delivery#2",
+        "delivery#3"
+      ],
+      "relevant": [
+        "shipping#1",
+        "delivery#2",
+        "delivery#3"
+      ],
+      "answer": "yes"
+    },
+    {
+      "id": "q32",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#6",
+        "accounts#2",
+        "accounts#4"
+      ],
+      "relevant": [
+        "preorders#6",
+        "accounts#2",
+        "accounts#4"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q33",
+      "answered": true,
+      "citations": [
+        "shipping#2",
+        "shipping#1"
+      ],
+      "topK": [
+        "shipping#2",
+        "shipping#1",
+        "shipping#8"
+      ],
+      "relevant": [
+        "shipping#2",
+        "shipping#1",
+        "shipping#8"
+      ],
+      "answer": "We offer two shipping options: Standard Shipping"
+    },
+    {
+      "id": "q34",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#3",
+        "returns#4",
+        "returns#1"
+      ],
+      "relevant": [],
+      "reason": "no_relevant_chunks"
+    },
+    {
+      "id": "q35",
+      "answered": true,
+      "citations": [
+        "shipping#7"
+      ],
+      "topK": [
+        "shipping#7",
+        "preorders#5",
+        "returns#6"
+      ],
+      "relevant": [
+        "shipping#7",
+        "preorders#5",
+        "returns#6"
+      ],
+      "answer": "Please contact us to start a lost package claim."
+    },
+    {
+      "id": "q36",
+      "answered": true,
+      "citations": [
+        "returns#2"
+      ],
+      "topK": [
+        "returns#2",
+        "delivery#5",
+        "returns#1"
+      ],
+      "relevant": [
+        "returns#2",
+        "delivery#5",
+        "returns#1"
+      ],
+      "answer": "5-7 business days"
+    },
+    {
+      "id": "q37",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#3",
+        "shipping#1",
+        "returns#7"
+      ],
+      "relevant": [
+        "returns#3",
+        "shipping#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q38",
+      "answered": true,
+      "citations": [
+        "returns#6",
+        "returns#3"
+      ],
+      "topK": [
+        "returns#6",
+        "returns#3",
+        "delivery#5"
+      ],
+      "relevant": [
+        "returns#6",
+        "returns#3"
+      ],
+      "answer": "yes"
+    },
+    {
+      "id": "q39",
+      "answered": true,
+      "citations": [
+        "returns#3"
+      ],
+      "topK": [
+        "preorders#6",
+        "delivery#5",
+        "returns#3"
+      ],
+      "relevant": [
+        "preorders#6",
+        "delivery#5",
+        "returns#3"
+      ],
+      "answer": "The customer is responsible for return shipping, unless the item is damaged or wrong."
+    },
+    {
+      "id": "q40",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#7",
+        "shipping#5",
+        "discounts#1"
+      ],
+      "relevant": [
+        "returns#7",
+        "shipping#5",
+        "discounts#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q41",
+      "answered": true,
+      "citations": [
+        "returns#1"
+      ],
+      "topK": [
+        "returns#1",
+        "returns#6",
+        "delivery#5"
+      ],
+      "relevant": [
+        "returns#1",
+        "returns#6",
+        "delivery#5"
+      ],
+      "answer": "You will be eligible for a return."
+    },
+    {
+      "id": "q42",
+      "answered": true,
+      "citations": [
+        "returns#4"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#4",
+        "returns#3"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#4",
+        "returns#3"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q43",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#1",
+        "giftcards#3",
+        "returns#4"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q44",
+      "answered": true,
+      "citations": [
+        "shipping#2",
+        "shipping#3"
+      ],
+      "topK": [
+        "shipping#2",
+        "shipping#3",
+        "preorders#5"
+      ],
+      "relevant": [
+        "shipping#2",
+        "shipping#3",
+        "preorders#5"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q45",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "shipping#1",
+        "returns#3",
+        "shipping#5"
+      ],
+      "relevant": [
+        "shipping#1",
+        "returns#3",
+        "shipping#5"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q46",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#4",
+        "discounts#5",
+        "preorders#1"
+      ],
+      "relevant": [
+        "preorders#4",
+        "discounts#5"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q47",
+      "answered": true,
+      "citations": [
+        "returns#5",
+        "discounts#1"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#5",
+        "discounts#1"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#5",
+        "discounts#1"
+      ],
+      "answer": "the amount actually paid"
+    },
+    {
+      "id": "q48",
+      "answered": true,
+      "citations": [
+        "discounts#3",
+        "discounts#4"
+      ],
+      "topK": [
+        "discounts#3",
+        "giftcards#4",
+        "discounts#4"
+      ],
+      "relevant": [
+        "discounts#3",
+        "giftcards#4",
+        "discounts#4"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q49",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#1",
+        "delivery#5",
+        "preorders#6"
+      ],
+      "relevant": [
+        "returns#1",
+        "delivery#5",
+        "preorders#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q50",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#7",
+        "returns#6",
+        "preorders#1"
+      ],
+      "relevant": [],
+      "reason": "no_relevant_chunks"
+    },
+    {
+      "id": "q51",
+      "answered": true,
+      "citations": [
+        "accounts#1"
+      ],
+      "topK": [
+        "accounts#1",
+        "accounts#6",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "accounts#1",
+        "accounts#6",
+        "giftcards#4"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q52",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#6",
+        "giftcards#3",
+        "giftcards#1"
+      ],
+      "relevant": [
+        "giftcards#6",
+        "giftcards#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q53",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#1",
+        "discounts#6",
+        "giftcards#3"
+      ],
+      "relevant": [
+        "giftcards#1",
+        "discounts#6",
+        "giftcards#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q54",
+      "answered": true,
+      "citations": [
+        "shipping#2",
+        "delivery#1"
+      ],
+      "topK": [
+        "shipping#2",
+        "delivery#1",
+        "preorders#1"
+      ],
+      "relevant": [
+        "shipping#2",
+        "delivery#1",
+        "preorders#1"
+      ],
+      "answer": "No, someone will not have to sign for it, and you will not be charged for shipping."
+    },
+    {
+      "id": "q55",
+      "answered": true,
+      "citations": [
+        "preorders#7"
+      ],
+      "topK": [
+        "preorders#7",
+        "preorders#6",
+        "preorders#3"
+      ],
+      "relevant": [
+        "preorders#7",
+        "preorders#6",
+        "preorders#3"
+      ],
+      "answer": "1 to 6 weeks"
+    },
+    {
+      "id": "q56",
+      "answered": true,
+      "citations": [
+        "delivery#2"
+      ],
+      "topK": [
+        "delivery#5",
+        "delivery#4",
+        "delivery#2"
+      ],
+      "relevant": [
+        "delivery#5",
+        "delivery#4",
+        "delivery#2"
+      ],
+      "answer": "If a signature is required and no one signs, the carrier leaves a notice instead of the parcel."
+    },
+    {
+      "id": "q57",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#3",
+        "discounts#1",
+        "discounts#2"
+      ],
+      "relevant": [
+        "discounts#3",
+        "discounts#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q58",
+      "answered": true,
+      "citations": [
+        "accounts#2",
+        "accounts#3"
+      ],
+      "topK": [
+        "accounts#2",
+        "accounts#3",
+        "accounts#5"
+      ],
+      "relevant": [
+        "accounts#2",
+        "accounts#3",
+        "accounts#5"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q59",
+      "answered": true,
+      "citations": [
+        "returns#3",
+        "returns#6"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#3",
+        "returns#6"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#3",
+        "returns#6"
+      ],
+      "answer": "Yes, you can send it back. You don't have to pay for the return postage."
+    },
+    {
+      "id": "q60",
+      "answered": true,
+      "citations": [
+        "giftcards#3"
+      ],
+      "topK": [
+        "giftcards#3",
+        "discounts#6",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "giftcards#3",
+        "discounts#6",
+        "giftcards#6"
+      ],
+      "answer": "yes"
+    },
+    {
+      "id": "q61",
+      "answered": true,
+      "citations": [
+        "preorders#3"
+      ],
+      "topK": [
+        "preorders#3",
+        "preorders#5",
+        "preorders#7"
+      ],
+      "relevant": [
+        "preorders#3",
+        "preorders#5",
+        "preorders#7"
+      ],
+      "answer": "yes"
+    },
+    {
+      "id": "q62",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "delivery#2",
+        "delivery#4",
+        "returns#6"
+      ],
+      "relevant": [
+        "delivery#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q63",
+      "answered": true,
+      "citations": [
+        "delivery#3"
+      ],
+      "topK": [
+        "delivery#4",
+        "delivery#3",
+        "delivery#2"
+      ],
+      "relevant": [
+        "delivery#4",
+        "delivery#3",
+        "delivery#2"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q64",
+      "answered": true,
+      "citations": [
+        "delivery#4",
+        "delivery#2"
+      ],
+      "topK": [
+        "delivery#4",
+        "delivery#2",
+        "delivery#5"
+      ],
+      "relevant": [
+        "delivery#4",
+        "delivery#2",
+        "delivery#5"
+      ],
+      "answer": "no"
+    },
+    {
+      "id": "q65",
+      "answered": true,
+      "citations": [
+        "giftcards#4"
+      ],
+      "topK": [
+        "giftcards#4",
+        "giftcards#2",
+        "giftcards#5"
+      ],
+      "relevant": [
+        "giftcards#4",
+        "giftcards#2",
+        "giftcards#5"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q66",
+      "answered": true,
+      "citations": [
+        "accounts#5",
+        "accounts#4"
+      ],
+      "topK": [
+        "accounts#5",
+        "accounts#2",
+        "accounts#4"
+      ],
+      "relevant": [
+        "accounts#5",
+        "accounts#2",
+        "accounts#4"
+      ],
+      "answer": "Your personal data will be removed within 45 days, but your old orders will still be kept for 7 years for accounting purposes."
+    },
+    {
+      "id": "q67",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "accounts#1",
+        "shipping#6",
+        "giftcards#5"
+      ],
+      "relevant": [
+        "accounts#1",
+        "shipping#6",
+        "giftcards#5"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q68",
+      "answered": true,
+      "citations": [
+        "preorders#2"
+      ],
+      "topK": [
+        "preorders#2",
+        "preorders#1",
+        "preorders#4"
+      ],
+      "relevant": [
+        "preorders#2",
+        "preorders#1"
+      ],
+      "answer": "No"
+    },
+    {
+      "id": "q69",
+      "answered": true,
+      "citations": [
+        "giftcards#5"
+      ],
+      "topK": [
+        "giftcards#5",
+        "giftcards#2",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "giftcards#5",
+        "giftcards#2",
+        "giftcards#6"
+      ],
+      "answer": "up to 3 times"
+    },
+    {
+      "id": "q70",
+      "answered": true,
+      "citations": [
+        "accounts#4",
+        "shipping#5"
+      ],
+      "topK": [
+        "accounts#4",
+        "shipping#5",
+        "preorders#5"
+      ],
+      "relevant": [
+        "accounts#4",
+        "shipping#5",
+        "preorders#5"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "id": "q71",
+      "answered": true,
+      "citations": [
+        "giftcards#4",
+        "giftcards#3"
+      ],
+      "topK": [
+        "giftcards#4",
+        "giftcards#3",
+        "giftcards#5"
+      ],
+      "relevant": [
+        "giftcards#4",
+        "giftcards#3",
+        "giftcards#5"
+      ],
+      "answer": "No, it has no expiry date."
+    },
+    {
+      "id": "q72",
+      "answered": true,
+      "citations": [
+        "preorders#5"
+      ],
+      "topK": [
+        "preorders#5",
+        "preorders#1",
+        "preorders#4"
+      ],
+      "relevant": [
+        "preorders#5",
+        "preorders#1",
+        "preorders#4"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "id": "q73",
+      "answered": true,
+      "citations": [
+        "accounts#6"
+      ],
+      "topK": [
+        "accounts#6",
+        "delivery#5",
+        "accounts#5"
+      ],
+      "relevant": [
+        "accounts#6",
+        "delivery#5"
+      ],
+      "answer": "yes"
+    },
+    {
+      "id": "q74",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "delivery#3",
+        "delivery#4",
+        "delivery#2"
+      ],
+      "relevant": [
+        "delivery#3",
+        "delivery#4",
+        "delivery#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q75",
+      "answered": true,
+      "citations": [
+        "delivery#2"
+      ],
+      "topK": [
+        "delivery#2",
+        "delivery#5",
+        "delivery#4"
+      ],
+      "relevant": [
+        "delivery#2",
+        "delivery#5",
+        "delivery#4"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "id": "q76",
+      "answered": true,
+      "citations": [
+        "giftcards#2"
+      ],
+      "topK": [
+        "giftcards#2",
+        "giftcards#5",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "giftcards#2",
+        "giftcards#5",
+        "giftcards#4"
+      ],
+      "answer": "The code will be sent to the email address you entered at purchase within 15 minutes of the purchase."
+    },
+    {
+      "id": "q77",
+      "answered": true,
+      "citations": [
+        "preorders#1"
+      ],
+      "topK": [
+        "preorders#4",
+        "preorders#1",
+        "preorders#7"
+      ],
+      "relevant": [
+        "preorders#4",
+        "preorders#1",
+        "preorders#7"
+      ],
+      "answer": "When it ships"
+    },
+    {
+      "id": "q78",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#3",
+        "discounts#1",
+        "preorders#1"
+      ],
+      "relevant": [
+        "discounts#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q79",
+      "answered": true,
+      "citations": [
+        "giftcards#6"
+      ],
+      "topK": [
+        "giftcards#6",
+        "giftcards#5",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "giftcards#6",
+        "giftcards#5",
+        "giftcards#4"
+      ],
+      "answer": "10"
+    },
+    {
+      "id": "q80",
+      "answered": true,
+      "citations": [
+        "accounts#3"
+      ],
+      "topK": [
+        "accounts#3",
+        "preorders#3",
+        "preorders#7"
+      ],
+      "relevant": [
+        "accounts#3",
+        "preorders#3",
+        "preorders#7"
+      ],
+      "answer": "no"
+    }
+  ]
+}
