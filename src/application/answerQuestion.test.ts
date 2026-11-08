@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { answerQuestion } from "./answerQuestion.js";
+import { ANSWER_PROMPT_VERSION, answerQuestion } from "./answerQuestion.js";
 import type { ChunkStore, Embedder, Hit, Llm } from "./ports.js";
 
 const hit = (id: string, text: string, similarity: number): Hit => ({ id, doc: "d", section: `Sec ${id}`, text, similarity });
@@ -52,4 +52,11 @@ test("refuses with the reason when the model reply fails the checks", async () =
 
 test("rejects an empty question", async () => {
   await assert.rejects(answerQuestion("  ", setup([], "{}").deps), /empty/);
+});
+
+test("prompt asks for a complete sentence, not a one-word reply", async () => {
+  const { deps, prompts } = setup([hit("a#1", "Returns within 14 days.", 0.8)], `{"answer":"No.","citations":["a#1"]}`);
+  await answerQuestion("Can I return after 20 days?", deps);
+  assert.match(prompts[0]!, /complete sentence/i);
+  assert.equal(ANSWER_PROMPT_VERSION, "v2");
 });

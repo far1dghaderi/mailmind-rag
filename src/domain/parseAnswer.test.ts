@@ -56,3 +56,8 @@ test("chunk ids written inside the answer text do not count as numbers", () => {
   const r = parse(`{"answer":"Final sale (returns#4).","citations":["returns#4"]}`);
   assert.equal(r.ok, true);
 });
+
+test("answerable:false is a refusal even when an answer is attached; answerable:true or absent is judged as before", () => {
+  assert.deepEqual(parse(`{"answerable":false,"answer":"No.","citations":["returns#4"]}`), { ok: false, reason: "model_declined" });
+  assert.equal(parse(`{"answerable":true,"answer":"No.","citations":["returns#4"]}`).ok, true);
+});

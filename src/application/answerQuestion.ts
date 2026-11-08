@@ -2,7 +2,7 @@ import { parseAnswer, type Refusal } from "../domain/parseAnswer.js";
 import { RETRIEVAL_DEFAULTS, search, type SearchResult } from "./retrieve.js";
 import type { ChunkStore, Embedder, Hit, Llm } from "./ports.js";
 
-export const ANSWER_PROMPT_VERSION = "v1";
+export const ANSWER_PROMPT_VERSION = "v2";
 
 export type NoAnswerReason = "no_relevant_chunks" | Refusal;
 
@@ -16,9 +16,10 @@ export type Answer = AnswerResult & { search: SearchResult };
 const buildPrompt = (question: string, chunks: Hit[]) => `You answer customer questions for Northwind Goods using ONLY the context below.
 Rules:
 - Use only facts stated in the context. Do not add numbers, fees, time limits, or rules that are not there.
-- If the context does not contain the answer, reply {"answer": null, "citations": []}.
+- First decide whether the context states what is needed to answer the question. If it does not, set "answerable" to false and "answer" to null. Do not guess, and do not answer "no" just because the context is silent.
+- If it does, set "answerable" to true and write one or two complete sentences a customer could be sent as written, starting with yes or no when the question asks for it.
 - Cite the ids of the chunks you used.
-Reply with only JSON: {"answer": "<short answer>", "citations": ["<chunk id>", ...]}
+Reply with only JSON: {"answerable": true or false, "answer": "<one or two complete sentences, or null>", "citations": ["<chunk id>", ...]}
 
 Context:
 ${chunks.map((c) => `[${c.id}] ${c.section}\n${c.text}`).join("\n\n")}

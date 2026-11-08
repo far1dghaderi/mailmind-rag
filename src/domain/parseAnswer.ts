@@ -17,6 +17,8 @@ export function parseAnswer(raw: string, chunks: { id: string; text: string }[],
   }
   if (!parsed || typeof parsed !== "object") return fail("invalid_output");
 
+  // The model first says whether the context answers the question; "no" wins over any answer it wrote anyway.
+  if (parsed.answerable === false) return fail("model_declined");
   const { answer } = parsed;
   if (answer === null || (typeof answer === "string" && !answer.trim())) return fail("model_declined");
   if (typeof answer !== "string") return fail("invalid_output");
