@@ -72,3 +72,16 @@ Change: "Cite the ids of the chunks you used" became "Cite the id of every chunk
 | Fact check: confirmed / wrong / need a human / refused | 35 / 3 / 18 / 8 | 30 / 4 / 20 / 10 |
 
 Mixed result. The citation rate rose 4.9 points, but two answerable questions that were answered are now refused (q44, q53; q44 had a wrong answer before, so that one is an improvement), and q54 and q80 are now flagged wrong by the fact check. One run on 64 questions, so a swing of 1-2 questions is within what a small prompt change can cause. Citation misses left: q26, q35, q41, q48, q59, q64, q75; five of them are questions where retrieval did not find all needed chunks, so a prompt cannot fix them.
+
+## 2026-11-11, hand-check of the current run (answer prompt v3, k=5, cutoff 0.55)
+
+Read the 20 answers the fact check could not judge: 17 right, 2 partly (q33, q41), 1 wrong (q64). With the 30 confirmed answers assumed right and the 4 screen-marked answers (q54, q73, q75, q80) assumed wrong:
+
+| | Baseline (2026-11-06) | Now |
+|---|---|---|
+| Right | 50 | 47 |
+| Partly | 3 | 2 |
+| Wrong | 5 | 5 |
+| Refused | 6 | 10 |
+
+Correctness did not improve: four more answerable questions are refused, wrong answers are unchanged at 5. What improved is how the answers read (no one-word answers), retrieval (82.8% to 93.8%), citations and classification. Verdicts are in `results/2026-11-11-answer-handcheck.json`.

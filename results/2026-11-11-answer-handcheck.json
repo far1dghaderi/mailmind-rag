@@ -1,0 +1,13 @@
+{
+  "run": "results/2026-11-11-qa-eval.json",
+  "note": "Hand verdicts on the 20 answers the fact check could not judge (items 1-20 of eval/answer-sample.md). The 6 confirmed answers in the sample (items 21-26) were not read this time.",
+  "unchecked": {
+    "right": ["q03","q04","q12","q23","q28","q30","q35","q39","q42","q43","q47","q56","q60","q65","q71","q76","q77"],
+    "partly": ["q33","q41"],
+    "wrong": ["q64"]
+  },
+  "estimate": {
+    "assumption": "the 30 answers the fact check confirmed are right (6 of 6 were right when sampled at the baseline; none sampled this time); the 4 it marked wrong (q54, q73, q75, q80) are wrong",
+    "right": 47, "partly": 2, "wrong": 5, "refused": 10, "total": 64
+  }
+}
