@@ -1,0 +1,2373 @@
+{
+  "date": "2026-11-11",
+  "model": "llama3.1:8b",
+  "answerPromptVersion": "v3",
+  "retrieval": {
+    "k": 5,
+    "threshold": 0.55
+  },
+  "summary": {
+    "retrievalTopK": {
+      "hit": 60,
+      "total": 64
+    },
+    "retrievalAfterCutoff": {
+      "hit": 60,
+      "total": 64
+    },
+    "answeredAnswerable": {
+      "hit": 54,
+      "total": 64
+    },
+    "refusedUnanswerable": {
+      "hit": 16,
+      "total": 16
+    },
+    "cited": {
+      "hit": 47,
+      "total": 54
+    },
+    "facts": {
+      "confirmed": 30,
+      "wrong": 4,
+      "unchecked": 20,
+      "refused": 10
+    }
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q02",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q03",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q04",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q05",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q06",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q07",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q08",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q09",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q10",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q11",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q12",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q13",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q14",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q15",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q16",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q17",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q18",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q19",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q20",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "decisionOk": false
+    },
+    {
+      "id": "q21",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q22",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q23",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q24",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q25",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q26",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q27",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q28",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q29",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q30",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q31",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q32",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q33",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q34",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q35",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q36",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q37",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q38",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q39",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q40",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q41",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q42",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q43",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q44",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q45",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q46",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q47",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q48",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q49",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q50",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q51",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q52",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q53",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q54",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q55",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q56",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q57",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q58",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q59",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q60",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q61",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q62",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q63",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "decisionOk": false
+    },
+    {
+      "id": "q64",
+      "type": "multi_chunk",
+      "inTopK": false,
+      "afterCutoff": false,
+      "cited": false,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q65",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q66",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q67",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q68",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q69",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q70",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q71",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q72",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q73",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q74",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q75",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": false,
+      "facts": "wrong",
+      "decisionOk": true
+    },
+    {
+      "id": "q76",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q77",
+      "type": "multi_chunk",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "unchecked",
+      "decisionOk": true
+    },
+    {
+      "id": "q78",
+      "type": "unanswerable",
+      "decisionOk": true
+    },
+    {
+      "id": "q79",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "confirmed",
+      "decisionOk": true
+    },
+    {
+      "id": "q80",
+      "type": "answerable",
+      "inTopK": true,
+      "afterCutoff": true,
+      "cited": true,
+      "facts": "wrong",
+      "decisionOk": true
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "q01",
+      "answered": true,
+      "citations": [
+        "returns#1"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#6",
+        "delivery#5",
+        "returns#3",
+        "returns#1"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#6",
+        "delivery#5",
+        "returns#3",
+        "returns#1"
+      ],
+      "answer": "Yes, you can still send it back. According to our return policy, you are eligible for a return within 14 days of delivery."
+    },
+    {
+      "id": "q02",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#3",
+        "preorders#1",
+        "giftcards#4",
+        "discounts#1",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "giftcards#3",
+        "preorders#1",
+        "giftcards#4",
+        "discounts#1",
+        "giftcards#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q03",
+      "answered": true,
+      "citations": [
+        "returns#1"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#1",
+        "returns#3",
+        "returns#7",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#1",
+        "returns#3",
+        "returns#7"
+      ],
+      "answer": "To be eligible for a return, the item must be unused and in its original packaging."
+    },
+    {
+      "id": "q04",
+      "answered": true,
+      "citations": [
+        "returns#2"
+      ],
+      "topK": [
+        "giftcards#5",
+        "returns#5",
+        "returns#2",
+        "giftcards#3",
+        "returns#7"
+      ],
+      "relevant": [
+        "giftcards#5",
+        "returns#5",
+        "returns#2",
+        "giftcards#3",
+        "returns#7"
+      ],
+      "answer": "Refunds will be issued to the original payment method."
+    },
+    {
+      "id": "q05",
+      "answered": true,
+      "citations": [
+        "returns#3",
+        "returns#2"
+      ],
+      "topK": [
+        "returns#3",
+        "returns#6",
+        "delivery#5",
+        "returns#2",
+        "returns#1"
+      ],
+      "relevant": [
+        "returns#3",
+        "returns#6",
+        "delivery#5",
+        "returns#2",
+        "returns#1"
+      ],
+      "answer": "No, you do not have to pay to ship it back. Refunds will be issued to the original payment method."
+    },
+    {
+      "id": "q06",
+      "answered": true,
+      "citations": [
+        "returns#4"
+      ],
+      "topK": [
+        "returns#4",
+        "returns#6",
+        "preorders#4",
+        "delivery#5",
+        "returns#3"
+      ],
+      "relevant": [
+        "returns#4",
+        "returns#6",
+        "preorders#4",
+        "delivery#5"
+      ],
+      "answer": "Yes, you can exchange it for a large, subject to stock availability."
+    },
+    {
+      "id": "q07",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#1",
+        "giftcards#3",
+        "giftcards#6",
+        "shipping#1",
+        "accounts#2"
+      ],
+      "relevant": [
+        "giftcards#1",
+        "giftcards#3",
+        "giftcards#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q08",
+      "answered": true,
+      "citations": [
+        "shipping#2"
+      ],
+      "topK": [
+        "shipping#2",
+        "returns#1",
+        "shipping#3",
+        "returns#3",
+        "returns#6"
+      ],
+      "relevant": [
+        "shipping#2",
+        "returns#1",
+        "shipping#3",
+        "returns#3",
+        "returns#6"
+      ],
+      "answer": "Standard shipping takes 3-5 business days."
+    },
+    {
+      "id": "q09",
+      "answered": true,
+      "citations": [
+        "shipping#2"
+      ],
+      "topK": [
+        "shipping#2",
+        "shipping#3",
+        "delivery#1",
+        "returns#3",
+        "discounts#1"
+      ],
+      "relevant": [
+        "shipping#2",
+        "shipping#3",
+        "delivery#1",
+        "returns#3",
+        "discounts#1"
+      ],
+      "answer": "Standard shipping costs $4.99."
+    },
+    {
+      "id": "q10",
+      "answered": true,
+      "citations": [
+        "shipping#3"
+      ],
+      "topK": [
+        "shipping#3",
+        "delivery#3",
+        "shipping#2",
+        "preorders#5",
+        "delivery#2"
+      ],
+      "relevant": [
+        "shipping#3",
+        "delivery#3",
+        "shipping#2",
+        "preorders#5",
+        "delivery#2"
+      ],
+      "answer": "Express Shipping takes 1-2 business days."
+    },
+    {
+      "id": "q11",
+      "answered": true,
+      "citations": [
+        "shipping#3"
+      ],
+      "topK": [
+        "shipping#3",
+        "shipping#2",
+        "delivery#1",
+        "preorders#5",
+        "discounts#1"
+      ],
+      "relevant": [
+        "shipping#3",
+        "shipping#2",
+        "delivery#1",
+        "preorders#5",
+        "discounts#1"
+      ],
+      "answer": "Express shipping costs $12.99."
+    },
+    {
+      "id": "q12",
+      "answered": true,
+      "citations": [
+        "shipping#4"
+      ],
+      "topK": [
+        "shipping#4",
+        "delivery#4",
+        "delivery#5",
+        "preorders#3",
+        "preorders#5"
+      ],
+      "relevant": [
+        "shipping#4",
+        "delivery#4",
+        "delivery#5",
+        "preorders#3",
+        "preorders#5"
+      ],
+      "answer": "Yes, your order will ship the same business day."
+    },
+    {
+      "id": "q13",
+      "answered": true,
+      "citations": [
+        "shipping#5"
+      ],
+      "topK": [
+        "preorders#5",
+        "accounts#4",
+        "shipping#7",
+        "delivery#4",
+        "shipping#5"
+      ],
+      "relevant": [
+        "preorders#5",
+        "accounts#4",
+        "shipping#7",
+        "delivery#4",
+        "shipping#5"
+      ],
+      "answer": "Yes, a tracking number is emailed to you once your order ships."
+    },
+    {
+      "id": "q14",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#6",
+        "shipping#6",
+        "accounts#2",
+        "shipping#5",
+        "returns#3"
+      ],
+      "relevant": [
+        "returns#6",
+        "shipping#6",
+        "accounts#2",
+        "shipping#5",
+        "returns#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q15",
+      "answered": true,
+      "citations": [
+        "shipping#7"
+      ],
+      "topK": [
+        "shipping#7",
+        "returns#6",
+        "delivery#5",
+        "delivery#4",
+        "returns#3"
+      ],
+      "relevant": [
+        "shipping#7",
+        "returns#6",
+        "delivery#5",
+        "delivery#4",
+        "returns#3"
+      ],
+      "answer": "If a package has not arrived 10 days after the estimated delivery date, please contact us to start a lost package claim."
+    },
+    {
+      "id": "q16",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "shipping#8",
+        "delivery#4",
+        "delivery#2",
+        "returns#1",
+        "delivery#1"
+      ],
+      "relevant": [
+        "shipping#8",
+        "delivery#4",
+        "delivery#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q17",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "accounts#2",
+        "giftcards#3",
+        "discounts#1",
+        "preorders#1",
+        "giftcards#1"
+      ],
+      "relevant": [
+        "accounts#2",
+        "giftcards#3",
+        "discounts#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q18",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#1",
+        "giftcards#3",
+        "giftcards#1",
+        "returns#1",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#3",
+        "giftcards#1",
+        "returns#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q19",
+      "answered": true,
+      "citations": [
+        "discounts#1"
+      ],
+      "topK": [
+        "discounts#1",
+        "giftcards#1",
+        "preorders#1",
+        "giftcards#3",
+        "giftcards#2"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#1",
+        "preorders#1",
+        "giftcards#3",
+        "giftcards#2"
+      ],
+      "answer": "You will receive 10% off your first order with the code WELCOME10."
+    },
+    {
+      "id": "q20",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#1",
+        "giftcards#6",
+        "giftcards#3",
+        "giftcards#2",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#6",
+        "giftcards#3",
+        "giftcards#2",
+        "giftcards#4"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q21",
+      "answered": true,
+      "citations": [
+        "discounts#2"
+      ],
+      "topK": [
+        "discounts#2",
+        "discounts#1",
+        "preorders#2",
+        "giftcards#6",
+        "returns#5"
+      ],
+      "relevant": [
+        "discounts#2",
+        "discounts#1",
+        "preorders#2",
+        "giftcards#6",
+        "returns#5"
+      ],
+      "answer": "No, only one discount code can be used per order."
+    },
+    {
+      "id": "q22",
+      "answered": true,
+      "citations": [
+        "discounts#3"
+      ],
+      "topK": [
+        "discounts#3",
+        "giftcards#5",
+        "giftcards#2",
+        "discounts#1",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "discounts#3",
+        "giftcards#5",
+        "giftcards#2",
+        "discounts#1",
+        "giftcards#6"
+      ],
+      "answer": "Yes, newsletter subscribers receive a new discount code every month."
+    },
+    {
+      "id": "q23",
+      "answered": true,
+      "citations": [
+        "discounts#4",
+        "discounts#3"
+      ],
+      "topK": [
+        "discounts#4",
+        "giftcards#2",
+        "giftcards#4",
+        "discounts#3",
+        "giftcards#5"
+      ],
+      "relevant": [
+        "discounts#4",
+        "giftcards#2",
+        "giftcards#4",
+        "discounts#3",
+        "giftcards#5"
+      ],
+      "answer": "Yes, if you are a newsletter subscriber, you would have received a new code this month, but it's possible the old code still works."
+    },
+    {
+      "id": "q24",
+      "answered": true,
+      "citations": [
+        "discounts#5"
+      ],
+      "topK": [
+        "discounts#5",
+        "returns#6",
+        "returns#5",
+        "delivery#5",
+        "preorders#6"
+      ],
+      "relevant": [
+        "discounts#5",
+        "returns#6",
+        "returns#5",
+        "delivery#5",
+        "preorders#6"
+      ],
+      "answer": "Yes, if you request it, we will refund the difference on request."
+    },
+    {
+      "id": "q25",
+      "answered": true,
+      "citations": [
+        "discounts#6"
+      ],
+      "topK": [
+        "discounts#6",
+        "giftcards#3",
+        "giftcards#1",
+        "giftcards#6",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "discounts#6",
+        "giftcards#3",
+        "giftcards#1",
+        "giftcards#6",
+        "giftcards#4"
+      ],
+      "answer": "No, gift cards cannot be used to buy other gift cards."
+    },
+    {
+      "id": "q26",
+      "answered": true,
+      "citations": [
+        "discounts#5",
+        "preorders#6"
+      ],
+      "topK": [
+        "discounts#5",
+        "returns#3",
+        "preorders#6",
+        "preorders#7",
+        "delivery#5"
+      ],
+      "relevant": [
+        "discounts#5",
+        "returns#3",
+        "preorders#6",
+        "preorders#7",
+        "delivery#5"
+      ],
+      "answer": "If the price of the headphones drops within 7 days of purchase, we will refund the difference on request. If you'd like to return the headphones instead, please note that you can only return them after they have been delivered."
+    },
+    {
+      "id": "q27",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#3",
+        "discounts#1",
+        "preorders#1",
+        "discounts#5",
+        "discounts#2"
+      ],
+      "relevant": [
+        "giftcards#3",
+        "discounts#1",
+        "preorders#1",
+        "discounts#5",
+        "discounts#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q28",
+      "answered": true,
+      "citations": [
+        "returns#3"
+      ],
+      "topK": [
+        "returns#3",
+        "returns#6",
+        "delivery#5",
+        "returns#7",
+        "returns#1"
+      ],
+      "relevant": [
+        "returns#3",
+        "returns#6",
+        "delivery#5",
+        "returns#7",
+        "returns#1"
+      ],
+      "answer": "The customer is responsible for return shipping, unless the item is damaged or wrong."
+    },
+    {
+      "id": "q29",
+      "answered": true,
+      "citations": [
+        "returns#6"
+      ],
+      "topK": [
+        "returns#6",
+        "returns#3",
+        "delivery#5",
+        "returns#1",
+        "preorders#7"
+      ],
+      "relevant": [
+        "returns#6",
+        "returns#3",
+        "delivery#5",
+        "returns#1",
+        "preorders#7"
+      ],
+      "answer": "You have 48 hours of delivery to contact us with a photo."
+    },
+    {
+      "id": "q30",
+      "answered": true,
+      "citations": [
+        "returns#4"
+      ],
+      "topK": [
+        "returns#4",
+        "preorders#4",
+        "preorders#7",
+        "delivery#5",
+        "preorders#3"
+      ],
+      "relevant": [
+        "returns#4",
+        "preorders#4",
+        "preorders#7"
+      ],
+      "answer": "We allow exchanges for size or color, subject to stock availability."
+    },
+    {
+      "id": "q31",
+      "answered": true,
+      "citations": [
+        "shipping#1"
+      ],
+      "topK": [
+        "shipping#1",
+        "delivery#2",
+        "delivery#3",
+        "returns#3",
+        "delivery#4"
+      ],
+      "relevant": [
+        "shipping#1",
+        "delivery#2",
+        "delivery#3",
+        "returns#3",
+        "delivery#4"
+      ],
+      "answer": "Yes, we ship to Canada only."
+    },
+    {
+      "id": "q32",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#6",
+        "accounts#2",
+        "accounts#4",
+        "accounts#5",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#6",
+        "accounts#2",
+        "accounts#4",
+        "accounts#5",
+        "delivery#5"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q33",
+      "answered": true,
+      "citations": [
+        "shipping#2"
+      ],
+      "topK": [
+        "shipping#2",
+        "shipping#1",
+        "shipping#8",
+        "returns#3",
+        "shipping#5"
+      ],
+      "relevant": [
+        "shipping#2",
+        "shipping#1",
+        "shipping#8",
+        "returns#3",
+        "shipping#5"
+      ],
+      "answer": "We offer two shipping options: Takes 3-5 business days, Costs $4.99 (free on orders over $50)"
+    },
+    {
+      "id": "q34",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#3",
+        "returns#4",
+        "returns#1",
+        "preorders#1",
+        "preorders#7"
+      ],
+      "relevant": [],
+      "reason": "no_relevant_chunks"
+    },
+    {
+      "id": "q35",
+      "answered": true,
+      "citations": [
+        "shipping#7"
+      ],
+      "topK": [
+        "shipping#7",
+        "preorders#5",
+        "returns#6",
+        "shipping#5",
+        "preorders#7"
+      ],
+      "relevant": [
+        "shipping#7",
+        "preorders#5",
+        "returns#6",
+        "shipping#5",
+        "preorders#7"
+      ],
+      "answer": "Yes, please contact us to start a lost package claim."
+    },
+    {
+      "id": "q36",
+      "answered": true,
+      "citations": [
+        "returns#2"
+      ],
+      "topK": [
+        "returns#2",
+        "delivery#5",
+        "returns#1",
+        "returns#3",
+        "returns#6"
+      ],
+      "relevant": [
+        "returns#2",
+        "delivery#5",
+        "returns#1",
+        "returns#3",
+        "returns#6"
+      ],
+      "answer": "Refunds will be issued to the original payment method after we receive the returned item, and may take 5-7 business days."
+    },
+    {
+      "id": "q37",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#3",
+        "shipping#1",
+        "returns#7",
+        "delivery#1",
+        "preorders#1"
+      ],
+      "relevant": [
+        "returns#3",
+        "shipping#1",
+        "returns#7",
+        "delivery#1",
+        "preorders#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q38",
+      "answered": true,
+      "citations": [
+        "returns#6"
+      ],
+      "topK": [
+        "returns#6",
+        "returns#3",
+        "delivery#5",
+        "returns#1",
+        "returns#7"
+      ],
+      "relevant": [
+        "returns#6",
+        "returns#3",
+        "delivery#5",
+        "returns#1",
+        "returns#7"
+      ],
+      "answer": "Yes, please contact us within 48 hours of delivery with a photo of the damaged item."
+    },
+    {
+      "id": "q39",
+      "answered": true,
+      "citations": [
+        "returns#3"
+      ],
+      "topK": [
+        "preorders#6",
+        "delivery#5",
+        "returns#3",
+        "returns#1",
+        "returns#6"
+      ],
+      "relevant": [
+        "preorders#6",
+        "delivery#5",
+        "returns#3",
+        "returns#1",
+        "returns#6"
+      ],
+      "answer": "The customer is responsible for return shipping, unless the item is damaged or wrong."
+    },
+    {
+      "id": "q40",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#7",
+        "shipping#5",
+        "discounts#1",
+        "returns#6",
+        "returns#3"
+      ],
+      "relevant": [
+        "returns#7",
+        "shipping#5",
+        "discounts#1",
+        "returns#6",
+        "returns#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q41",
+      "answered": true,
+      "citations": [
+        "returns#1"
+      ],
+      "topK": [
+        "returns#1",
+        "returns#6",
+        "delivery#5",
+        "shipping#7",
+        "preorders#7"
+      ],
+      "relevant": [
+        "returns#1",
+        "returns#6",
+        "delivery#5",
+        "shipping#7",
+        "preorders#7"
+      ],
+      "answer": "We will process your return as it meets our eligibility criteria. Once we receive the returned item, we will refund your money."
+    },
+    {
+      "id": "q42",
+      "answered": true,
+      "citations": [
+        "returns#4"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#4",
+        "returns#3",
+        "returns#1",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#4",
+        "returns#3",
+        "returns#1",
+        "delivery#5"
+      ],
+      "answer": "Sale items are final sale and cannot be returned."
+    },
+    {
+      "id": "q43",
+      "answered": true,
+      "citations": [
+        "discounts#2"
+      ],
+      "topK": [
+        "discounts#1",
+        "giftcards#3",
+        "returns#4",
+        "giftcards#6",
+        "discounts#2"
+      ],
+      "relevant": [
+        "discounts#1",
+        "giftcards#3",
+        "returns#4",
+        "giftcards#6",
+        "discounts#2"
+      ],
+      "answer": "Discount codes are not valid on sale items."
+    },
+    {
+      "id": "q44",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "shipping#2",
+        "shipping#3",
+        "preorders#5",
+        "preorders#1",
+        "discounts#1"
+      ],
+      "relevant": [
+        "shipping#2",
+        "shipping#3",
+        "preorders#5",
+        "preorders#1",
+        "discounts#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q45",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "shipping#1",
+        "returns#3",
+        "shipping#5",
+        "shipping#8",
+        "shipping#2"
+      ],
+      "relevant": [
+        "shipping#1",
+        "returns#3",
+        "shipping#5",
+        "shipping#8",
+        "shipping#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q46",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#4",
+        "discounts#5",
+        "preorders#1",
+        "discounts#2",
+        "returns#5"
+      ],
+      "relevant": [
+        "preorders#4",
+        "discounts#5",
+        "preorders#1",
+        "discounts#2",
+        "returns#5"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q47",
+      "answered": true,
+      "citations": [
+        "returns#5"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#5",
+        "discounts#1",
+        "discounts#2",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#5",
+        "discounts#1",
+        "discounts#2",
+        "delivery#5"
+      ],
+      "answer": "You will get back the amount actually paid, not the original price."
+    },
+    {
+      "id": "q48",
+      "answered": true,
+      "citations": [
+        "discounts#3"
+      ],
+      "topK": [
+        "discounts#3",
+        "giftcards#4",
+        "discounts#4",
+        "preorders#7",
+        "preorders#3"
+      ],
+      "relevant": [
+        "discounts#3",
+        "giftcards#4",
+        "discounts#4",
+        "preorders#7",
+        "preorders#3"
+      ],
+      "answer": "Newsletter subscribers receive a new discount code every month, but it's not clear if the code is still valid after 45 days."
+    },
+    {
+      "id": "q49",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "returns#1",
+        "delivery#5",
+        "preorders#6",
+        "returns#3",
+        "returns#2"
+      ],
+      "relevant": [
+        "returns#1",
+        "delivery#5",
+        "preorders#6",
+        "returns#3",
+        "returns#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q50",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "preorders#7",
+        "returns#6",
+        "preorders#1",
+        "accounts#3",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#7",
+        "returns#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q51",
+      "answered": true,
+      "citations": [
+        "accounts#1",
+        "accounts#2"
+      ],
+      "topK": [
+        "accounts#1",
+        "accounts#6",
+        "giftcards#4",
+        "giftcards#6",
+        "accounts#2"
+      ],
+      "relevant": [
+        "accounts#1",
+        "accounts#6",
+        "giftcards#4",
+        "giftcards#6",
+        "accounts#2"
+      ],
+      "answer": "No, your password must be at least 8 characters long."
+    },
+    {
+      "id": "q52",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#6",
+        "giftcards#3",
+        "giftcards#1",
+        "accounts#2",
+        "discounts#1"
+      ],
+      "relevant": [
+        "giftcards#6",
+        "giftcards#3",
+        "giftcards#1",
+        "accounts#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q53",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "giftcards#1",
+        "discounts#6",
+        "giftcards#3",
+        "giftcards#4",
+        "giftcards#2"
+      ],
+      "relevant": [
+        "giftcards#1",
+        "discounts#6",
+        "giftcards#3",
+        "giftcards#4",
+        "giftcards#2"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q54",
+      "answered": true,
+      "citations": [
+        "shipping#2",
+        "delivery#1"
+      ],
+      "topK": [
+        "shipping#2",
+        "delivery#1",
+        "preorders#1",
+        "shipping#3",
+        "returns#3"
+      ],
+      "relevant": [
+        "shipping#2",
+        "delivery#1",
+        "preorders#1",
+        "shipping#3",
+        "returns#3"
+      ],
+      "answer": "No, someone will not have to sign for it. You will not be charged for shipping because your order is over $50."
+    },
+    {
+      "id": "q55",
+      "answered": true,
+      "citations": [
+        "preorders#7"
+      ],
+      "topK": [
+        "preorders#7",
+        "preorders#6",
+        "preorders#3",
+        "preorders#4",
+        "preorders#1"
+      ],
+      "relevant": [
+        "preorders#7",
+        "preorders#6",
+        "preorders#3",
+        "preorders#4",
+        "preorders#1"
+      ],
+      "answer": "A backordered item is expected to be back in stock in 1 to 6 weeks. If it's still out of stock after 30 days, a new estimated date will be shown."
+    },
+    {
+      "id": "q56",
+      "answered": true,
+      "citations": [
+        "delivery#2"
+      ],
+      "topK": [
+        "delivery#5",
+        "delivery#4",
+        "delivery#2",
+        "returns#3",
+        "shipping#7"
+      ],
+      "relevant": [
+        "delivery#5",
+        "delivery#4",
+        "delivery#2",
+        "returns#3",
+        "shipping#7"
+      ],
+      "answer": "If a signature is required and no one signs, the carrier leaves a notice instead of the parcel."
+    },
+    {
+      "id": "q57",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#3",
+        "discounts#1",
+        "discounts#2",
+        "giftcards#2",
+        "giftcards#3"
+      ],
+      "relevant": [
+        "discounts#3",
+        "discounts#1",
+        "discounts#2",
+        "giftcards#2",
+        "giftcards#3"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q58",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "accounts#2",
+        "accounts#3",
+        "accounts#5",
+        "shipping#5",
+        "preorders#1"
+      ],
+      "relevant": [
+        "accounts#2",
+        "accounts#3",
+        "accounts#5",
+        "shipping#5",
+        "preorders#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q59",
+      "answered": true,
+      "citations": [
+        "returns#3",
+        "returns#6"
+      ],
+      "topK": [
+        "preorders#6",
+        "returns#3",
+        "returns#6",
+        "returns#1",
+        "delivery#5"
+      ],
+      "relevant": [
+        "preorders#6",
+        "returns#3",
+        "returns#6",
+        "returns#1",
+        "delivery#5"
+      ],
+      "answer": "Yes, you can send it back. Since the item is damaged, you do not have to pay for the return postage."
+    },
+    {
+      "id": "q60",
+      "answered": true,
+      "citations": [
+        "giftcards#3"
+      ],
+      "topK": [
+        "giftcards#3",
+        "discounts#6",
+        "giftcards#6",
+        "giftcards#1",
+        "giftcards#4"
+      ],
+      "relevant": [
+        "giftcards#3",
+        "discounts#6",
+        "giftcards#6",
+        "giftcards#1",
+        "giftcards#4"
+      ],
+      "answer": "You can spend your gift card balance across several orders until it reaches zero."
+    },
+    {
+      "id": "q61",
+      "answered": true,
+      "citations": [
+        "preorders#3"
+      ],
+      "topK": [
+        "preorders#3",
+        "preorders#5",
+        "preorders#7",
+        "preorders#1",
+        "discounts#5"
+      ],
+      "relevant": [
+        "preorders#3",
+        "preorders#5",
+        "preorders#7",
+        "preorders#1",
+        "discounts#5"
+      ],
+      "answer": "Yes, a pre-order release date can move by up to 60 days after the date first shown. You will be emailed each time the release date changes."
+    },
+    {
+      "id": "q62",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "delivery#2",
+        "delivery#4",
+        "returns#6",
+        "delivery#5",
+        "returns#3"
+      ],
+      "relevant": [
+        "delivery#2",
+        "delivery#4",
+        "returns#6"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q63",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "delivery#4",
+        "delivery#3",
+        "delivery#2",
+        "delivery#5",
+        "shipping#7"
+      ],
+      "relevant": [
+        "delivery#4",
+        "delivery#3",
+        "delivery#2",
+        "delivery#5",
+        "shipping#7"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q64",
+      "answered": true,
+      "citations": [
+        "delivery#4",
+        "delivery#2"
+      ],
+      "topK": [
+        "delivery#4",
+        "delivery#2",
+        "delivery#5",
+        "returns#3",
+        "shipping#7"
+      ],
+      "relevant": [
+        "delivery#4",
+        "delivery#2",
+        "delivery#5",
+        "returns#3",
+        "shipping#7"
+      ],
+      "answer": "A parcel left in a safe place is treated as delivered on the day it is dropped off."
+    },
+    {
+      "id": "q65",
+      "answered": true,
+      "citations": [
+        "giftcards#4"
+      ],
+      "topK": [
+        "giftcards#4",
+        "giftcards#2",
+        "giftcards#5",
+        "giftcards#3",
+        "giftcards#6"
+      ],
+      "relevant": [
+        "giftcards#4",
+        "giftcards#2",
+        "giftcards#5",
+        "giftcards#3",
+        "giftcards#6"
+      ],
+      "answer": "A gift card code is not case-sensitive."
+    },
+    {
+      "id": "q66",
+      "answered": true,
+      "citations": [
+        "accounts#5",
+        "accounts#2"
+      ],
+      "topK": [
+        "accounts#5",
+        "accounts#2",
+        "accounts#4",
+        "accounts#3",
+        "preorders#7"
+      ],
+      "relevant": [
+        "accounts#5",
+        "accounts#2",
+        "accounts#4",
+        "accounts#3",
+        "preorders#7"
+      ],
+      "answer": "Deleting your account will remove your personal data within 45 days. Your old orders will still be kept for 7 years for accounting purposes."
+    },
+    {
+      "id": "q67",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "accounts#1",
+        "shipping#6",
+        "giftcards#5",
+        "accounts#4",
+        "accounts#5"
+      ],
+      "relevant": [
+        "accounts#1",
+        "shipping#6",
+        "giftcards#5",
+        "accounts#4",
+        "accounts#5"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q68",
+      "answered": true,
+      "citations": [
+        "preorders#2"
+      ],
+      "topK": [
+        "preorders#2",
+        "preorders#1",
+        "preorders#4",
+        "preorders#3",
+        "preorders#5"
+      ],
+      "relevant": [
+        "preorders#2",
+        "preorders#1",
+        "preorders#4",
+        "preorders#3",
+        "preorders#5"
+      ],
+      "answer": "No, a customer can pre-order up to 2 units of the same item."
+    },
+    {
+      "id": "q69",
+      "answered": true,
+      "citations": [
+        "giftcards#5"
+      ],
+      "topK": [
+        "giftcards#5",
+        "giftcards#2",
+        "giftcards#6",
+        "giftcards#4",
+        "delivery#5"
+      ],
+      "relevant": [
+        "giftcards#5",
+        "giftcards#2",
+        "giftcards#6",
+        "giftcards#4",
+        "delivery#5"
+      ],
+      "answer": "Yes, we can resend your gift card code to your email address. You can have it resent up to 3 times."
+    },
+    {
+      "id": "q70",
+      "answered": true,
+      "citations": [
+        "accounts#4",
+        "shipping#5"
+      ],
+      "topK": [
+        "accounts#4",
+        "shipping#5",
+        "preorders#5",
+        "accounts#2",
+        "accounts#5"
+      ],
+      "relevant": [
+        "accounts#4",
+        "shipping#5",
+        "preorders#5",
+        "accounts#2",
+        "accounts#5"
+      ],
+      "answer": "Yes, you will still receive the tracking email when your order ships."
+    },
+    {
+      "id": "q71",
+      "answered": true,
+      "citations": [
+        "giftcards#4",
+        "giftcards#3"
+      ],
+      "topK": [
+        "giftcards#4",
+        "giftcards#3",
+        "giftcards#5",
+        "discounts#6",
+        "discounts#4"
+      ],
+      "relevant": [
+        "giftcards#4",
+        "giftcards#3",
+        "giftcards#5",
+        "discounts#6",
+        "discounts#4"
+      ],
+      "answer": "No, a gift card has no expiry date. Unused gift card balances are not paid out in cash."
+    },
+    {
+      "id": "q72",
+      "answered": true,
+      "citations": [
+        "preorders#5"
+      ],
+      "topK": [
+        "preorders#5",
+        "preorders#1",
+        "preorders#4",
+        "preorders#3",
+        "preorders#7"
+      ],
+      "relevant": [
+        "preorders#5",
+        "preorders#1",
+        "preorders#4",
+        "preorders#3",
+        "preorders#7"
+      ],
+      "answer": "Yes, you will receive a release email 3 days before the item ships."
+    },
+    {
+      "id": "q73",
+      "answered": true,
+      "citations": [
+        "accounts#6"
+      ],
+      "topK": [
+        "accounts#6",
+        "delivery#5",
+        "accounts#5",
+        "giftcards#5",
+        "returns#6"
+      ],
+      "relevant": [
+        "accounts#6",
+        "delivery#5",
+        "accounts#5",
+        "giftcards#5",
+        "returns#6"
+      ],
+      "answer": "Yes, a password reset link is valid for 60 minutes."
+    },
+    {
+      "id": "q74",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "delivery#3",
+        "delivery#4",
+        "delivery#2",
+        "returns#3",
+        "returns#1"
+      ],
+      "relevant": [
+        "delivery#3",
+        "delivery#4",
+        "delivery#2",
+        "returns#3",
+        "returns#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q75",
+      "answered": true,
+      "citations": [
+        "delivery#2"
+      ],
+      "topK": [
+        "delivery#2",
+        "delivery#5",
+        "delivery#4",
+        "delivery#3",
+        "returns#3"
+      ],
+      "relevant": [
+        "delivery#2",
+        "delivery#5",
+        "delivery#4",
+        "delivery#3",
+        "returns#3"
+      ],
+      "answer": "Yes, a carrier makes up to 3 delivery attempts on separate business days."
+    },
+    {
+      "id": "q76",
+      "answered": true,
+      "citations": [
+        "giftcards#2"
+      ],
+      "topK": [
+        "giftcards#2",
+        "giftcards#5",
+        "giftcards#4",
+        "giftcards#6",
+        "returns#6"
+      ],
+      "relevant": [
+        "giftcards#2",
+        "giftcards#5",
+        "giftcards#4",
+        "giftcards#6",
+        "returns#6"
+      ],
+      "answer": "After purchasing a gift card, the code will be sent to the email address you entered at purchase."
+    },
+    {
+      "id": "q77",
+      "answered": true,
+      "citations": [
+        "preorders#4",
+        "preorders#1"
+      ],
+      "topK": [
+        "preorders#4",
+        "preorders#1",
+        "preorders#7",
+        "preorders#3",
+        "preorders#5"
+      ],
+      "relevant": [
+        "preorders#4",
+        "preorders#1",
+        "preorders#7",
+        "preorders#3",
+        "preorders#5"
+      ],
+      "answer": "You can switch to an in-stock item of the same or lower price before it ships. You will be charged when the item ships, not when the order is placed."
+    },
+    {
+      "id": "q78",
+      "answered": false,
+      "citations": [],
+      "topK": [
+        "discounts#3",
+        "discounts#1",
+        "preorders#1",
+        "giftcards#3",
+        "giftcards#1"
+      ],
+      "relevant": [
+        "discounts#3",
+        "discounts#1",
+        "preorders#1",
+        "giftcards#3",
+        "giftcards#1"
+      ],
+      "reason": "model_declined"
+    },
+    {
+      "id": "q79",
+      "answered": true,
+      "citations": [
+        "giftcards#6"
+      ],
+      "topK": [
+        "giftcards#6",
+        "giftcards#5",
+        "giftcards#4",
+        "giftcards#2",
+        "discounts#6"
+      ],
+      "relevant": [
+        "giftcards#6",
+        "giftcards#5",
+        "giftcards#4",
+        "giftcards#2",
+        "discounts#6"
+      ],
+      "answer": "You can store up to 10 gift card codes in your Northwind Goods customer account at once."
+    },
+    {
+      "id": "q80",
+      "answered": true,
+      "citations": [
+        "accounts#3"
+      ],
+      "topK": [
+        "accounts#3",
+        "preorders#3",
+        "preorders#7",
+        "accounts#2",
+        "accounts#5"
+      ],
+      "relevant": [
+        "accounts#3",
+        "preorders#3",
+        "preorders#7",
+        "accounts#2",
+        "accounts#5"
+      ],
+      "answer": "Yes, your order history will show orders placed in the past 2 years."
+    }
+  ]
+}

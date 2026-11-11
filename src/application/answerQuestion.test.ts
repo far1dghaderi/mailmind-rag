@@ -58,5 +58,11 @@ test("prompt asks for a complete sentence, not a one-word reply", async () => {
   const { deps, prompts } = setup([hit("a#1", "Returns within 14 days.", 0.8)], `{"answer":"No.","citations":["a#1"]}`);
   await answerQuestion("Can I return after 20 days?", deps);
   assert.match(prompts[0]!, /complete sentence/i);
-  assert.equal(ANSWER_PROMPT_VERSION, "v2");
+  assert.equal(ANSWER_PROMPT_VERSION, "v3");
+});
+
+test("prompt asks for every chunk used to be cited", async () => {
+  const { deps, prompts } = setup([hit("a#1", "Returns within 14 days.", 0.8)], `{"answer":"No.","citations":["a#1"]}`);
+  await answerQuestion("q?", deps);
+  assert.match(prompts[0]!, /every chunk/i);
 });

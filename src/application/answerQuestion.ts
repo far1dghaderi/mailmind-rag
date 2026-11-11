@@ -2,7 +2,7 @@ import { parseAnswer, type Refusal } from "../domain/parseAnswer.js";
 import { RETRIEVAL_DEFAULTS, search, type SearchResult } from "./retrieve.js";
 import type { ChunkStore, Embedder, Hit, Llm } from "./ports.js";
 
-export const ANSWER_PROMPT_VERSION = "v2";
+export const ANSWER_PROMPT_VERSION = "v3";
 
 export type NoAnswerReason = "no_relevant_chunks" | Refusal;
 
@@ -18,7 +18,7 @@ Rules:
 - Use only facts stated in the context. Do not add numbers, fees, time limits, or rules that are not there.
 - First decide whether the context states what is needed to answer the question. If it does not, set "answerable" to false and "answer" to null. Do not guess, and do not answer "no" just because the context is silent.
 - If it does, set "answerable" to true and write one or two complete sentences a customer could be sent as written, starting with yes or no when the question asks for it.
-- Cite the ids of the chunks you used.
+- Cite the id of every chunk whose facts you used, including chunks that only support part of the answer.
 Reply with only JSON: {"answerable": true or false, "answer": "<one or two complete sentences, or null>", "citations": ["<chunk id>", ...]}
 
 Context:

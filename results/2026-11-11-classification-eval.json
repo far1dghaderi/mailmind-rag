@@ -1,0 +1,571 @@
+{
+  "date": "2026-11-11",
+  "model": "llama3.1:8b",
+  "promptVersion": "v2",
+  "files": [
+    "classified-emails.txt",
+    "messy-emails.txt"
+  ],
+  "perFile": {
+    "classified-emails.txt": {
+      "accuracy": {
+        "hit": 40,
+        "total": 42
+      },
+      "confusion": {
+        "order_status": {
+          "order_status": 4
+        },
+        "shipping_delivery": {
+          "shipping_delivery": 4
+        },
+        "return_exchange": {
+          "return_exchange": 4
+        },
+        "refund_status": {
+          "refund_status": 4
+        },
+        "order_cancellation": {
+          "order_cancellation": 4
+        },
+        "product_information": {
+          "product_information": 4
+        },
+        "damaged_defective_product": {
+          "damaged_defective_product": 4
+        },
+        "payment_issue": {
+          "payment_issue": 3,
+          "order_status": 1
+        },
+        "discount_promotion": {
+          "discount_promotion": 4
+        },
+        "missing_incorrect_items": {
+          "missing_incorrect_items": 4
+        },
+        "unknown": {
+          "unknown": 1,
+          "product_information": 1
+        }
+      },
+      "calibration": [
+        {
+          "range": "0-49",
+          "hit": 1,
+          "total": 1
+        },
+        {
+          "range": "50-69",
+          "hit": 0,
+          "total": 0
+        },
+        {
+          "range": "70-89",
+          "hit": 0,
+          "total": 0
+        },
+        {
+          "range": "90-100",
+          "hit": 39,
+          "total": 41
+        }
+      ]
+    },
+    "messy-emails.txt": {
+      "accuracy": {
+        "hit": 11,
+        "total": 12
+      },
+      "confusion": {
+        "return_exchange": {
+          "order_status": 1,
+          "return_exchange": 2
+        },
+        "damaged_defective_product": {
+          "damaged_defective_product": 2
+        },
+        "refund_status": {
+          "refund_status": 2
+        },
+        "shipping_delivery": {
+          "shipping_delivery": 2
+        },
+        "discount_promotion": {
+          "discount_promotion": 2
+        },
+        "missing_incorrect_items": {
+          "missing_incorrect_items": 1
+        }
+      },
+      "calibration": [
+        {
+          "range": "0-49",
+          "hit": 0,
+          "total": 0
+        },
+        {
+          "range": "50-69",
+          "hit": 0,
+          "total": 0
+        },
+        {
+          "range": "70-89",
+          "hit": 2,
+          "total": 3
+        },
+        {
+          "range": "90-100",
+          "hit": 9,
+          "total": 9
+        }
+      ]
+    }
+  },
+  "total": {
+    "accuracy": {
+      "hit": 51,
+      "total": 54
+    },
+    "confusion": {
+      "order_status": {
+        "order_status": 4
+      },
+      "shipping_delivery": {
+        "shipping_delivery": 6
+      },
+      "return_exchange": {
+        "return_exchange": 6,
+        "order_status": 1
+      },
+      "refund_status": {
+        "refund_status": 6
+      },
+      "order_cancellation": {
+        "order_cancellation": 4
+      },
+      "product_information": {
+        "product_information": 4
+      },
+      "damaged_defective_product": {
+        "damaged_defective_product": 6
+      },
+      "payment_issue": {
+        "payment_issue": 3,
+        "order_status": 1
+      },
+      "discount_promotion": {
+        "discount_promotion": 6
+      },
+      "missing_incorrect_items": {
+        "missing_incorrect_items": 5
+      },
+      "unknown": {
+        "unknown": 1,
+        "product_information": 1
+      }
+    },
+    "calibration": [
+      {
+        "range": "0-49",
+        "hit": 1,
+        "total": 1
+      },
+      {
+        "range": "50-69",
+        "hit": 0,
+        "total": 0
+      },
+      {
+        "range": "70-89",
+        "hit": 2,
+        "total": 3
+      },
+      {
+        "range": "90-100",
+        "hit": 48,
+        "total": 50
+      }
+    ]
+  },
+  "rows": [
+    {
+      "file": "classified-emails.txt",
+      "email": 0,
+      "label": "order_status",
+      "intent": "order_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 1,
+      "label": "order_status",
+      "intent": "order_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 2,
+      "label": "order_status",
+      "intent": "order_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 3,
+      "label": "order_status",
+      "intent": "order_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 4,
+      "label": "shipping_delivery",
+      "intent": "shipping_delivery",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 5,
+      "label": "shipping_delivery",
+      "intent": "shipping_delivery",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 6,
+      "label": "shipping_delivery",
+      "intent": "shipping_delivery",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 7,
+      "label": "shipping_delivery",
+      "intent": "shipping_delivery",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 8,
+      "label": "return_exchange",
+      "intent": "return_exchange",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 9,
+      "label": "return_exchange",
+      "intent": "return_exchange",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 10,
+      "label": "return_exchange",
+      "intent": "return_exchange",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 11,
+      "label": "return_exchange",
+      "intent": "return_exchange",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 12,
+      "label": "refund_status",
+      "intent": "refund_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 13,
+      "label": "refund_status",
+      "intent": "refund_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 14,
+      "label": "refund_status",
+      "intent": "refund_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 15,
+      "label": "refund_status",
+      "intent": "refund_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 16,
+      "label": "order_cancellation",
+      "intent": "order_cancellation",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 17,
+      "label": "order_cancellation",
+      "intent": "order_cancellation",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 18,
+      "label": "order_cancellation",
+      "intent": "order_cancellation",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 19,
+      "label": "order_cancellation",
+      "intent": "order_cancellation",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 20,
+      "label": "product_information",
+      "intent": "product_information",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 21,
+      "label": "product_information",
+      "intent": "product_information",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 22,
+      "label": "product_information",
+      "intent": "product_information",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 23,
+      "label": "product_information",
+      "intent": "product_information",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 24,
+      "label": "damaged_defective_product",
+      "intent": "damaged_defective_product",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 25,
+      "label": "damaged_defective_product",
+      "intent": "damaged_defective_product",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 26,
+      "label": "damaged_defective_product",
+      "intent": "damaged_defective_product",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 27,
+      "label": "damaged_defective_product",
+      "intent": "damaged_defective_product",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 28,
+      "label": "payment_issue",
+      "intent": "payment_issue",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 29,
+      "label": "payment_issue",
+      "intent": "payment_issue",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 30,
+      "label": "payment_issue",
+      "intent": "order_status",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 31,
+      "label": "payment_issue",
+      "intent": "payment_issue",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 32,
+      "label": "discount_promotion",
+      "intent": "discount_promotion",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 33,
+      "label": "discount_promotion",
+      "intent": "discount_promotion",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 34,
+      "label": "discount_promotion",
+      "intent": "discount_promotion",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 35,
+      "label": "discount_promotion",
+      "intent": "discount_promotion",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 36,
+      "label": "missing_incorrect_items",
+      "intent": "missing_incorrect_items",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 37,
+      "label": "missing_incorrect_items",
+      "intent": "missing_incorrect_items",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 38,
+      "label": "missing_incorrect_items",
+      "intent": "missing_incorrect_items",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 39,
+      "label": "missing_incorrect_items",
+      "intent": "missing_incorrect_items",
+      "confidence": 100
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 40,
+      "label": "unknown",
+      "intent": "unknown",
+      "confidence": 0
+    },
+    {
+      "file": "classified-emails.txt",
+      "email": 41,
+      "label": "unknown",
+      "intent": "product_information",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 0,
+      "label": "return_exchange",
+      "intent": "order_status",
+      "confidence": 80
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 1,
+      "label": "damaged_defective_product",
+      "intent": "damaged_defective_product",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 2,
+      "label": "refund_status",
+      "intent": "refund_status",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 3,
+      "label": "shipping_delivery",
+      "intent": "shipping_delivery",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 4,
+      "label": "discount_promotion",
+      "intent": "discount_promotion",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 5,
+      "label": "missing_incorrect_items",
+      "intent": "missing_incorrect_items",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 6,
+      "label": "return_exchange",
+      "intent": "return_exchange",
+      "confidence": 80
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 7,
+      "label": "damaged_defective_product",
+      "intent": "damaged_defective_product",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 8,
+      "label": "refund_status",
+      "intent": "refund_status",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 9,
+      "label": "discount_promotion",
+      "intent": "discount_promotion",
+      "confidence": 90
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 10,
+      "label": "shipping_delivery",
+      "intent": "shipping_delivery",
+      "confidence": 100
+    },
+    {
+      "file": "messy-emails.txt",
+      "email": 11,
+      "label": "return_exchange",
+      "intent": "return_exchange",
+      "confidence": 80
+    }
+  ]
+}
