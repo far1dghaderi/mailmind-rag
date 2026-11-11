@@ -1,7 +1,8 @@
 import type { ChunkStore, Embedder, Hit } from "./ports.js";
 
-// shortcut: defaults come from 7 hand-checked questions (answerable top-1 scored 0.68-0.77, an unanswerable one 0.56); tune with the eval set.
-export const RETRIEVAL_DEFAULTS = { k: 3, threshold: 0.6 };
+// Chosen with scripts/sweep-retrieval.ts on the 80-question eval set: k=5, cutoff 0.55 finds the right chunk for 94% of answerable questions (k=3, 0.6 found 83%).
+// shortcut: the cutoff barely separates answerable from unanswerable (14 of 16 unanswerable pass even 0.6); the model's answerable flag does that job. Revisit with a reranker.
+export const RETRIEVAL_DEFAULTS = { k: 5, threshold: 0.55 };
 
 export type ScoredHit = Hit & { relevant: boolean };
 export interface SearchResult {

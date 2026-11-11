@@ -111,9 +111,9 @@ Hello, I placed order #MM10482 ...
 
 ### API
 
-**Email page:** open `/`, type or paste an email (subject and message), and press Process email (or Ctrl/Cmd+Enter). It shows the final result first, then the four stages: classify, route (can the policies answer this kind of email?), retrieve (top 3 policy sections with scores, weak ones dimmed), and answer. Skipped stages are greyed out. A few example emails can be loaded from a dropdown. `POST /triage/email` with `{ "subject": "...", "body": "..." }` returns the same data as JSON.
+**Email page:** open `/`, type or paste an email (subject and message), and press Process email (or Ctrl/Cmd+Enter). It shows the final result first, then the four stages: classify, route (can the policies answer this kind of email?), retrieve (top 5 policy sections with scores, weak ones dimmed), and answer. Skipped stages are greyed out. A few example emails can be loaded from a dropdown. `POST /triage/email` with `{ "subject": "...", "body": "..." }` returns the same data as JSON.
 
-**Question page:** open `/question.html` and type a question. It shows the answer (or the refusal and its reason) and the top 3 chunks with similarity scores; those under the cutoff are dimmed, so you can see what the system used and what it ignored. `POST /ask` with `{ "question": "..." }` returns `{ answered, answer, citations }` or `{ answered: false, reason, flagForHuman }`, plus the search result. `POST /search` returns only the chunks.
+**Question page:** open `/question.html` and type a question. It shows the answer (or the refusal and its reason) and the top 5 chunks with similarity scores; those under the cutoff are dimmed, so you can see what the system used and what it ignored. `POST /ask` with `{ "question": "..." }` returns `{ answered, answer, citations }` or `{ answered: false, reason, flagForHuman }`, plus the search result. `POST /search` returns only the chunks.
 
 `POST /triage` with `{ "path": "classified-emails.txt", "emails": [7, 11] }` (emails optional) runs the full pipeline and returns each email's intent, the label, and either an answer with citations or the reason it was flagged for a human.
 
