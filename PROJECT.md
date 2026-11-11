@@ -269,8 +269,8 @@ Configuration: `DATABASE_URL` (required by the db scripts), and optionally `PORT
 
 - [ ] Improvements, one at a time with an eval re-run after each (prompt disambiguation, chunking tweaks, hybrid search, reranking, threshold tuning)
 - [ ] Move the pipeline into LangGraph.js (classify, retrieve, answer, escalate nodes)
-- [ ] Regression tests that fail when a metric drops past a threshold
-- [ ] Failure-case tests: empty email, Ollama down, no chunks found, malformed model JSON
+- [x] Regression tests that fail when a metric drops past a threshold
+- [x] Failure-case tests: empty email, Ollama down, no chunks found, malformed model JSON
 - [ ] CI that runs the tests on push
 
 ### Phase 4: publish

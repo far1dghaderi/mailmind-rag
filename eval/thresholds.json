@@ -1,0 +1,8 @@
+{
+  "classificationRate": { "min": 0.9 },
+  "retrievalRate": { "min": 0.9 },
+  "answeredRate": { "min": 0.8 },
+  "refusalRate": { "min": 1 },
+  "citationRate": { "min": 0.83 },
+  "wrongAnswers": { "max": 5 }
+}

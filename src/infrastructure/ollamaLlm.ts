@@ -1,4 +1,5 @@
 import type { Llm } from "../application/ports.js";
+import { ollamaPost, unexpectedReply } from "./ollamaFetch.js";
 
 interface Options {
   baseUrl?: string;
@@ -12,18 +13,14 @@ export const ollamaLlm = ({
   fetch: doFetch = fetch,
 }: Options = {}): Llm => ({
   async complete(prompt) {
-    const res = await doFetch(`${baseUrl}/api/chat`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        model,
-        stream: false,
-        format: "json",
-        options: { temperature: 0 },
-        messages: [{ role: "user", content: prompt }],
-      }),
+    const reply = await ollamaPost(doFetch, baseUrl, "/api/chat", {
+      model,
+      stream: false,
+      format: "json",
+      options: { temperature: 0 },
+      messages: [{ role: "user", content: prompt }],
     });
-    if (!res.ok) throw new Error(`Ollama ${res.status}: ${await res.text()}`);
-    return (await res.json()).message.content;
+    if (typeof reply?.message?.content !== "string") throw unexpectedReply("message.content");
+    return reply.message.content;
   },
 });

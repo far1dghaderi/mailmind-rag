@@ -128,3 +128,16 @@ test("/triage/email 400 for an empty, non-string or oversized email", async () =
     assert.equal((await post(app, "/triage/email", body)).status, 400);
   }
 });
+
+test("/triage/email answers 503 with a clear message when the model is unreachable", async () => {
+  const down = Object.assign(new Error("Ollama is not reachable at http://localhost:11434"), { status: 503 });
+  const server = createApp({ classifyFile: async () => ({ emails: [] }), search: noSearch, answer: noAnswer, triage: noTriage, triageText: async () => Promise.reject(down) }).listen(0);
+  try {
+    const { port } = server.address() as AddressInfo;
+    const res = await fetch(`http://localhost:${port}/triage/email`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ body: "hello" }) });
+    assert.equal(res.status, 503);
+    assert.match((await res.json()).error, /not reachable/);
+  } finally {
+    server.close();
+  }
+});

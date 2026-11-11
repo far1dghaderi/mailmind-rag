@@ -1,4 +1,5 @@
 import type { Embedder } from "../application/ports.js";
+import { ollamaPost, unexpectedReply } from "./ollamaFetch.js";
 
 interface Options {
   baseUrl?: string;
@@ -14,13 +15,9 @@ export const ollamaEmbedder = ({
   fetch: doFetch = fetch,
 }: Options = {}): Embedder => {
   async function embed(inputs: string[]): Promise<number[][]> {
-    const res = await doFetch(`${baseUrl}/api/embed`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ model, input: inputs }),
-    });
-    if (!res.ok) throw new Error(`Ollama ${res.status}: ${await res.text()}`);
-    const { embeddings } = (await res.json()) as { embeddings: number[][] };
+    const reply = await ollamaPost(doFetch, baseUrl, "/api/embed", { model, input: inputs });
+    if (!Array.isArray(reply?.embeddings)) throw unexpectedReply("embeddings");
+    const embeddings: number[][] = reply.embeddings;
     if (embeddings.length !== inputs.length) throw new Error(`expected ${inputs.length} embeddings, got ${embeddings.length}`);
     for (const e of embeddings) if (e.length !== dimensions) throw new Error(`expected ${dimensions} dimensions, got ${e.length}`);
     return embeddings;
