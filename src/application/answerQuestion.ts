@@ -26,16 +26,20 @@ ${chunks.map((c) => `[${c.id}] ${c.section}\n${c.text}`).join("\n\n")}
 
 Question: ${question}`;
 
+// The generation half: answers from a search that was already done. Used by the triage graph's answer node.
+export async function answerFromSearch(question: string, found: SearchResult, llm: Llm): Promise<Answer> {
+  const relevant = found.hits.filter((h) => h.relevant);
+  if (!relevant.length) return { answered: false, reason: "no_relevant_chunks", flagForHuman: true, search: found };
+
+  const parsed = parseAnswer(await llm.complete(buildPrompt(question, relevant)), relevant, question);
+  if (!parsed.ok) return { answered: false, reason: parsed.reason, flagForHuman: true, search: found };
+  return { answered: true, answer: parsed.answer, citations: parsed.citations, search: found };
+}
+
 export async function answerQuestion(
   question: string,
   deps: { embedder: Embedder; store: ChunkStore; llm: Llm },
   options = RETRIEVAL_DEFAULTS,
 ): Promise<Answer> {
-  const found = await search(question, deps.embedder, deps.store, options);
-  const relevant = found.hits.filter((h) => h.relevant);
-  if (!relevant.length) return { answered: false, reason: "no_relevant_chunks", flagForHuman: true, search: found };
-
-  const parsed = parseAnswer(await deps.llm.complete(buildPrompt(question, relevant)), relevant, question);
-  if (!parsed.ok) return { answered: false, reason: parsed.reason, flagForHuman: true, search: found };
-  return { answered: true, answer: parsed.answer, citations: parsed.citations, search: found };
+  return answerFromSearch(question, await search(question, deps.embedder, deps.store, options), deps.llm);
 }
